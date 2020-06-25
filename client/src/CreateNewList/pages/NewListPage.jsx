@@ -1,6 +1,7 @@
 import React from 'react';
 
-import ProductList from '../components/ProductList'
+import ProductList from '../components/ProductList';
+import ProductForm from '../components/ProductForm';
 
 const products = [
     {
@@ -46,6 +47,7 @@ const NewList = () => {
     return (
         <div>            
             <ProductList products={products}/>
+            <ProductForm />
         </div>
     )
 }
