@@ -12,7 +12,8 @@ const NewList = () => {
     }
 
     const removeProduct = (id) => {
-        products.filter(product => product.id !== id)
+        console.log(id)
+        return products.filter(product => product.id !== id)
     }
 
     return (
