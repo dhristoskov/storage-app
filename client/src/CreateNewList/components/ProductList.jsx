@@ -14,7 +14,8 @@ const ProductList = (props) => {
                         priceWithVat={product.priceWithVat}
                         qty={product.qty}
                         type={product.type}
-                        storage={product.storage}/>
+                        storage={product.storage}
+                        removeProduct={() => props.removeProduct(product.id)}/>
                     )
             })}
             <p>{props.name}</p>

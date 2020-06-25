@@ -16,7 +16,7 @@ const ProductItem = (props) => {
             <p>{props.storage}</p>
             <p>{totalPrice}</p>
             <div>
-                <button>delete</button>
+                <button onClick={props.removeProduct}>delete</button>
                 <button>edit</button>
                 <button>done</button>
                 <button>priority</button>

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-const ProductForm = () => {
+const ProductForm = ( props ) => {
     const [ product, setProduct ] = useState({
+        id: Date.now(),
         name: '',
         price: '',
-        priceWithVat: '',
         qty: '',
         type: 'kg',
         storage: ''
@@ -19,12 +19,12 @@ const ProductForm = () => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        console.log(product);
+        props.addNewProduct(product)
         setProduct({
             name: '',
             price: '',
             qty: '',
-            type: '',
+            type: 'kg',
             storage: ''
         })
     }
