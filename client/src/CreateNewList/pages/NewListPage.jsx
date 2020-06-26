@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 
 import ProductList from '../components/ProductList';
 import ProductForm from '../components/ProductForm';
@@ -32,6 +32,7 @@ const productssReducer = ( state, action ) => {
 
 const NewList = () => {
 
+    const [ onEdit, setOnEdint ] = useState(false)
     const [ products, dispatch ] = useReducer(productssReducer, [
         {
             id: '01',
@@ -88,12 +89,18 @@ const NewList = () => {
         dispatch({type: 'UNDONE', id: pid})
     }
 
+    const editHandler = (pid) => {
+        console.log(pid)
+        setOnEdint(true)
+    }
+
     return (
         <div>            
             <ProductList products={products}
             removeProduct={removeProduct}
             isDoneHandler={isDoneHandler}
-            isUndoneHandler={isUndoneHandler}/>
+            isUndoneHandler={isUndoneHandler}
+            editHandler={editHandler}/>
             <ProductForm addNewProduct={addNewProduct}/>
         </div>
     )
