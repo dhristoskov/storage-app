@@ -58,13 +58,13 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: fixed;
-  left: 1%;
-  top: 10%;
+  left: 2%;
+  top: 15%;
 }
 
 .navbar li {
   list-style: none;
-  text-align: end;
+  text-align: start;
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 700;
@@ -81,5 +81,20 @@ html {
 
 .navbar li a:hover, .navbar li a.active {
   color: blue;
+}
+
+.main-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 25px 2%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-header .logo {
+  position: fixed;
+  right: 50%;
 }
 /*# sourceMappingURL=App.css.map */

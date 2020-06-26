@@ -17,7 +17,7 @@ const MainHeader = () => {
             {
                 toggleNav &&  <Navigation />
             }          
-            <p>Logo</p>
+            <p className='logo'>Logo</p>
         </div>
     )
 }
