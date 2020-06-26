@@ -15,4 +15,71 @@ html {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
+
+.menu-button {
+  display: block;
+  width: 55px;
+  cursor: pointer;
+}
+
+.menu-button:hover div {
+  width: 45px;
+}
+
+.menu-button div {
+  height: 4px;
+  background: blue;
+  margin: 5px 0;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.menu-button .one {
+  width: 55px;
+}
+
+.menu-button .two {
+  width: 25px;
+}
+
+.menu-button .three {
+  width: 40px;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  left: 1%;
+  top: 10%;
+}
+
+.navbar li {
+  list-style: none;
+  text-align: end;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: black;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar li a:hover, .navbar li a.active {
+  color: blue;
+}
 /*# sourceMappingURL=App.css.map */
