@@ -18,7 +18,8 @@ const ProductList = (props) => {
                         isDone={product.isDone}
                         removeProduct={() => props.removeProduct(product.id)}
                         isDoneHandler={() => props.isDoneHandler(product.id)}
-                        isUndoneHandler={() => props.isUndoneHandler(product.id)}/>
+                        isUndoneHandler={() => props.isUndoneHandler(product.id)}
+                        editHandler={() => props.editHandler(product.id)}/>
                     )
             })}
             <p>{props.name}</p>

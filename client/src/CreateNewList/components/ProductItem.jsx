@@ -7,8 +7,8 @@ const ProductItem = (props) => {
     const [ toggle, setToggle ] = useState(false)
 
     const price = parseFloat(props.price).toFixed(2);
-    const vatPrice = parseFloat(props.price + (props.price/100)*20).toFixed(2);
-    const totalPrice = parseFloat(vatPrice * props.qty).toFixed(2);
+    const vatPrice = parseFloat((props.price/100)*20).toFixed(2);
+    const totalPrice = parseFloat(price * props.qty).toFixed(2);
 
     const togglePriority = () => {
         setToggle(prevState => !prevState)
@@ -25,7 +25,7 @@ const ProductItem = (props) => {
             <p>{totalPrice}</p>
             <div>
                 <button onClick={props.removeProduct}>delete</button>
-                <button>edit</button>
+                <button onClick={props.editHandler}>edit</button>
                 {
                     props.isDone 
                     ? <button onClick={props.isUndoneHandler}>undone</button>

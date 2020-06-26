@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ProductForm = ( props ) => {
+
+    const { onEdit, 
+        addNewProduct, 
+        onClearEditHandler,
+        onUpdateHandler } = props
     const [ product, setProduct ] = useState({
         name: '',
         price: '',
@@ -9,6 +14,21 @@ const ProductForm = ( props ) => {
         storage: '',
         isDone: false
     });
+
+    useEffect(() => {
+        if(onEdit){
+            setProduct(onEdit)
+        }else{
+            setProduct({
+                name: '',
+                price: '',
+                qty: '',
+                type: '' || 'kg', 
+                storage: '',
+                isDone: false
+            });
+        }
+    }, [onEdit]);
 
     const { name, price, qty, storage, type } = product;
 
@@ -19,7 +39,11 @@ const ProductForm = ( props ) => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        props.addNewProduct(product)
+        if(!onEdit){
+            addNewProduct(product) 
+        }else{
+            onUpdateHandler(product)
+        }
         setProduct({
             name: '',
             price: '',
@@ -44,7 +68,10 @@ const ProductForm = ( props ) => {
                 </select>
                 <input type="text" placeholder='Storage' name='storage' value={storage}
                 onChange={onChangeHandler} required/>
-                <input type="submit" value='submit'/>
+                <input type='submit' value={onEdit ? 'Update' : 'Create'}/>   
+                {
+                    onEdit && <p onClick={onClearEditHandler} style={{cursor: 'pointer'}}>X</p>
+                }         
             </form>
         </div>
     )

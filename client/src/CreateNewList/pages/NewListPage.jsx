@@ -32,7 +32,7 @@ const productssReducer = ( state, action ) => {
 
 const NewList = () => {
 
-    const [ onEdit, setOnEdint ] = useState(false)
+    const [ onEdit, setOnEdit ] = useState();
     const [ products, dispatch ] = useReducer(productssReducer, [
         {
             id: '01',
@@ -90,8 +90,17 @@ const NewList = () => {
     }
 
     const editHandler = (pid) => {
-        console.log(pid)
-        setOnEdint(true)
+        const product = products.find(e => e.id === pid);
+        setOnEdit(product)
+    }
+
+    const onUpdateHandler = (item) => {
+        dispatch({type: 'UPDATE_PRODUCT', id: item.id, update: item});
+        setOnEdit(null);
+    }
+
+    const onClearEditHandler = () => {
+        setOnEdit(null);
     }
 
     return (
@@ -101,7 +110,10 @@ const NewList = () => {
             isDoneHandler={isDoneHandler}
             isUndoneHandler={isUndoneHandler}
             editHandler={editHandler}/>
-            <ProductForm addNewProduct={addNewProduct}/>
+            <ProductForm addNewProduct={addNewProduct}
+            onClearEditHandler={onClearEditHandler}
+            onUpdateHandler={onUpdateHandler}
+            onEdit={onEdit}/>
         </div>
     )
 }
