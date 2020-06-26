@@ -1,9 +1,15 @@
 import React from 'react';
 
+import StorageForm from '../components/StorageForm';
+import StorageList from '../components/StorageList';
+
 const StoragePage = () => {
 
     return (
-        <p>StorageList</p>
+        <div>
+            <StorageForm />
+            <StorageList />
+        </div>
     )
 }
 
