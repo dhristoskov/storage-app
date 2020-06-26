@@ -7,13 +7,12 @@ import { products } from '../../shared-components/data';
 const NewList = () => {
 
     const addNewProduct = ( product ) => {
-        console.log(product)
-        products.push(product)
+        products.push({id: Date.now(), ...product})
     }
 
-    const removeProduct = (id) => {
-        console.log(id)
-        return products.filter(product => product.id !== id)
+    const removeProduct = (pid) => {
+        console.log(products.find(e => e.id === pid))
+        products.filter(e => e.id !== pid);
     }
 
     return (

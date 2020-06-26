@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 const ProductForm = ( props ) => {
     const [ product, setProduct ] = useState({
-        id: Date.now(),
         name: '',
         price: '',
         qty: '',
