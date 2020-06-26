@@ -5,11 +5,11 @@ const ProductForm = ( props ) => {
         name: '',
         price: '',
         qty: '',
-        type: 'kg',
+        type: '',
         storage: ''
     });
 
-    const { name, price, qty, storage } = product;
+    const { name, price, qty, storage, type } = product;
 
     const onChangeHandler = (e) => {
         e.preventDefault();
@@ -23,7 +23,7 @@ const ProductForm = ( props ) => {
             name: '',
             price: '',
             qty: '',
-            type: 'kg',
+            type: '',
             storage: ''
         })
     }
@@ -37,6 +37,10 @@ const ProductForm = ( props ) => {
                 onChange={onChangeHandler} required/>
                 <input type="number" placeholder='Quantity' name='qty' value={qty}
                 onChange={onChangeHandler} required/>
+                <select name="type" value={type} onChange={onChangeHandler} required>
+                    <option value="kg">kg</option>
+                    <option value="pcs">pcs</option>
+                </select>
                 <input type="text" placeholder='Storage' name='storage' value={storage}
                 onChange={onChangeHandler} required/>
                 <input type="submit" value='submit'/>
