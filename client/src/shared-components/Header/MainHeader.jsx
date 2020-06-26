@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AiOutlineLogin } from 'react-icons/ai'
 
 import Navigation from './Navigation';
 import NavButton from './NavButton';
@@ -18,6 +19,7 @@ const MainHeader = () => {
                 toggleNav &&  <Navigation />
             }          
             <p className='logo'>Logo</p>
+            <div className='login'><AiOutlineLogin /></div>
         </div>
     )
 }

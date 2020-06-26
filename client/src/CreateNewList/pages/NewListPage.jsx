@@ -3,12 +3,12 @@ import React, { useReducer, useState } from 'react';
 import ProductList from '../components/ProductList';
 import ProductForm from '../components/ProductForm';
 
-const productssReducer = ( state, action ) => {
+const productsReducer = ( state, action ) => {
     switch(action.type){
         case 'GET':
             return action.products;
         case 'ADD':
-            return [...state, action.product ]
+            return [ action.product, ...state ]
         case 'DELETE':
             return state.filter(product => product.id !== action.id);
         case 'UPDATE_PRODUCT':
@@ -33,7 +33,7 @@ const productssReducer = ( state, action ) => {
 const NewList = () => {
 
     const [ onEdit, setOnEdit ] = useState();
-    const [ products, dispatch ] = useReducer(productssReducer, [
+    const [ products, dispatch ] = useReducer(productsReducer, [
         {
             id: '01',
             name: 'Cheese',
@@ -73,7 +73,6 @@ const NewList = () => {
     ])
 
     const addNewProduct = ( item ) => {
-        console.log(item)
         dispatch({ type:'ADD', product:{ id: Date.now(), ...item }})
     }
 
@@ -103,17 +102,22 @@ const NewList = () => {
         setOnEdit(null);
     }
 
+    //Calculating Total Price for all products
+    // const totalPrice = products.reduce((prev, cur) =>  {
+    //     return prev + (cur.price * cur.qty)
+    // }, 0)
+
     return (
-        <div>            
+        <div>     
+            <ProductForm addNewProduct={addNewProduct}
+            onClearEditHandler={onClearEditHandler}
+            onUpdateHandler={onUpdateHandler}
+            onEdit={onEdit}/>       
             <ProductList products={products}
             removeProduct={removeProduct}
             isDoneHandler={isDoneHandler}
             isUndoneHandler={isUndoneHandler}
-            editHandler={editHandler}/>
-            <ProductForm addNewProduct={addNewProduct}
-            onClearEditHandler={onClearEditHandler}
-            onUpdateHandler={onUpdateHandler}
-            onEdit={onEdit}/>
+            editHandler={editHandler}/>         
         </div>
     )
 }

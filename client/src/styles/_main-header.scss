@@ -2,9 +2,23 @@
     display: flex;
     padding: 25px 2%;
     align-items: center;
+    justify-content: space-between;
     .logo{
         position: fixed;
         right: 50%;
+    }
+    .login {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: 700;
+        color: blue;
+        cursor: pointer;
+        transition: all .5s ease-in-out;   
+        &:hover {
+            color: burlywood;
+            transform: scale(1.1);
+        }
     }
 }
 

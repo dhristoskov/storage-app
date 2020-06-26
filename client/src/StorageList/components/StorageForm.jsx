@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const StorageForm = () => {
+const StorageForm = (props) => {
 
     const [ name, setName ] = useState('')
 
@@ -11,7 +11,7 @@ const StorageForm = () => {
             name: name
         };
 
-        console.log(storage);
+        props.addStorage(storage);
         setName('')
     }
 

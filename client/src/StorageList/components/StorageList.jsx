@@ -2,7 +2,7 @@ import React from 'react';
 
 const StorageList = (props) => {
 
-    if(!props.storagesList) {
+    if(!props.storages.length) {
         return (
             <div>List is empty!</div>
         )
@@ -11,9 +11,12 @@ const StorageList = (props) => {
     return (
         <div>
             {
-                props.storagesList.map( item => {
+                props.storages.map( item => {
                     return (
-                        <p key={item.id}>{item.name}</p>
+                        <div key={item.id}>
+                            <p>{item.name}</p>
+                            <button onClick={() => props.deleteStorage(item.id)}>delete</button>
+                        </div>
                     )
                 })
             }
