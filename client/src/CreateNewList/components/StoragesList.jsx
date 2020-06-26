@@ -19,7 +19,6 @@ const StoragesList = (props) => {
             }           
         </select>
     )
-
 }
 
 export default StoragesList;
