@@ -2,3 +2,42 @@
 @import './hamburger-btn';
 @import './nav-bar';
 @import './main-header';
+
+.form-wrapper {
+    display: flex;
+    width: 60%;
+    margin: 10px auto;
+    input[type=text],
+    input[type=number]{
+        border: none;
+        outline: none;      
+        border-bottom: 1.5px solid blue;
+        margin-right: 5px;
+    }
+    input[type=text]{
+        width: 35%;
+    }
+    input[type=number]{
+        width: 10%;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0; 
+    }
+    input[type=number] {
+        -moz-appearance:textfield;
+    }
+    input[type=submit] {
+        width: 15%;
+    }
+    select {
+        border: none;
+        outline: none;
+        width: 13%;
+        border-bottom: 1.5px solid blue;
+        margin-right: 5px;
+    }
+}

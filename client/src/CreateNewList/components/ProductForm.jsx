@@ -57,7 +57,7 @@ const ProductForm = ( props ) => {
 
     return(
         <div>
-            <form onSubmit={onSubmitHandler}>
+            <form className='form-wrapper' onSubmit={onSubmitHandler}>
                 <input type="text" placeholder='Name' name='name' value={name} 
                 onChange={onChangeHandler} required/>
                 <input type="number" placeholder='Price' name='price' value={price}
