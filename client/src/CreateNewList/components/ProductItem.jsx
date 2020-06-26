@@ -18,7 +18,11 @@ const ProductItem = (props) => {
             <div>
                 <button onClick={props.removeProduct}>delete</button>
                 <button>edit</button>
-                <button>done</button>
+                {
+                    props.isDone 
+                    ? <button onClick={props.isUndoneHandler}>undone</button>
+                    : <button onClick={props.isDoneHandler}>done</button>
+                }              
                 <button>priority</button>
             </div>
         </div>

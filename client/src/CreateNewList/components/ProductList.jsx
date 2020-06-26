@@ -15,7 +15,10 @@ const ProductList = (props) => {
                         qty={product.qty}
                         type={product.type}
                         storage={product.storage}
-                        removeProduct={() => props.removeProduct(product.id)}/>
+                        isDone={product.isDone}
+                        removeProduct={() => props.removeProduct(product.id)}
+                        isDoneHandler={() => props.isDoneHandler(product.id)}
+                        isUndoneHandler={() => props.isUndoneHandler(product.id)}/>
                     )
             })}
             <p>{props.name}</p>

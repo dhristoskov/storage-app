@@ -72,6 +72,7 @@ const NewList = () => {
     ])
 
     const addNewProduct = ( item ) => {
+        console.log(item)
         dispatch({ type:'ADD', product:{ id: Date.now(), ...item }})
     }
 
@@ -79,10 +80,20 @@ const NewList = () => {
         dispatch({type: 'DELETE', id: pid})
     }
 
+    const isDoneHandler = (pid) => {
+        dispatch({type: 'DONE', id: pid})
+    }
+
+    const isUndoneHandler = (pid) => {
+        dispatch({type: 'UNDONE', id: pid})
+    }
+
     return (
         <div>            
             <ProductList products={products}
-            removeProduct={removeProduct}/>
+            removeProduct={removeProduct}
+            isDoneHandler={isDoneHandler}
+            isUndoneHandler={isUndoneHandler}/>
             <ProductForm addNewProduct={addNewProduct}/>
         </div>
     )

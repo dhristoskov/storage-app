@@ -5,8 +5,9 @@ const ProductForm = ( props ) => {
         name: '',
         price: '',
         qty: '',
-        type: '',
-        storage: ''
+        type: '' || 'kg', // <---Default value if it is not picked
+        storage: '',
+        isDone: false
     });
 
     const { name, price, qty, storage, type } = product;
