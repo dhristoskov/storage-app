@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import StoragesList from './StoragesList';
+
 const ProductForm = ( props ) => {
 
     const { onEdit, 
@@ -66,8 +68,7 @@ const ProductForm = ( props ) => {
                     <option value="kg">kg</option>
                     <option value="pcs">pcs</option>
                 </select>
-                <input type="text" placeholder='Storage' name='storage' value={storage}
-                onChange={onChangeHandler} required/>
+                <StoragesList name={'storage'} value={storage} onChangeHandler={onChangeHandler} required/>
                 <input type='submit' value={onEdit ? 'Update' : 'Create'}/>   
                 {
                     onEdit && <p onClick={onClearEditHandler} style={{cursor: 'pointer'}}>X</p>
