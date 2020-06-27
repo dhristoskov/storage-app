@@ -10,6 +10,7 @@ const StoragesList = (props) => {
 
     return (
         <select name={props.name} value={props.value} onChange={props.onChangeHandler} required>
+            <option>Storage</option>
             {
                 SHOPS.map( shop => {
                     return (

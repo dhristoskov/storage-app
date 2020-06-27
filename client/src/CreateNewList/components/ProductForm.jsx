@@ -70,6 +70,7 @@ const ProductForm = ( props ) => {
                 <input type="number" placeholder='Quantity' name='qty' value={qty}
                 onChange={onChangeHandler} required/>
                 <select className='type' name="type" value={type} onChange={onChangeHandler} required>
+                    <option>Type</option>
                     <option value="kg">kg</option>
                     <option value="pcs">pcs</option>
                 </select>
