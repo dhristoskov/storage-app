@@ -385,4 +385,16 @@ html {
   text-align: start;
   color: blue;
 }
+
+.list-wrapper .total-price {
+  font-size: 13px;
+  text-align: end;
+  color: blue;
+  margin: 5px 10px 0 0;
+}
+
+.list-wrapper .total-price span {
+  font-size: 14px;
+  font-weight: 600;
+}
 /*# sourceMappingURL=App.css.map */

@@ -1,0 +1,20 @@
+.list-wrapper{
+    margin: auto;
+    width: 55%;
+    .counter {
+        font-size: 13px;
+        font-weight: 600;
+        text-align: start;
+        color: blue;
+    }
+    .total-price {
+        font-size: 13px;       
+        text-align: end;
+        color: blue;
+        margin: 5px 10px 0 0;
+        span {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+}

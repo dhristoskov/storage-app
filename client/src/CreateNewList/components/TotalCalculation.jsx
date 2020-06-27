@@ -11,10 +11,11 @@ const TotalCalculation = (props) => {
     }, 0);
 
     //Total with VAT
-    const priceWithVat = parseFloat(totalPrice * (1 + taxes / 100) * props.products.qty).toFixed(2);
+    const priceWithVat = parseFloat(totalPrice * (1 + taxes / 100)).toFixed(2);
 
     return (
-        <p>Total: {totalPrice} - with VAT {priceWithVat}</p>
+        <p className='total-price'>Total: <span>{parseFloat(totalPrice).toFixed(2)} €</span> - with VAT
+        <span> {priceWithVat} €</span></p>
     )
 
 }

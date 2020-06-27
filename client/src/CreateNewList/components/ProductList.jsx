@@ -3,6 +3,7 @@ import React from 'react';
 import ProductItem from './ProductItem';
 import TableHeader from './TableHeader';
 import ProductsCounter from './ProductsCounter';
+import TotalCalculation from './TotalCalculation';
 
 const ProductList = (props) => {
 
@@ -36,7 +37,7 @@ const ProductList = (props) => {
                         editHandler={() => props.editHandler(product.id)}/>
                     )
             })}
-            <p>{props.name}</p>
+            <TotalCalculation products={props.products}/>
         </div>
     )
 }
