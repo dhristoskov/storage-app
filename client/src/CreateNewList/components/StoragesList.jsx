@@ -1,9 +1,9 @@
 import React from 'react';
 
 const SHOPS = [ 
-    { id: '001', name: 'Storage First'},
-    { id: '002', name: 'Storage Second'},
-    { id: '003', name: 'Storage Third'},
+    { id: '001', name: 'Dragor'},
+    { id: '002', name: 'Pazardjik'},
+    { id: '003', name: 'Depoto'},
 ];
 
 const StoragesList = (props) => {

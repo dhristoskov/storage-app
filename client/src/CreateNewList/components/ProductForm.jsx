@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 import StoragesList from './StoragesList';
 
@@ -12,8 +13,8 @@ const ProductForm = ( props ) => {
         name: '',
         price: '',
         qty: '',
-        type: '' || 'kg', // <---Default value if it is not picked
-        storage: '',
+        type: '' || 'n/a', // <---Default value if it is not picked
+        storage: '' || 'not specified', // <--- Same default value if it is not picked
         isDone: false
     });
 
@@ -25,8 +26,8 @@ const ProductForm = ( props ) => {
                 name: '',
                 price: '',
                 qty: '',
-                type: '' || 'kg', 
-                storage: '',
+                type: '' || 'n/a', 
+                storage: '' || 'not specified',
                 isDone: false
             });
         }
@@ -58,21 +59,22 @@ const ProductForm = ( props ) => {
     return(
         <div>
             <form className='form-wrapper' onSubmit={onSubmitHandler}>
+                {
+                    onEdit && <p className='close-btn' onClick={onClearEditHandler}>
+                        <AiOutlineCloseCircle /></p>
+                }  
                 <input type="text" placeholder='Name' name='name' value={name} 
                 onChange={onChangeHandler} required/>
                 <input type="number" placeholder='Price' name='price' value={price}
                 onChange={onChangeHandler} required/>
                 <input type="number" placeholder='Quantity' name='qty' value={qty}
                 onChange={onChangeHandler} required/>
-                <select name="type" value={type} onChange={onChangeHandler} required>
+                <select className='type' name="type" value={type} onChange={onChangeHandler} required>
                     <option value="kg">kg</option>
                     <option value="pcs">pcs</option>
                 </select>
                 <StoragesList name={'storage'} value={storage} onChangeHandler={onChangeHandler} required/>
-                <input type='submit' value={onEdit ? 'Update' : 'Create'}/>   
-                {
-                    onEdit && <p onClick={onClearEditHandler} style={{cursor: 'pointer'}}>X</p>
-                }         
+                <input type='submit' value={onEdit ? 'Update' : 'Create'}/>                        
             </form>
         </div>
     )

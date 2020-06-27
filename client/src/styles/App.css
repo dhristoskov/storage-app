@@ -123,11 +123,12 @@ html {
 }
 
 .form-wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 60%;
-  margin: 10px auto;
+  width: 55%;
+  margin: 10px auto 30px auto;
 }
 
 .form-wrapper input[type=text],
@@ -136,6 +137,7 @@ html {
   outline: none;
   border-bottom: 1.5px solid blue;
   margin-right: 5px;
+  padding: 8px 0 0 4px;
 }
 
 .form-wrapper input[type=text] {
@@ -143,7 +145,7 @@ html {
 }
 
 .form-wrapper input[type=number] {
-  width: 10%;
+  width: 8%;
 }
 
 .form-wrapper input[type=number]::-webkit-inner-spin-button,
@@ -160,13 +162,71 @@ html {
 
 .form-wrapper input[type=submit] {
   width: 15%;
+  padding: 5px 15px;
+  color: blue;
+  background: none;
+  border: 1px solid blue;
+  border-radius: 20px;
+  outline: none;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.form-wrapper input[type=submit]:hover {
+  background-color: blue;
+  color: white;
+}
+
+.form-wrapper .close-btn {
+  position: absolute;
+  top: 0;
+  left: -35px;
+  margin-right: 5px;
+  font-size: 25px;
+  color: blue;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.form-wrapper .close-btn:hover {
+  color: #f86969;
+}
+
+.form-wrapper input::-webkit-input-placeholder {
+  color: blue;
+}
+
+.form-wrapper input:-ms-input-placeholder {
+  color: blue;
+}
+
+.form-wrapper input::-ms-input-placeholder {
+  color: blue;
+}
+
+.form-wrapper input::placeholder {
+  color: blue;
 }
 
 .form-wrapper select {
   border: none;
   outline: none;
-  width: 13%;
+  width: 15%;
   border-bottom: 1.5px solid blue;
   margin-right: 5px;
+  padding: 8px 0 0 4px;
+}
+
+.form-wrapper .type {
+  width: 8%;
+}
+
+@media (max-width: 480px) {
+  .form-wrapper {
+    width: 95%;
+  }
 }
 /*# sourceMappingURL=App.css.map */
