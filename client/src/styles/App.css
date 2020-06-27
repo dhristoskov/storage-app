@@ -18,12 +18,12 @@ html {
 
 .menu-button {
   display: block;
-  width: 55px;
+  width: 40px;
   cursor: pointer;
 }
 
 .menu-button:hover div {
-  width: 45px;
+  width: 35px;
 }
 
 .menu-button div {
@@ -35,15 +35,15 @@ html {
 }
 
 .menu-button .one {
-  width: 55px;
+  width: 40px;
 }
 
 .menu-button .two {
-  width: 25px;
+  width: 20px;
 }
 
 .menu-button .three {
-  width: 40px;
+  width: 30px;
 }
 
 .navbar {
@@ -302,5 +302,48 @@ html {
   color: #e64444;
   -webkit-transform: scale(1.15);
           transform: scale(1.15);
+}
+
+.table-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 55%;
+  margin: 0 auto 5px auto;
+  border-bottom: 1px solid blue;
+  padding: 0 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  padding-top: 12px;
+}
+
+.table-header p {
+  font-size: 15px;
+  font-weight: 700;
+  text-align: end;
+  color: blue;
+}
+
+.table-header .name {
+  width: 30%;
+  text-align: start;
+}
+
+.table-header .price {
+  width: 12%;
+}
+
+.table-header .quantity {
+  width: 15%;
+}
+
+.table-header .storage {
+  width: 15%;
+}
+
+.table-header .total {
+  width: 12%;
 }
 /*# sourceMappingURL=App.css.map */

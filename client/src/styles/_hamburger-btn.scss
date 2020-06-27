@@ -1,9 +1,9 @@
 .menu-button {
     display: block;
-    width: 55px;
+    width: 40px;
     cursor: pointer;
     &:hover div {
-        width: 45px;
+        width: 35px;
     }
     div {
         height: 3px;
@@ -12,12 +12,12 @@
         transition: all .5s ease-in-out;            
     }
     .one {
-        width: 55px;
+        width: 40px;
     }
     .two {
-        width: 25px;
+        width: 20px;
     }
     .three {
-        width: 40px;
+        width: 30px;
     }
 }

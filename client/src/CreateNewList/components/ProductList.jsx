@@ -1,10 +1,13 @@
 import React from 'react';
+
 import ProductItem from './ProductItem';
+import TableHeader from './TableHeader';
 
 const ProductList = (props) => {
 
     return (
         <div>
+            <TableHeader />
             {
                 props.products.map(product => {
                     return (
