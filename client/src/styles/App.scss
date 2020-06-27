@@ -5,13 +5,16 @@
 @import './product-form';
 @import './product-item';
 @import './table-header';
+@import './prority-btn';
+@import './empty-list';
 
-.priority-btn{
-    display: flex;
-    position: absolute;
-    right: -90px;
-    top: 0;
-    .priority-item {
-        font-size: 25px;
+.list-wrapper{
+    margin: auto;
+    width: 55%;
+    .counter {
+        font-size: 13px;
+        font-weight: 600;
+        text-align: start;
+        color: blue;
     }
 }

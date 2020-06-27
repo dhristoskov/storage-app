@@ -12,7 +12,7 @@ const ProductItem = (props) => {
     const [ toggle, setToggle ] = useState(false)
 
     const price = parseFloat(props.price).toFixed(2);
-    //const vatPrice = parseFloat((props.price/100)*20).toFixed(2);
+    //const vatPrice = parseFloat((props.price/100)*20).toFixed(2);   
     const totalPrice = parseFloat(price * props.qty).toFixed(2);
 
     const togglePriority = () => {

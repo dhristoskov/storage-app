@@ -2,7 +2,6 @@ import React, { useReducer, useState } from 'react';
 
 import ProductList from '../components/ProductList';
 import ProductForm from '../components/ProductForm';
-import EditFrom from '../components/EditForm';
 
 const productsReducer = ( state, action ) => {
     switch(action.type){
@@ -103,17 +102,12 @@ const NewList = () => {
         setOnEdit(null);
     }
 
-    //Calculating Total Price for all products
-    // const totalPrice = products.reduce((prev, cur) =>  {
-    //     return prev + (cur.price * cur.qty)
-    // }, 0)
-
     return (
         <div>     
             <ProductForm addNewProduct={addNewProduct}
             onClearEditHandler={onClearEditHandler}
             onUpdateHandler={onUpdateHandler}
-            onEdit={onEdit}/>       
+            onEdit={onEdit}/>                
             <ProductList products={products}
             removeProduct={removeProduct}
             isDoneHandler={isDoneHandler}

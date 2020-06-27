@@ -2,11 +2,22 @@ import React from 'react';
 
 import ProductItem from './ProductItem';
 import TableHeader from './TableHeader';
+import ProductsCounter from './ProductsCounter';
 
 const ProductList = (props) => {
 
+    if(!props.products.length) {
+        return(
+            <div className='empty-list'>
+                <p>Your list is empty </p>
+                <p className='line'/>
+            </div>  
+        )   
+    }
+
     return (
-        <div>
+        <div className='list-wrapper'>
+            <ProductsCounter products={props.products}/>
             <TableHeader />
             {
                 props.products.map(product => {

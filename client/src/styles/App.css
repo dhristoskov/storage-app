@@ -234,7 +234,7 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 55%;
+  width: 100%;
   margin: auto;
   border-bottom: 1px solid blue;
   padding: 0 5px;
@@ -309,7 +309,7 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 55%;
+  width: 100%;
   margin: auto;
   border-bottom: 1px solid blue;
   padding: 0 5px;
@@ -359,5 +359,30 @@ html {
 
 .priority-btn .priority-item {
   font-size: 25px;
+}
+
+.empty-list {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.empty-list .line {
+  height: 2px;
+  width: 200px;
+  background: blue;
+  margin: auto;
+}
+
+.list-wrapper {
+  margin: auto;
+  width: 55%;
+}
+
+.list-wrapper .counter {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: start;
+  color: blue;
 }
 /*# sourceMappingURL=App.css.map */
