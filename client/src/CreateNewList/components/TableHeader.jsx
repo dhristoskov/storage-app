@@ -1,6 +1,9 @@
 import React from 'react';
+//import { AiOutlineArrowDown, AiOutlineArrowUp} from 'react-icons/ai';
 
 const TableHeader = () => {
+
+    //Sort the array TODO
 
     return(
         <div className='table-header'>

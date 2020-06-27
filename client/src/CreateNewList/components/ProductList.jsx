@@ -7,6 +7,7 @@ import TotalCalculation from './TotalCalculation';
 
 const ProductList = (props) => {
 
+    //If list is empty array
     if(!props.products.length) {
         return(
             <div className='empty-list'>

@@ -18,6 +18,7 @@ const ProductForm = ( props ) => {
         isDone: false
     });
 
+    //Checking if edit is not null
     useEffect(() => {
         if(onEdit){
             setProduct(onEdit)
