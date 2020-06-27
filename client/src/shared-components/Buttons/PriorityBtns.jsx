@@ -1,12 +1,13 @@
 import React from 'react';
+import { GoArrowDown, GoArrowUp, GoArrowBoth } from 'react-icons/go';
 
 const PriorityBtns = () => {
 
     return (
-        <div>
-            <button>High</button>
-            <button>Average</button>
-            <button>Low</button>
+        <div className='priority-btn'>
+            <p><GoArrowUp /></p>
+            <p><GoArrowBoth /></p>
+            <p><GoArrowDown /></p>
         </div>
     )
 

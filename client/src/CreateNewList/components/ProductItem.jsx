@@ -20,7 +20,8 @@ const ProductItem = (props) => {
     }
 
     return(
-        <div className='product-wrapper'>
+        <div className='product-wrapper' 
+        style={props.isDone ? {background: '#D2DDBB', color: 'white'} : null}>
             <p className='name'>{props.name}</p>
             <p className='price'>{price} €</p>
             <p className='quantity'>{props.qty}</p>

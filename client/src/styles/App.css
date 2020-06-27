@@ -277,6 +277,7 @@ html {
 }
 
 .product-wrapper .settings {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -309,7 +310,7 @@ html {
   display: -ms-flexbox;
   display: flex;
   width: 55%;
-  margin: 0 auto 5px auto;
+  margin: auto;
   border-bottom: 1px solid blue;
   padding: 0 5px;
   -webkit-box-align: center;
@@ -345,5 +346,18 @@ html {
 
 .table-header .total {
   width: 12%;
+}
+
+.priority-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: -90px;
+  top: 0;
+}
+
+.priority-btn .priority-item {
+  font-size: 25px;
 }
 /*# sourceMappingURL=App.css.map */

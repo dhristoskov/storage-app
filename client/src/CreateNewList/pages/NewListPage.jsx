@@ -2,6 +2,7 @@ import React, { useReducer, useState } from 'react';
 
 import ProductList from '../components/ProductList';
 import ProductForm from '../components/ProductForm';
+import EditFrom from '../components/EditForm';
 
 const productsReducer = ( state, action ) => {
     switch(action.type){
@@ -117,7 +118,7 @@ const NewList = () => {
             removeProduct={removeProduct}
             isDoneHandler={isDoneHandler}
             isUndoneHandler={isUndoneHandler}
-            editHandler={editHandler}/>         
+            editHandler={editHandler}/>       
         </div>
     )
 }
