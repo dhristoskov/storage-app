@@ -20,7 +20,10 @@ const ProductList = (props) => {
     return (
         <div className='list-wrapper'>
             <ProductsCounter products={props.products}/>
-            <TableHeader />
+            <TableHeader onAscOrder={props.onAscOrder}
+            onDescOrder={props.onDescOrder}
+            onLowPrice={props.onLowPrice}
+            onHighPrice={props.onHighPrice}/>
             {
                 props.products.map(product => {
                     return (

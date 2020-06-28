@@ -182,10 +182,9 @@ html {
 
 .form-wrapper .close-btn {
   position: absolute;
-  top: 0;
-  left: -35px;
-  margin-right: 5px;
-  font-size: 25px;
+  top: -2.5px;
+  right: -25px;
+  font-size: 26px;
   color: blue;
   cursor: pointer;
   -webkit-transition: all .2s ease-in;
@@ -273,7 +272,7 @@ html {
 }
 
 .product-wrapper .total {
-  width: 12%;
+  width: 13%;
 }
 
 .product-wrapper .settings {
@@ -317,7 +316,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   height: 30px;
-  padding-top: 12px;
+  padding-top: 8px;
 }
 
 .table-header p {
@@ -328,12 +327,77 @@ html {
 }
 
 .table-header .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 30%;
+}
+
+.table-header .name p {
   text-align: start;
+  margin-right: 5px;
+}
+
+.table-header .name .order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.table-header .name .order p {
+  padding-top: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.table-header .name .order p:hover {
+  color: #e64444;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 .table-header .price {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 12%;
+}
+
+.table-header .price p {
+  margin-right: 5px;
+}
+
+.table-header .price .order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.table-header .price .order p {
+  padding-top: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.table-header .price .order p:hover {
+  color: #e64444;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 .table-header .quantity {
@@ -345,7 +409,7 @@ html {
 }
 
 .table-header .total {
-  width: 12%;
+  width: 13%;
 }
 
 .priority-btn {

@@ -6,7 +6,7 @@
     padding: 0 5px;
     align-items: center;
     height: 30px;
-    padding-top: 12px;
+    padding-top: 8px;
     p{
         font-size: 15px;
         font-weight: 700;
@@ -14,11 +14,50 @@
         color: blue;
     }
     .name {
+        display: flex;
+        align-items: center;
         width: 30%;
-        text-align: start;
+        p {
+            text-align: start;
+            margin-right: 5px;
+        }
+        .order {
+            display: flex;
+            p {
+                padding-top: 4px;
+                font-size: 14px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all .2s ease-in;
+                &:hover {
+                    color: rgb(230, 68, 68);
+                    transform: scale(1.15);
+                }
+            }
+        }
     }
     .price {
+        justify-content: flex-end;
+        display: flex;
+        align-items: center;
         width: 12%;
+        p {
+            margin-right: 5px;
+        }
+        .order {
+            display: flex;
+            p {
+                padding-top: 4px;
+                font-size: 14px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all .2s ease-in;
+                &:hover {
+                    color: rgb(230, 68, 68);
+                    transform: scale(1.15);
+                }
+            }
+        }
     }
     .quantity {
         width: 15%;
@@ -27,7 +66,7 @@
         width: 15%;
     }
     .total {
-        width: 12%;
+        width: 13%;
     }
     
 }
