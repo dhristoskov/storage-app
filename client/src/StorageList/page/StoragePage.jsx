@@ -79,12 +79,14 @@ const StoragePage = () => {
         details =  <StorageList storages={storages}
                     deleteStorage={deleteStorage}
                     moveToStoragePage={moveToStoragePage}
-                    moveToCreateList={moveToCreateList}/>
+                    moveToCreateList={moveToCreateList}
+                    showDeleteWarning={showDeleteWarning}/>
     }else{
         details =  <StorageSimpleList storages={storages}
                     deleteStorage={deleteStorage}
                     moveToStoragePage={moveToStoragePage}
-                    moveToCreateList={moveToCreateList}/>
+                    moveToCreateList={moveToCreateList}
+                    showDeleteWarning={showDeleteWarning}/>
     }
 
     return (

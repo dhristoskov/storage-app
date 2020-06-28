@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { AiOutlineMinusCircle, AiOutlinePlusCircle, AiOutlineCloseCircle } from 'react-icons/ai';
-
-import StoragesList from './StoragesList';
+import { AiOutlineMinusCircle, 
+    AiOutlinePlusCircle, 
+    AiOutlineCloseCircle } from 'react-icons/ai';
 
 const ProductForm = ( props ) => {
 
     const { onEdit, 
         addNewProduct, 
         onClearEditHandler,
-        onUpdateHandler } = props;
+        onUpdateHandler,
+        storageName } = props;
+        
+    const fixedName = storageName.replace(/^./, str => str.toUpperCase())
     const [ showForm, setShowForm ] = useState(false);
     const [ product, setProduct ] = useState({
         name: '',
         price: '',
         qty: '',
         type: '' || 'n/a', // <---Default value if it is not picked
-        storage: '' || 'not specified', // <--- Same default value if it is not picked
+        storage: fixedName,
         isDone: false
     });
 
@@ -29,13 +32,13 @@ const ProductForm = ( props ) => {
                 price: '',
                 qty: '',
                 type: '' || 'n/a', 
-                storage: '' || 'not specified',
+                storage: fixedName,
                 isDone: false
             });
         }
     }, [onEdit]);
 
-    const { name, price, qty, storage, type } = product;
+    const { name, price, qty, type } = product;
 
     const onChangeHandler = (e) => {
         e.preventDefault();
@@ -53,9 +56,8 @@ const ProductForm = ( props ) => {
             name: '',
             price: '',
             qty: '',
-            type: '',
-            storage: ''
-        })
+            type: ''
+        });
     };
 
     const onFormHandler = () => {
@@ -87,7 +89,6 @@ const ProductForm = ( props ) => {
                     <option value="kg">kg</option>
                     <option value="pcs">pcs</option>
                 </select>
-                <StoragesList name={'storage'} value={storage} onChangeHandler={onChangeHandler} required/>
                 <input type='submit' value={onEdit ? 'Update' : 'Create'}/>                        
             </form>
             :

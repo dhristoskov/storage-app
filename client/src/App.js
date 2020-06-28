@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import MainHeader from './shared-components/Header/MainHeader';
 import NewListPage from './CreateNewList/pages/NewListPage';
 import StoragePage from './StorageList/page/StoragePage';
+import StorageListsPage from './StorageList/page/StorageListsPage';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <MainHeader />
         <Route path='/list' component={NewListPage} />
         <Route path='/storage' component={StoragePage} />
+        <Route path='/storage-list/:name' component={StorageListsPage} />
+        <Route path='/create-list/:storageName' component={NewListPage} />
       </Router>
     </Fragment>
   );

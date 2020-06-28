@@ -133,7 +133,7 @@ html {
 .form-main .toggle-form {
   position: absolute;
   top: -2.5px;
-  left: -45px;
+  left: -35px;
   font-size: 32px;
   color: blue;
   -webkit-transition: all .2s ease-in;
@@ -163,11 +163,11 @@ html {
 }
 
 .form-main .form-wrapper input[type=text] {
-  width: 35%;
+  width: 45%;
 }
 
 .form-main .form-wrapper input[type=number] {
-  width: 10%;
+  width: 13%;
 }
 
 .form-main .form-wrapper input[type=number]::-webkit-inner-spin-button,
@@ -183,7 +183,7 @@ html {
 }
 
 .form-main .form-wrapper input[type=submit] {
-  width: 13%;
+  width: 15%;
   padding: 3px 15px;
   color: blue;
   background: none;

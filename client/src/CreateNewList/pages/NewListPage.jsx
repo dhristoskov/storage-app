@@ -1,4 +1,5 @@
 import React, { useReducer, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import ProductList from '../components/ProductList';
 import ProductForm from '../components/ProductForm';
@@ -40,6 +41,8 @@ const productsReducer = ( state, action ) => {
 
 const NewList = () => {
 
+    const { storageName } = useParams(); 
+    const fixedName = storageName.replace(/^./, str => str.toUpperCase())
     const [ onEdit, setOnEdit ] = useState();
     const [ products, dispatch ] = useReducer(productsReducer, [
         {
@@ -126,9 +129,11 @@ const NewList = () => {
 
     return (
         <div className='main-wrapper'>     
+            <p className='storage-name'>You are in {fixedName} storage</p>
             <ProductForm addNewProduct={addNewProduct}
             onClearEditHandler={onClearEditHandler}
             onUpdateHandler={onUpdateHandler}
+            storageName={storageName}
             onEdit={onEdit}/>                
             <ProductList products={products}
             removeProduct={removeProduct}
