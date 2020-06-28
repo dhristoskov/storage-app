@@ -12,7 +12,6 @@ function App() {
     <Fragment>
       <Router>
         <MainHeader />
-        <Route path='/list' component={NewListPage} />
         <Route path='/storage' component={StoragePage} />
         <Route path='/storage-list/:name' component={StorageListsPage} />
         <Route path='/create-list/:storageName' component={NewListPage} />

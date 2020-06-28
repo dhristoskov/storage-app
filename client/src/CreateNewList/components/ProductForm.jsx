@@ -78,7 +78,7 @@ const ProductForm = ( props ) => {
                     onEdit && <p className='close-btn' onClick={onClearEditHandler}>
                         <AiOutlineCloseCircle /></p>
                 }  
-                <input type="text" placeholder='Name' name='name' value={name} 
+                <input type="text" placeholder='Product' name='name' value={name} 
                 onChange={onChangeHandler} required/>
                 <input type="number" placeholder='Price' name='price' value={price}
                 onChange={onChangeHandler} required/>

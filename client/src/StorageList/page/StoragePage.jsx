@@ -95,8 +95,8 @@ const StoragePage = () => {
                 showWarning &&   
                 <Modal removeModal={hideDeleteWarning}>
                     {/* <DeleteWarning
-                    cancel={hideDeleteWarning}
-                    delete={props.onDeleteOrder}/> */}
+                    hideDeleteWarning={hideDeleteWarning}
+                    deleteStorage={deleteStorage}/> */}
                 </Modal>
             }
             <div className='storage-main'>

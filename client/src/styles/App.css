@@ -698,24 +698,15 @@ html {
           transform: scale(1.15);
 }
 
-.main-wrapper .save-list {
-  margin: 20px auto 0 auto;
-  width: 100px;
-  padding: 5px;
-  color: blue;
-  background: none;
-  border: 1px solid blue;
-  border-radius: 20px;
-  outline: none;
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
-  text-transform: uppercase;
+.main-wrapper .storage-name {
   text-align: center;
+  font-size: 22px;
+  margin: 15px 0 35px 0;
 }
 
-.main-wrapper .save-list:hover {
-  background-color: blue;
-  color: white;
+.main-wrapper .storage-name span {
+  color: blue;
+  font-size: 24px;
 }
 
 .modal {
@@ -747,6 +738,47 @@ html {
   height: 100vh;
   background: rgba(213, 231, 248, 0.85);
   z-index: 40;
+}
+
+.save-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 35%;
+  margin: 20px auto 0 auto;
+}
+
+.save-btn .save-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 20px auto 0 auto;
+  width: 100px;
+  padding: 5px;
+  color: blue;
+  background: none;
+  border: 1px solid blue;
+  border-radius: 20px;
+  outline: none;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.save-btn .save-list span {
+  font-size: 12px;
+}
+
+.save-btn .save-list:hover {
+  background-color: blue;
+  color: white;
 }
 
 .storage-main {

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import ProductList from '../components/ProductList';
 import ProductForm from '../components/ProductForm';
+import SaveButtons from '../../shared-components/Buttons/SaveButtons';
 
 const productsReducer = ( state, action ) => {
     switch(action.type){
@@ -129,7 +130,7 @@ const NewList = () => {
 
     return (
         <div className='main-wrapper'>     
-            <p className='storage-name'>You are in {fixedName} storage</p>
+            <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
             <ProductForm addNewProduct={addNewProduct}
             onClearEditHandler={onClearEditHandler}
             onUpdateHandler={onUpdateHandler}
@@ -143,8 +144,8 @@ const NewList = () => {
             onAscOrder={onAscOrder}
             onHighPrice={onHighPrice}
             onLowPrice={onLowPrice}
-            editHandler={editHandler}/>     
-            <p className='save-list'>save list</p>  
+            editHandler={editHandler}/>    
+            <SaveButtons /> 
         </div>
     )
 }

@@ -1,0 +1,30 @@
+.save-btn{
+    display: flex;
+    width: 35%;
+    margin:20px auto 0 auto;
+    .save-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 20px auto 0 auto;
+        width: 100px;
+        padding:5px;
+        color: blue;
+        background: none;
+        border: 1px solid blue;        
+        border-radius: 20px;
+        outline: none;
+        transition: all .2s ease-in;
+        text-transform: uppercase;
+        text-align: center;
+        span {
+            font-size: 12px;
+        }
+        &:hover {
+            background-color: blue;
+            color: white;
+        }
+    }
+}
+
+  
