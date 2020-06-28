@@ -9,3 +9,12 @@
 @import './empty-list';
 @import './list-wrapper';
 @import './storage-item';
+@import './storage-form';
+
+.storage-main {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+

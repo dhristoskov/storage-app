@@ -1,0 +1,41 @@
+.storage-form {
+    margin: 15px auto;
+    width: 70%;
+    p {
+        text-align: center;
+        color: blue;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    input[type=text]{
+        border: none;
+        outline: none;      
+        border-bottom: 1.5px solid blue;
+        padding: 8px 0 0 4px;
+    }
+    input[type=text]{
+        width: 70%;
+        margin-right: 10px;
+    }
+    input[type=submit] {
+        width: 25%;
+        padding:3px 15px;
+        color: blue;
+        background: none;
+        border: 1px solid blue;        
+        border-radius: 20px;
+        outline: none;
+        transition: all .2s ease-in;
+        text-transform: uppercase;
+        text-align: center;
+        &:hover {
+            background-color: blue;
+            color: white;
+        }
+    }
+    input::placeholder{
+        color: blue;
+    }
+}
+

@@ -17,11 +17,14 @@ const StorageForm = (props) => {
 
 
     return (
-        <form onSubmit={onSubmitHandler}>
-            <input type='text' name='name' placeholder='Name' value={name}
-            onChange={e => setName(e.target.value)} required/>
-            <input type='submit' value='submit' />
-        </form>
+        <div className='storage-form'>
+            <p>Create Storage</p>
+            <form onSubmit={onSubmitHandler}>
+                <input type='text' name='name' placeholder='Name' value={name}
+                onChange={e => setName(e.target.value)} required/>
+                <input type='submit' value='Create' />
+            </form>
+        </div>
     )
 
 }

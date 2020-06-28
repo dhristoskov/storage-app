@@ -493,7 +493,7 @@ html {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: auto;
-  width: 55%;
+  width: 100%;
 }
 
 .storage-wrapper .storage-item {
@@ -554,5 +554,77 @@ html {
 .storage-wrapper .storage-item img {
   width: 80%;
   height: auto;
+}
+
+.storage-form {
+  margin: 15px auto;
+  width: 70%;
+}
+
+.storage-form p {
+  text-align: center;
+  color: blue;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.storage-form input[type=text] {
+  border: none;
+  outline: none;
+  border-bottom: 1.5px solid blue;
+  padding: 8px 0 0 4px;
+}
+
+.storage-form input[type=text] {
+  width: 70%;
+  margin-right: 10px;
+}
+
+.storage-form input[type=submit] {
+  width: 25%;
+  padding: 3px 15px;
+  color: blue;
+  background: none;
+  border: 1px solid blue;
+  border-radius: 20px;
+  outline: none;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.storage-form input[type=submit]:hover {
+  background-color: blue;
+  color: white;
+}
+
+.storage-form input::-webkit-input-placeholder {
+  color: blue;
+}
+
+.storage-form input:-ms-input-placeholder {
+  color: blue;
+}
+
+.storage-form input::-ms-input-placeholder {
+  color: blue;
+}
+
+.storage-form input::placeholder {
+  color: blue;
+}
+
+.storage-main {
+  width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
 }
 /*# sourceMappingURL=App.css.map */

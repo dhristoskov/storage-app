@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import StorageForm from '../components/StorageForm';
 import StorageList from '../components/StorageList';
+import StorageCounter from '../components/StorageCounter';
 
 const storageReducer = ( state, action ) => {
     switch(action.type){
@@ -44,16 +45,17 @@ const StoragePage = () => {
     }
 
     const moveToStoragePage = (name) => {
-        history.push(`/storage-list/${name.toLowerCase()}`);
+        history.push(`/storage/storage-list/${name.toLowerCase()}`);
     };
 
     const moveToCreateList = (name) => {
-        history.push(`/create-list/${name.toLowerCase()}`);
+        history.push(`/storage/create-list/${name.toLowerCase()}`);
     };
 
     return (
-        <div>
+        <div className='storage-main'>
             <StorageForm addStorage={addStorage}/>
+            <StorageCounter storages={storages}/>
             <StorageList storages={storages}
             deleteStorage={deleteStorage}
             moveToStoragePage={moveToStoragePage}
