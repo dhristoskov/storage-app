@@ -3,12 +3,11 @@ import { AiOutlineDelete,
     AiOutlineEdit, 
     AiOutlineOrderedList } from 'react-icons/ai'
 
-import shop from '../../assets/shop.svg'
+const StorageSimpleList = (props) => {
 
-const StorageList = (props) => {
-
-      //If storages list is empty array
-      if(!props.storages.length) {
+    
+    //If storages list is empty array
+    if(!props.storages.length) {
         return(
             <div className='empty-list'>
                 <p>Your storages list is empty </p>
@@ -18,14 +17,13 @@ const StorageList = (props) => {
     }
 
     return (
-        <div className='storage-wrapper'>
+        <div className='simple-wrapper'>
             {
                 props.storages.map( item => {
                     return (
-                        <div className='storage-item' key={item.id}>
+                        <div className='simple-item' key={item.id}>
                             <p>{item.name}</p>
-                            <img src={shop} alt='shop' />
-                            <div className='stgs-btn'>
+                            <div className='simple-btn'>
                                 <button onClick={() => props.deleteStorage(item.id)}>
                                     <AiOutlineDelete /></button>
                                 <button onClick={() => props.moveToStoragePage(item.name)}>
@@ -40,4 +38,4 @@ const StorageList = (props) => {
     )
 }
 
-export default StorageList
+export default StorageSimpleList

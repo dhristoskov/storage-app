@@ -454,7 +454,7 @@ html {
 
 .empty-list .line {
   height: 2px;
-  width: 200px;
+  width: 250px;
   background: blue;
   margin: auto;
 }
@@ -626,5 +626,29 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: auto;
+}
+
+.view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+}
+
+.view p {
+  font-size: 26px;
+  color: blue;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.view p:hover {
+  color: #e64444;
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
 }
 /*# sourceMappingURL=App.css.map */

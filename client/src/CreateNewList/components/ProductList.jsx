@@ -11,7 +11,7 @@ const ProductList = (props) => {
     if(!props.products.length) {
         return(
             <div className='empty-list'>
-                <p>Your list is empty </p>
+                <p>Your product list is empty </p>
                 <p className='line'/>
             </div>  
         )   

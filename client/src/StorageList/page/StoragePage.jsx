@@ -1,9 +1,10 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import StorageForm from '../components/StorageForm';
 import StorageList from '../components/StorageList';
 import StorageCounter from '../components/StorageCounter';
+import ListButtons from '../components/ListButtons';
 
 const storageReducer = ( state, action ) => {
     switch(action.type){
@@ -30,6 +31,7 @@ const storageReducer = ( state, action ) => {
 
 const StoragePage = () => {
 
+    const [ detailList, setDetailList ] = useState(false)
     const history = useHistory();
     const [ storages, dispatch ] = useReducer(storageReducer, [
         { id: '001', name: 'Dragor' },
@@ -52,10 +54,20 @@ const StoragePage = () => {
         history.push(`/storage/create-list/${name.toLowerCase()}`);
     };
 
+    const showDetailedList = () => {
+        setDetailList(true)
+    };
+
+    const showSimpleList = () => {
+        setDetailList(false)
+    };
+
     return (
         <div className='storage-main'>
             <StorageForm addStorage={addStorage}/>
             <StorageCounter storages={storages}/>
+            <ListButtons showDetailedList={showDetailedList}
+            showSimpleList={showSimpleList}/>
             <StorageList storages={storages}
             deleteStorage={deleteStorage}
             moveToStoragePage={moveToStoragePage}
