@@ -36,7 +36,7 @@ const ProductForm = ( props ) => {
                 isDone: false
             });
         }
-    }, [onEdit]);
+    }, [onEdit, fixedName]);
 
     const { name, price, qty, type } = product;
 
@@ -56,7 +56,9 @@ const ProductForm = ( props ) => {
             name: '',
             price: '',
             qty: '',
-            type: ''
+            type: '',
+            storage: fixedName,
+            isDone: false
         });
     };
 

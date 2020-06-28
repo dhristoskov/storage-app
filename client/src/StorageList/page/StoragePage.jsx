@@ -7,6 +7,7 @@ import StorageCounter from '../components/StorageCounter';
 import StorageSimpleList from '../components/StorageSimpleList';
 import ListButtons from '../components/ListButtons';
 import Modal from '../../shared-components/Modal/Modal';
+//import DeleteWarning from '../components/DeleteWarning';
 
 const storageReducer = ( state, action ) => {
     switch(action.type){
@@ -95,8 +96,8 @@ const StoragePage = () => {
                 showWarning &&   
                 <Modal removeModal={hideDeleteWarning}>
                     {/* <DeleteWarning
-                    hideDeleteWarning={hideDeleteWarning}
-                    deleteStorage={deleteStorage}/> */}
+                    cancel={hideDeleteWarning}
+                    delete={deleteStorage}/> */}
                 </Modal>
             }
             <div className='storage-main'>
