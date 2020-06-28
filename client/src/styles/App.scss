@@ -10,7 +10,11 @@
 @import './list-wrapper';
 @import './storage-item';
 @import './storage-form';
+@import './view-buttons';
+@import './strg-simple-list';
 
+
+//Storage main page
 .storage-main {
     width: 55%;
     display: flex;
@@ -18,18 +22,24 @@
     margin: auto;
 }
 
-.view {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    p {
-        font-size: 26px;
+
+//Main Product Page
+.main-wrapper{
+    .save-list {
+        margin: 20px auto 0 auto;
+        width: 100px;
+        padding:5px;
         color: blue;
-        cursor: pointer;
+        background: none;
+        border: 1px solid blue;        
+        border-radius: 20px;
+        outline: none;
         transition: all .2s ease-in;
-        &:hover{
-            color: rgb(230, 68, 68);
-            transform: scale(1.25);
+        text-transform: uppercase;
+        text-align: center;
+        &:hover {
+            background-color: blue;
+            color: white;
         }
     }
 }

@@ -616,18 +616,6 @@ html {
   color: blue;
 }
 
-.storage-main {
-  width: 55%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: auto;
-}
-
 .view {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -650,5 +638,95 @@ html {
   color: #e64444;
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
+}
+
+.simple-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.simple-wrapper .simple-item {
+  border-bottom: 1px solid blue;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 0 1px 5px;
+  margin: auto;
+}
+
+.simple-wrapper .simple-item p {
+  width: 69%;
+  font-size: 17px;
+  font-weight: 600;
+  color: blue;
+}
+
+.simple-wrapper .simple-item .simple-btn {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.simple-wrapper .simple-item .simple-btn button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  color: blue;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  text-align: center;
+  font-size: 22px;
+}
+
+.simple-wrapper .simple-item .simple-btn button:hover {
+  color: #e64444;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.storage-main {
+  width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+}
+
+.main-wrapper .save-list {
+  margin: 20px auto 0 auto;
+  width: 100px;
+  padding: 5px;
+  color: blue;
+  background: none;
+  border: 1px solid blue;
+  border-radius: 20px;
+  outline: none;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.main-wrapper .save-list:hover {
+  background-color: blue;
+  color: white;
 }
 /*# sourceMappingURL=App.css.map */

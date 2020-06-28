@@ -1,4 +1,4 @@
-export const  ValidateInput = (name, value) => {
+export const  productValidation = (name, value) => {
 
     let errors = {
         name: '',
@@ -13,13 +13,13 @@ export const  ValidateInput = (name, value) => {
                 : '';
                 break; 
         case 'price':
-            errors.price = value.length > 0
-                ? 'Product must have a price!'
+            errors.price = value < 0
+                ? 'Product must have a positive number price!'
                 : '';
                 break;   
         case 'qty':
-            errors.qty = value.length > 0
-                ? 'Product must have a quantity!'
+            errors.qty = value < 0
+                ? 'Product must have a positive number quantity!'
                 : '';
                 break;      
         default:

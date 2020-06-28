@@ -1,0 +1,38 @@
+.simple-wrapper{   
+    display: flex;   
+    flex-direction: column;
+    .simple-item {
+        border-bottom: 1px solid blue;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        padding: 8px 0 1px 5px; 
+        margin: auto;
+        p {
+            width: 69%;
+            font-size: 17px;
+            font-weight: 600;
+            color: blue;
+        }
+        .simple-btn {
+            width: 30%;
+            display: flex;
+            justify-content: space-evenly;                   
+            button {
+                cursor: pointer;
+                outline: none;
+                border: none;
+                background: none;
+                color: blue;
+                transition: all .2s ease-in;
+                text-align: center;
+                font-size: 22px;
+                &:hover {
+                    color: rgb(230, 68, 68);
+                    transform: scale(1.15);
+                }
+            }
+        }
+    }
+}
+

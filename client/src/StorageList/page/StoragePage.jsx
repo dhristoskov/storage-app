@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import StorageForm from '../components/StorageForm';
 import StorageList from '../components/StorageList';
 import StorageCounter from '../components/StorageCounter';
+import StorageSimpleList from '../components/StorageSimpleList';
 import ListButtons from '../components/ListButtons';
 
 const storageReducer = ( state, action ) => {
@@ -31,7 +32,7 @@ const storageReducer = ( state, action ) => {
 
 const StoragePage = () => {
 
-    const [ detailList, setDetailList ] = useState(false)
+    const [ detailList, setDetailList ] = useState(true)
     const history = useHistory();
     const [ storages, dispatch ] = useReducer(storageReducer, [
         { id: '001', name: 'Dragor' },
@@ -47,11 +48,11 @@ const StoragePage = () => {
     }
 
     const moveToStoragePage = (name) => {
-        history.push(`/storage/storage-list/${name.toLowerCase()}`);
+        history.push(`/storage-list/${name.toLowerCase()}`);
     };
 
     const moveToCreateList = (name) => {
-        history.push(`/storage/create-list/${name.toLowerCase()}`);
+        history.push(`/create-list/${name.toLowerCase()}`);
     };
 
     const showDetailedList = () => {
@@ -62,16 +63,27 @@ const StoragePage = () => {
         setDetailList(false)
     };
 
+    //Switch between detail and simple list mode
+    let details;
+    if(detailList) {
+        details =  <StorageList storages={storages}
+                    deleteStorage={deleteStorage}
+                    moveToStoragePage={moveToStoragePage}
+                    moveToCreateList={moveToCreateList}/>
+    }else{
+        details =  <StorageSimpleList storages={storages}
+                    deleteStorage={deleteStorage}
+                    moveToStoragePage={moveToStoragePage}
+                    moveToCreateList={moveToCreateList}/>
+    }
+
     return (
         <div className='storage-main'>
             <StorageForm addStorage={addStorage}/>
             <StorageCounter storages={storages}/>
             <ListButtons showDetailedList={showDetailedList}
             showSimpleList={showSimpleList}/>
-            <StorageList storages={storages}
-            deleteStorage={deleteStorage}
-            moveToStoragePage={moveToStoragePage}
-            moveToCreateList={moveToCreateList}/>
+            {details}
         </div>
     )
 }

@@ -138,7 +138,8 @@ const NewList = () => {
             onAscOrder={onAscOrder}
             onHighPrice={onHighPrice}
             onLowPrice={onLowPrice}
-            editHandler={editHandler}/>       
+            editHandler={editHandler}/>     
+            <p className='save-list'>save list</p>  
         </div>
     )
 }
