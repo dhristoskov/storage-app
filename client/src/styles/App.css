@@ -122,46 +122,65 @@ html {
           transform: scale(1.1);
 }
 
-.form-wrapper {
+.form-main {
+  position: relative;
+  width: 55%;
+  margin: 10px auto 30px auto;
+}
+
+.form-main .toggle-form {
+  position: absolute;
+  top: -2.5px;
+  left: -45px;
+  font-size: 32px;
+  color: blue;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.form-main .toggle-form:hover {
+  color: #f86969;
+}
+
+.form-main .form-wrapper {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 55%;
-  margin: 10px auto 30px auto;
+  width: 100%;
 }
 
-.form-wrapper input[type=text],
-.form-wrapper input[type=number] {
+.form-main .form-wrapper input[type=text],
+.form-main .form-wrapper input[type=number] {
   border: none;
   outline: none;
   border-bottom: 1.5px solid blue;
   padding: 8px 0 0 4px;
 }
 
-.form-wrapper input[type=text] {
+.form-main .form-wrapper input[type=text] {
   width: 35%;
 }
 
-.form-wrapper input[type=number] {
+.form-main .form-wrapper input[type=number] {
   width: 10%;
 }
 
-.form-wrapper input[type=number]::-webkit-inner-spin-button,
-.form-wrapper input[type=number]::-webkit-outer-spin-button {
+.form-main .form-wrapper input[type=number]::-webkit-inner-spin-button,
+.form-main .form-wrapper input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   margin: 0;
 }
 
-.form-wrapper input[type=number] {
+.form-main .form-wrapper input[type=number] {
   -moz-appearance: textfield;
 }
 
-.form-wrapper input[type=submit] {
+.form-main .form-wrapper input[type=submit] {
   width: 13%;
   padding: 3px 15px;
   color: blue;
@@ -175,12 +194,12 @@ html {
   text-align: center;
 }
 
-.form-wrapper input[type=submit]:hover {
+.form-main .form-wrapper input[type=submit]:hover {
   background-color: blue;
   color: white;
 }
 
-.form-wrapper .close-btn {
+.form-main .form-wrapper .close-btn {
   position: absolute;
   top: -2.5px;
   right: -25px;
@@ -191,27 +210,27 @@ html {
   transition: all .2s ease-in;
 }
 
-.form-wrapper .close-btn:hover {
+.form-main .form-wrapper .close-btn:hover {
   color: #f86969;
 }
 
-.form-wrapper input::-webkit-input-placeholder {
+.form-main .form-wrapper input::-webkit-input-placeholder {
   color: blue;
 }
 
-.form-wrapper input:-ms-input-placeholder {
+.form-main .form-wrapper input:-ms-input-placeholder {
   color: blue;
 }
 
-.form-wrapper input::-ms-input-placeholder {
+.form-main .form-wrapper input::-ms-input-placeholder {
   color: blue;
 }
 
-.form-wrapper input::placeholder {
+.form-main .form-wrapper input::placeholder {
   color: blue;
 }
 
-.form-wrapper select {
+.form-main .form-wrapper select {
   border: none;
   outline: none;
   width: 14%;
@@ -219,7 +238,7 @@ html {
   padding: 8px 0 0 4px;
 }
 
-.form-wrapper .type {
+.form-main .form-wrapper .type {
   width: 10%;
 }
 
@@ -451,14 +470,14 @@ html {
 }
 
 .list-wrapper .total-price {
-  font-size: 13px;
+  font-size: 14px;
+  color: green;
   text-align: end;
-  color: blue;
-  margin: 5px 10px 0 0;
+  margin: 10px 10px 0 0;
 }
 
 .list-wrapper .total-price span {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
 }
 /*# sourceMappingURL=App.css.map */

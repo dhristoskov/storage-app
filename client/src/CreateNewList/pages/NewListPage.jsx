@@ -1,5 +1,4 @@
 import React, { useReducer, useState } from 'react';
-import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai';
 
 import ProductList from '../components/ProductList';
 import ProductForm from '../components/ProductForm';
@@ -126,17 +125,8 @@ const NewList = () => {
         setOnEdit(null);
     }
 
-    const onFormHandler = () => {
-        setShowForm(prevState => !prevState);
-    }
-
     return (
-        <div> 
-            {
-                showForm 
-                ? <p onClick={onFormHandler}><AiOutlineMinusCircle /></p> 
-                : <p onClick={onFormHandler}><AiOutlinePlusCircle /></p>
-            }    
+        <div className='main-wrapper'>     
             <ProductForm addNewProduct={addNewProduct}
             onClearEditHandler={onClearEditHandler}
             onUpdateHandler={onUpdateHandler}

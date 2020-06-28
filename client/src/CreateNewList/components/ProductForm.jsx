@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AiOutlineCloseCircle } from 'react-icons/ai'
+import { AiOutlineMinusCircle, AiOutlinePlusCircle, AiOutlineCloseCircle } from 'react-icons/ai';
 
 import StoragesList from './StoragesList';
 
@@ -8,7 +8,8 @@ const ProductForm = ( props ) => {
     const { onEdit, 
         addNewProduct, 
         onClearEditHandler,
-        onUpdateHandler } = props
+        onUpdateHandler } = props;
+    const [ showForm, setShowForm ] = useState(false);
     const [ product, setProduct ] = useState({
         name: '',
         price: '',
@@ -55,10 +56,21 @@ const ProductForm = ( props ) => {
             type: '',
             storage: ''
         })
-    }
+    };
+
+    const onFormHandler = () => {
+        setShowForm(prevState => !prevState);
+    };
 
     return(
-        <div>
+        <div className='form-main'>
+            {
+                showForm 
+                ? <p className='toggle-form' onClick={onFormHandler}><AiOutlineMinusCircle /></p> 
+                : <p className='toggle-form' onClick={onFormHandler}><AiOutlinePlusCircle /></p>
+            } 
+            {
+            showForm ?            
             <form className='form-wrapper' onSubmit={onSubmitHandler}>
                 {
                     onEdit && <p className='close-btn' onClick={onClearEditHandler}>
@@ -78,6 +90,9 @@ const ProductForm = ( props ) => {
                 <StoragesList name={'storage'} value={storage} onChangeHandler={onChangeHandler} required/>
                 <input type='submit' value={onEdit ? 'Update' : 'Create'}/>                        
             </form>
+            :
+            <p>Add Product</p>
+            }
         </div>
     )
 }
