@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import StorageForm from '../components/StorageForm';
 import StorageList from '../components/StorageList';
@@ -28,9 +29,10 @@ const storageReducer = ( state, action ) => {
 
 const StoragePage = () => {
 
+    const history = useHistory();
     const [ storages, dispatch ] = useReducer(storageReducer, [
         { id: '001', name: 'Dragor' },
-        { id: '002', name: 'Pazardjik' }
+        { id: '002', name: 'Pazardzhik' }
     ]);
 
     const deleteStorage = (storageId) => {
@@ -41,11 +43,21 @@ const StoragePage = () => {
         dispatch({ type:'ADD', storage: newStorage})
     }
 
+    const moveToStoragePage = (name) => {
+        history.push(`/storage-list/${name.toLowerCase()}`);
+    };
+
+    const moveToCreateList = (name) => {
+        history.push(`/create-list/${name.toLowerCase()}`);
+    };
+
     return (
         <div>
             <StorageForm addStorage={addStorage}/>
             <StorageList storages={storages}
-            deleteStorage={deleteStorage}/>
+            deleteStorage={deleteStorage}
+            moveToStoragePage={moveToStoragePage}
+            moveToCreateList={moveToCreateList}/>
         </div>
     )
 }

@@ -15,10 +15,10 @@
         font-weight: 700;
         color: blue;
         cursor: pointer;
-        transition: all .5s ease-in-out;   
+        transition: all .4s ease-in-out;   
         &:hover {
             color: burlywood;
-            transform: scale(1.1);
+            transform: scale(1.25);
         }
     }
 }

@@ -24,6 +24,7 @@ html {
 
 .menu-button:hover div {
   width: 35px;
+  background: #e64444;
 }
 
 .menu-button div {
@@ -113,14 +114,14 @@ html {
   font-weight: 700;
   color: blue;
   cursor: pointer;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 .main-header .login:hover {
   color: burlywood;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
 }
 
 .form-main {
@@ -534,6 +535,7 @@ html {
 
 .storage-wrapper .storage-item .stgs-btn button {
   cursor: pointer;
+  outline: none;
   border: none;
   background: none;
   color: blue;

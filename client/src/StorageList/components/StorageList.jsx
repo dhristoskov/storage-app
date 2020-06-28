@@ -24,8 +24,9 @@ const StorageList = (props) => {
                             <div className='stgs-btn'>
                                 <button onClick={() => props.deleteStorage(item.id)}>
                                     <AiOutlineDelete /></button>
-                                <button><AiOutlineEdit /></button>
-                                <button>< AiOutlineOrderedList /></button>
+                                <button onClick={() => props.moveToStoragePage(item.name)}>
+                                    <AiOutlineEdit /></button>
+                                <button onClick={() => props.moveToCreateList(item.name)}>< AiOutlineOrderedList /></button>
                             </div>
                         </div>
                     )

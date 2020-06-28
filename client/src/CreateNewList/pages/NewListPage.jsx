@@ -40,7 +40,6 @@ const productsReducer = ( state, action ) => {
 
 const NewList = () => {
 
-    const [ showForm, setShowForm ] = useState(false);
     const [ onEdit, setOnEdit ] = useState();
     const [ products, dispatch ] = useReducer(productsReducer, [
         {
