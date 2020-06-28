@@ -620,10 +620,10 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 20px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80px;
+  margin: 20px auto 0 auto;
 }
 
 .view p {
@@ -698,18 +698,6 @@ html {
           transform: scale(1.15);
 }
 
-.storage-main {
-  width: 55%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: auto;
-}
-
 .main-wrapper .save-list {
   margin: 20px auto 0 auto;
   width: 100px;
@@ -728,5 +716,48 @@ html {
 .main-wrapper .save-list:hover {
   background-color: blue;
   color: white;
+}
+
+.modal {
+  position: fixed;
+  z-index: 50;
+  background-color: white;
+  width: 35%;
+  border: 2px solid blue;
+  -webkit-box-shadow: 6px 6px 5px 0px #9BB5A1;
+          box-shadow: 6px 6px 5px 0px #9BB5A1;
+  padding: 15px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (max-width: 420px) {
+  .modal {
+    width: 80%;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(213, 231, 248, 0.85);
+  z-index: 40;
+}
+
+.storage-main {
+  width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
 }
 /*# sourceMappingURL=App.css.map */

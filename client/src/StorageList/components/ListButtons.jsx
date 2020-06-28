@@ -1,12 +1,12 @@
 import React from 'react';
-import { MdViewList, MdViewModule } from 'react-icons/md'
+import { BsListUl, BsGrid3X2 } from 'react-icons/bs'
 
 const ListButtons = (props) => {
 
     return (
         <div className='view'>
-            <p onClick={props.showSimpleList}><MdViewList /></p>
-            <p onClick={props.showDetailedList}><MdViewModule /></p>
+            <p onClick={props.showSimpleList}><BsListUl /></p>
+            <p onClick={props.showDetailedList}><BsGrid3X2 /></p>
         </div>
     )
 

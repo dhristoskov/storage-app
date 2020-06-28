@@ -1,0 +1,19 @@
+.main-wrapper{
+    .save-list {
+        margin: 20px auto 0 auto;
+        width: 100px;
+        padding:5px;
+        color: blue;
+        background: none;
+        border: 1px solid blue;        
+        border-radius: 20px;
+        outline: none;
+        transition: all .2s ease-in;
+        text-transform: uppercase;
+        text-align: center;
+        &:hover {
+            background-color: blue;
+            color: white;
+        }
+    }
+}

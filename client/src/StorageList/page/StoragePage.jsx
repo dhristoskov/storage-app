@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, Fragment } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import StorageForm from '../components/StorageForm';
@@ -6,6 +6,7 @@ import StorageList from '../components/StorageList';
 import StorageCounter from '../components/StorageCounter';
 import StorageSimpleList from '../components/StorageSimpleList';
 import ListButtons from '../components/ListButtons';
+import Modal from '../../shared-components/Modal/Modal';
 
 const storageReducer = ( state, action ) => {
     switch(action.type){
@@ -32,6 +33,7 @@ const storageReducer = ( state, action ) => {
 
 const StoragePage = () => {
 
+    const [showWarning, setShowWarning ] = useState(false);
     const [ detailList, setDetailList ] = useState(true)
     const history = useHistory();
     const [ storages, dispatch ] = useReducer(storageReducer, [
@@ -63,6 +65,14 @@ const StoragePage = () => {
         setDetailList(false)
     };
 
+    const showDeleteWarning = () => {
+        setShowWarning(true);
+    };
+
+    const hideDeleteWarning = () => {
+        setShowWarning(false);
+    };
+
     //Switch between detail and simple list mode
     let details;
     if(detailList) {
@@ -78,13 +88,23 @@ const StoragePage = () => {
     }
 
     return (
-        <div className='storage-main'>
-            <StorageForm addStorage={addStorage}/>
-            <StorageCounter storages={storages}/>
-            <ListButtons showDetailedList={showDetailedList}
-            showSimpleList={showSimpleList}/>
-            {details}
-        </div>
+        <Fragment>
+            {
+                showWarning &&   
+                <Modal removeModal={hideDeleteWarning}>
+                    {/* <DeleteWarning
+                    cancel={hideDeleteWarning}
+                    delete={props.onDeleteOrder}/> */}
+                </Modal>
+            }
+            <div className='storage-main'>
+                <StorageForm addStorage={addStorage}/>
+                <StorageCounter storages={storages}/>
+                <ListButtons showDetailedList={showDetailedList}
+                showSimpleList={showSimpleList}/>
+                {details}
+            </div>
+        </Fragment>
     )
 }
 

@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+
+import Overlay from '../Overlay/Overlay';
 
 const Modal = (props) => {
 
     return(
-        <div className='modal-wrapper'>
-            {props.children}
-        </div>
+        <Fragment>
+            <Overlay removeModal={props.removeModal}/>
+            <div className='modal'>
+                {props.children}
+            </div>
+        </Fragment>
     )
 }
 

@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 const Backdrop = (props) => {
 
     return ReactDOM.createPortal(
-        <div className='backdrop'></div>,
-        document.getElementById('backdrop')
+        <div className='overlay' onClick={props.removeModal}></div>,
+        document.getElementById('overlay')
       );
 }
 
