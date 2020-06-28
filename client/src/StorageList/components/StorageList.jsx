@@ -1,4 +1,9 @@
 import React from 'react';
+import { AiOutlineDelete, 
+    AiOutlineEdit, 
+    AiOutlineOrderedList } from 'react-icons/ai'
+
+import shop from '../../assets/shop.svg'
 
 const StorageList = (props) => {
 
@@ -9,13 +14,19 @@ const StorageList = (props) => {
     }
 
     return (
-        <div>
+        <div className='storage-wrapper'>
             {
                 props.storages.map( item => {
                     return (
-                        <div key={item.id}>
+                        <div className='storage-item' key={item.id}>
                             <p>{item.name}</p>
-                            <button onClick={() => props.deleteStorage(item.id)}>delete</button>
+                            <img src={shop} alt='shop' />
+                            <div className='stgs-btn'>
+                                <button onClick={() => props.deleteStorage(item.id)}>
+                                    <AiOutlineDelete /></button>
+                                <button><AiOutlineEdit /></button>
+                                <button>< AiOutlineOrderedList /></button>
+                            </div>
                         </div>
                     )
                 })
