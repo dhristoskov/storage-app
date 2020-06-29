@@ -162,6 +162,15 @@ html {
   padding: 8px 0 0 4px;
 }
 
+.form-main .form-wrapper .errors {
+  position: absolute;
+  top: 35px;
+  left: 28%;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f05252;
+}
+
 .form-main .form-wrapper input[type=text] {
   width: 45%;
 }

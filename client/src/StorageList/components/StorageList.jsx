@@ -26,7 +26,7 @@ const StorageList = (props) => {
                             <p>{item.name}</p>
                             <img src={shop} alt='shop' />
                             <div className='stgs-btn'>
-                                <button onClick={() => props.showDeleteWarning(item.id)}>
+                                <button onClick={() => props.deleteStorage(item.id)}>
                                     <AiOutlineDelete /></button>
                                 <button onClick={() => props.moveToCreateList(item.name)}>
                                     <AiOutlineEdit /></button>

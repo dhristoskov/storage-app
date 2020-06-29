@@ -25,6 +25,14 @@
             border-bottom: 1.5px solid blue;
             padding: 8px 0 0 4px;
         }
+        .errors {
+            position: absolute;
+            top: 35px;
+            left: 28%;
+            font-size: 13px;
+            font-weight: 600;
+            color: rgb(240, 82, 82);
+        }
         input[type=text]{
             width: 45%;
         }

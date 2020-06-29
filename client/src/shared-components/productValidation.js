@@ -14,12 +14,17 @@ export const  productValidation = (name, value) => {
                 break; 
         case 'price':
             errors.price = value < 0
-                ? 'Product must have a positive number price!'
+                ? 'Product must have a positive number as a price!'
                 : '';
                 break;   
         case 'qty':
             errors.qty = value < 0
-                ? 'Product must have a positive number quantity!'
+                ? 'Product must have a positive number as a quantity!'
+                : '';
+                break;  
+        case 'type':
+            errors.type = value === null
+                ? 'Product must have a type kg or pcs!'
                 : '';
                 break;      
         default:

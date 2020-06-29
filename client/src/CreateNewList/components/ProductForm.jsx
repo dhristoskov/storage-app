@@ -3,6 +3,8 @@ import { AiOutlineMinusCircle,
     AiOutlinePlusCircle, 
     AiOutlineCloseCircle } from 'react-icons/ai';
 
+import { productValidation } from '../../shared-components/productValidation';
+
 const ProductForm = ( props ) => {
 
     const { onEdit, 
@@ -10,14 +12,15 @@ const ProductForm = ( props ) => {
         onClearEditHandler,
         onUpdateHandler,
         storageName } = props;
-        
+
+    const [ errors, setErrors ] = useState({});   
     const fixedName = storageName.replace(/^./, str => str.toUpperCase())
     const [ showForm, setShowForm ] = useState(false);
     const [ product, setProduct ] = useState({
         name: '',
         price: '',
         qty: '',
-        type: '' || 'n/a', // <---Default value if it is not picked
+        type: '' || 'n.a', // <---Default value if it is not picked
         storage: fixedName,
         isDone: false
     });
@@ -31,7 +34,7 @@ const ProductForm = ( props ) => {
                 name: '',
                 price: '',
                 qty: '',
-                type: '' || 'n/a', 
+                type: '' || 'n.a', 
                 storage: fixedName,
                 isDone: false
             });
@@ -42,7 +45,10 @@ const ProductForm = ( props ) => {
 
     const onChangeHandler = (e) => {
         e.preventDefault();
-        setProduct({...product, [e.target.name]: e.target.value});
+        const { name, value } = e.target;
+        let error = productValidation(name, value);
+        setErrors(error)
+        setProduct({...product, [ name ]: value});
     }
 
     const onSubmitHandler = (e) => {
@@ -56,7 +62,7 @@ const ProductForm = ( props ) => {
             name: '',
             price: '',
             qty: '',
-            type: '',
+            type: '' || 'n.a',
             storage: fixedName,
             isDone: false
         });
@@ -82,15 +88,19 @@ const ProductForm = ( props ) => {
                 }  
                 <input type="text" placeholder='Product' name='name' value={name} 
                 onChange={onChangeHandler} required/>
+                {errors.name && <p className='errors'>{errors.name}</p>}
                 <input type="number" placeholder='Price' name='price' value={price}
                 onChange={onChangeHandler} required/>
+                {errors.price && <p className='errors'>{errors.price}</p>}
                 <input type="number" placeholder='Quantity' name='qty' value={qty}
                 onChange={onChangeHandler} required/>
+                {errors.qty && <p className='errors'>{errors.qty}</p>}
                 <select className='type' name="type" value={type} onChange={onChangeHandler} required>
                     <option>Type</option>
                     <option value="kg">kg</option>
                     <option value="pcs">pcs</option>
                 </select>
+                {errors.type && <p className='errors'>{errors.type}</p>}
                 <input type='submit' value={onEdit ? 'Update' : 'Create'}/>                        
             </form>
             :
