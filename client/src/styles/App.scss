@@ -17,6 +17,7 @@
 @import './overlay';
 @import './save-buttons';
 @import './delete-warning';
+@import './lower-header';
 
 
 //Storage main page
@@ -26,4 +27,6 @@
     flex-direction: column;
     margin: auto;
 }
+
+
 

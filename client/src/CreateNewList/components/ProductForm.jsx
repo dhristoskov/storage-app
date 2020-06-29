@@ -28,7 +28,8 @@ const ProductForm = ( props ) => {
     //Checking if edit is not null
     useEffect(() => {
         if(onEdit){
-            setProduct(onEdit)
+            setProduct(onEdit);
+            setShowForm(true);
         }else{
             setProduct({
                 name: '',

@@ -60,7 +60,7 @@ html {
           justify-content: space-between;
   position: fixed;
   left: 2%;
-  top: 15%;
+  top: 20%;
 }
 
 .navbar li {
@@ -776,12 +776,14 @@ html {
   padding: 5px;
   color: blue;
   background: none;
-  border: 1px solid blue;
+  border: 2px solid blue;
   border-radius: 20px;
   outline: none;
   -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
   text-transform: uppercase;
+  -webkit-box-shadow: 2px 2px 2px 0px #9BB5A1;
+          box-shadow: 2px 2px 2px 0px #9BB5A1;
   text-align: center;
 }
 
@@ -848,6 +850,70 @@ html {
 .delete-container .delete-btns .delete:hover {
   background-color: red;
   color: white;
+}
+
+.lower-header {
+  position: relative;
+  background-color: #D2DDBB;
+  padding: 4px 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lower-header .welcome {
+  font-size: 14px;
+}
+
+.lower-header .welcome span {
+  color: blue;
+}
+
+.lower-header .storage-btn {
+  font-size: 14px;
+  color: blue;
+  background-color: white;
+  border: 1px solid white;
+  -webkit-box-shadow: 2px 2px 2px 0px #9BB5A1;
+          box-shadow: 2px 2px 2px 0px #9BB5A1;
+  padding: 0 8px;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.lower-header .storage-btn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.lower-header .storage-options {
+  position: absolute;
+  right: 2%;
+  top: 30px;
+  background-color: #D2DDBB;
+  padding: 5px 15px;
+}
+
+.lower-header .storage-options p {
+  text-align: end;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.lower-header .storage-options p:hover {
+  color: blue;
 }
 
 .storage-main {

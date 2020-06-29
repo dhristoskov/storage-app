@@ -10,11 +10,11 @@ import PriorityBtns from '../../shared-components/Buttons/PriorityBtns';
 const ProductItem = (props) => {
 
     const [ toggle, setToggle ] = useState(false)
+    //const taxes = 20;
 
     const price = parseFloat(props.price).toFixed(2);
-    //Single item price with VAT
-    //const vatPrice = parseFloat((props.price/100)*20).toFixed(2);   
     const totalPrice = parseFloat(price * props.qty).toFixed(2);
+    //const priceWithVat = parseFloat(props.price * (1 + taxes / 100)).toFixed(2);
 
     const togglePriority = () => {
         setToggle(prevState => !prevState)

@@ -1,0 +1,46 @@
+.lower-header {
+    position: relative;
+    background-color: #D2DDBB;
+    padding: 4px 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .welcome {
+        font-size: 14px;
+        span {
+            color: blue;
+        }
+    }
+    .storage-btn {
+        font-size: 14px;
+        color: blue;
+        background-color: white;
+        border: 1px solid white;
+        box-shadow: 2px 2px 2px 0px #9BB5A1;
+        padding: 0 8px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all .2s ease-in;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    .storage-options {
+        position: absolute;
+        right: 2%;
+        top: 30px;
+        background-color: #D2DDBB;
+        padding: 5px 15px;
+        p {
+            text-align: end;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 5px;
+            cursor: pointer;
+            transition: all .2s ease-in;
+            &:hover {
+                color: blue;
+            }
+        }
+    }
+}
