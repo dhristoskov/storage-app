@@ -12,7 +12,7 @@ export const DATA = [
                 price: 12.25,
                 qty: 25,
                 type: 'psc',
-                storage: 'Storage First',
+                storage: 'Dragor',
                 isDone: false
             },
             {
@@ -21,7 +21,7 @@ export const DATA = [
                 price: 2.25,
                 qty: 15,
                 type: 'kg',
-                storage: 'Storage First',
+                storage: 'Dragor',
                 isDone: false
             },
             {
@@ -30,7 +30,7 @@ export const DATA = [
                 price: 0.55,
                 qty: 35,
                 type: 'pcs',
-                storage: 'Storage Two',
+                storage: 'Dragor',
                 isDone: false
             },
             {
@@ -39,7 +39,52 @@ export const DATA = [
                 price: 1.55,
                 qty: 55,
                 type: 'kg',
-                storage: 'Storage Two',
+                storage: 'Dragor',
+                isDone: false
+            }
+        ]
+    },
+    {
+        id: 'ama0013',
+        storage: 'Dragor',
+        data: '06.05.2020',
+        totalPrice: 450,
+        totalVat: 540,
+        products: [
+            {
+                id: '01',
+                name: 'Melons',
+                price: 0.65,
+                qty: 25,
+                type: 'kg',
+                storage: 'Dragor',
+                isDone: false
+            },
+            {
+                id: '02',
+                name: 'Tomato',
+                price: 1.25,
+                qty: 25,
+                type: 'kg',
+                storage: 'Dragor',
+                isDone: false
+            },
+            {
+                id: '03',
+                name: 'Coca-Cola',
+                price: 0.55,
+                qty: 135,
+                type: 'pcs',
+                storage: 'Dragor',
+                isDone: false
+            },
+            {
+                id: '04',
+                name: 'Beer',
+                price: 0.55,
+                qty: 65,
+                type: 'pcs',
+                storage: 'Dragor',
                 isDone: false
             }
         ]

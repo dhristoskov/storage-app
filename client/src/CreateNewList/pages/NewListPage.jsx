@@ -44,7 +44,7 @@ const productsReducer = ( state, action ) => {
 const NewList = () => {
 
     const { storageName } = useParams(); 
-    const fixedName = storageName.replace(/^./, str => str.toUpperCase())
+    const fixedName = storageName.replace(/^./, str => str.toUpperCase());
     const [ onEdit, setOnEdit ] = useState();
     const [ products, dispatch ] = useReducer(productsReducer, [
         {

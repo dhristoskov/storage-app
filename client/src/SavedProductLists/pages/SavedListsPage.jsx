@@ -5,14 +5,15 @@ import SavedProductsList from '../components/SavedProductsList';
 import { DATA } from '../../shared-components/data';
 
 const StorageListsPage = () => {
-    
+  
     const [ savedLists ] = useState(DATA)
-    const { name } = useParams();
+    const { storageName } = useParams();
+    const fixedName = storageName.replace(/^./, str => str.toUpperCase());
 
     return (
         <div>
+            <p>You are in <span>{fixedName}</span> storage.</p>
             <SavedProductsList savedLists={savedLists}/>
-            <p>{name}</p>
         </div>
     )
 }
