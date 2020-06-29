@@ -936,11 +936,27 @@ html {
 }
 
 .upload-file {
+  position: relative;
   margin: 10px auto;
-  width: 35%;
+  width: 55%;
+}
+
+.upload-file .toggle-upload {
+  position: absolute;
+  top: -2.5px;
+  left: -35px;
+  font-size: 32px;
+  color: blue;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.upload-file .toggle-upload:hover {
+  color: #f86969;
 }
 
 .upload-file .upload-form {
+  margin: auto;
   color: blue;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -957,7 +973,7 @@ html {
   font-weight: 700;
   border-radius: 20px;
   white-space: nowrap;
-  width: 100%;
+  width: 65%;
   text-align: center;
   cursor: pointer;
 }

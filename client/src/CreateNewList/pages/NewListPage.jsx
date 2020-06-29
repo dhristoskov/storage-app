@@ -136,7 +136,8 @@ const NewList = () => {
             onClearEditHandler={onClearEditHandler}
             onUpdateHandler={onUpdateHandler}
             storageName={storageName}
-            onEdit={onEdit}/>                
+            onEdit={onEdit}/>   
+             <ProductsUpload />             
             <ProductList products={products}
             removeProduct={removeProduct}
             isDoneHandler={isDoneHandler}
@@ -146,8 +147,7 @@ const NewList = () => {
             onHighPrice={onHighPrice}
             onLowPrice={onLowPrice}
             editHandler={editHandler}/>    
-            <SaveButtons /> 
-            <ProductsUpload />
+            <SaveButtons />           
         </div>
     )
 }
