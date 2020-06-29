@@ -48,11 +48,11 @@ const StoragePage = () => {
     }
 
     const moveToStoragePage = (name) => {
-        history.push(`/storage-list/${name.toLowerCase()}`);
+        history.push(`/storage/storage-list/${name.toLowerCase()}`);
     };
 
     const moveToCreateList = (name) => {
-        history.push(`/create-list/${name.toLowerCase()}`);
+        history.push(`/storage/create-list/${name.toLowerCase()}`);
     };
 
     const showDetailedList = () => {

@@ -1,11 +1,12 @@
 .list-wrapper{
-    margin: auto;
+    margin: 50px auto 0 auto;
     width: 55%;
     .counter {
         font-size: 13px;
         font-weight: 600;
         text-align: start;
         color: blue;
+        padding: 0 5px;
     }
     .total-price {
         font-size: 14px;    
