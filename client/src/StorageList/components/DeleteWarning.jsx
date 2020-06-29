@@ -7,8 +7,8 @@ const DeleteWarning = (props) => {
             <p>Do you want to proceed and delete this storage? Please note that it
             can't be undone thereafter.Ane you will lose all entries</p>
             <div className='delete-btns'>
-                <button className='cancel' onClick={props.cancel}>Cancel</button>
-                <button className='delete' onClick={props.delete}>Delete</button>
+                <p className='cancel' onClick={props.cancel}>Cancel</p>
+                <p className='delete' onClick={props.delete}>Delete</p>
             </div>
         </div>
     )

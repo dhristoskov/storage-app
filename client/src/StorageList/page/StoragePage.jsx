@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, Fragment } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import StorageForm from '../components/StorageForm';
@@ -6,6 +6,8 @@ import StorageList from '../components/StorageList';
 import StorageCounter from '../components/StorageCounter';
 import StorageSimpleList from '../components/StorageSimpleList';
 import ListButtons from '../components/ListButtons';
+import Modal from '../../shared-components/Modal/Modal';
+import DeleteWarning from '../components/DeleteWarning';
 
 const storageReducer = ( state, action ) => {
     switch(action.type){
@@ -32,6 +34,8 @@ const storageReducer = ( state, action ) => {
 
 const StoragePage = () => {
 
+    const [showWarning, setShowWarning ] = useState(false);
+    const [ itemToDelete, setItemToDelete ] = useState(null);
     const [ detailList, setDetailList ] = useState(true)
     const history = useHistory();
     const [ storages, dispatch ] = useReducer(storageReducer, [
@@ -39,8 +43,9 @@ const StoragePage = () => {
         { id: '002', name: 'Pazardzhik' }
     ]);
 
-    const deleteStorage = (storageId) => {
-        dispatch({type: 'DELETE', id: storageId})
+    const deleteStorage = () => {
+        dispatch({type: 'DELETE', id: itemToDelete});
+        setShowWarning(false);
     };
 
     const addStorage = ( newStorage ) => {
@@ -63,28 +68,48 @@ const StoragePage = () => {
         setDetailList(false)
     };
 
+    const showDeleteWarning = (storageId) => {
+        setShowWarning(true);
+        setItemToDelete(storageId);
+    };
+
+    const hideDeleteWarning = () => {
+        setShowWarning(false);
+        setItemToDelete(null)
+    };
+
     //Switch between detail and simple list mode
     let details;
     if(detailList) {
         details =  <StorageList storages={storages}
-                    deleteStorage={deleteStorage}
+                    showDeleteWarning={showDeleteWarning}
                     moveToStoragePage={moveToStoragePage}
                     moveToCreateList={moveToCreateList}/>
     }else{
         details =  <StorageSimpleList storages={storages}
-                    deleteStorage={deleteStorage}
+                    showDeleteWarning={showDeleteWarning}
                     moveToStoragePage={moveToStoragePage}
                     moveToCreateList={moveToCreateList}/>
     }
 
     return (
-        <div className='storage-main'>
-            <StorageForm addStorage={addStorage}/>
-            <StorageCounter storages={storages}/>
-            <ListButtons showDetailedList={showDetailedList}
-            showSimpleList={showSimpleList}/>
-            {details}
-        </div>
+        <Fragment>
+            {
+                showWarning &&   
+                <Modal removeModal={hideDeleteWarning}>
+                    <DeleteWarning 
+                    delete={deleteStorage}
+                    cancel={hideDeleteWarning}/>
+                </Modal>
+            }
+            <div className='storage-main'>
+                <StorageForm addStorage={addStorage}/>
+                <StorageCounter storages={storages}/>
+                <ListButtons showDetailedList={showDetailedList}
+                showSimpleList={showSimpleList}/>
+                {details}
+            </div>
+        </Fragment>
     )
 }
 

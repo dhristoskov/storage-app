@@ -725,10 +725,11 @@ html {
   position: fixed;
   z-index: 50;
   background-color: white;
-  width: 35%;
+  width: 30%;
   border: 2px solid blue;
   -webkit-box-shadow: 6px 6px 5px 0px #9BB5A1;
           box-shadow: 6px 6px 5px 0px #9BB5A1;
+  border-radius: 20px;
   padding: 15px;
   left: 50%;
   top: 50%;
@@ -790,6 +791,62 @@ html {
 
 .save-btn .save-list:hover {
   background-color: blue;
+  color: white;
+}
+
+.delete-container h3 {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: blue;
+}
+
+.delete-container p {
+  text-align: center;
+  font-size: 15px;
+  margin: 10px auto;
+  color: red;
+}
+
+.delete-container .delete-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.delete-container .delete-btns p {
+  padding: 4px 10px;
+  min-width: 25%;
+  background-color: transparent;
+  border: 2px solid blue;
+  color: blue;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 15px;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+.delete-container .delete-btns p:hover {
+  background-color: blue;
+  color: white;
+}
+
+.delete-container .delete-btns .delete {
+  border: 2px solid red;
+  color: red;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+.delete-container .delete-btns .delete:hover {
+  background-color: red;
   color: white;
 }
 
