@@ -4,11 +4,19 @@ import { AiOutlineDelete,
     AiOutlineCheckCircle, 
     AiOutlineUndo,
     AiOutlineOrderedList } from 'react-icons/ai'
+import { GoIssueOpened, GoHistory } from 'react-icons/go';    
 
 import PriorityBtns from '../../shared-components/Buttons/PriorityBtns';
 
+const PRIORITES = {
+    high: <GoIssueOpened style={{color: 'red'}} />,
+    normal: null,
+    low: <GoHistory style={{ color: 'green'}} />
+}
+
 const ProductItem = (props) => {
 
+    const [ icon, setIcon ] = useState(null)
     const [ toggle, setToggle ] = useState(false)
     //const taxes = 20;
 
@@ -18,6 +26,10 @@ const ProductItem = (props) => {
 
     const togglePriority = () => {
         setToggle(prevState => !prevState)
+    };
+
+    const priorityHandler = (priority) => {
+        setIcon(PRIORITES[priority])
     }
 
     return(
@@ -39,9 +51,10 @@ const ProductItem = (props) => {
                 }              
                 <p onClick={togglePriority}><AiOutlineOrderedList /></p>
                 {
-                    toggle && <PriorityBtns />
+                    toggle && <PriorityBtns priorityHandler={priorityHandler} />
                 }             
             </div>
+            <p className='priority-icon'>{icon}</p>
         </div>
     )
 

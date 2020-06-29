@@ -262,6 +262,7 @@ html {
 }
 
 .product-wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,6 +275,13 @@ html {
           align-items: center;
   height: 30px;
   padding-top: 12px;
+}
+
+.product-wrapper .priority-icon {
+  position: absolute;
+  top: 6px;
+  left: -20px;
+  font-size: 20px;
 }
 
 .product-wrapper p {
