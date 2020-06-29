@@ -24,6 +24,13 @@
     }
     .price {
         width: 12%;
+        position: relative;
+        .vat-icon {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            color: #9ba585;
+        }
     }
     .quantity {
         width: 8%;

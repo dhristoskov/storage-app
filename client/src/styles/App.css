@@ -203,6 +203,8 @@ html {
   outline: none;
   -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
+  -webkit-box-shadow: 2px 2px 2px 0px #9BB5A1;
+          box-shadow: 2px 2px 2px 0px #9BB5A1;
   text-transform: uppercase;
   text-align: center;
 }
@@ -296,6 +298,14 @@ html {
 
 .product-wrapper .price {
   width: 12%;
+  position: relative;
+}
+
+.product-wrapper .price .vat-icon {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  color: #9ba585;
 }
 
 .product-wrapper .quantity {
@@ -793,6 +803,7 @@ html {
   -webkit-box-shadow: 2px 2px 2px 0px #9BB5A1;
           box-shadow: 2px 2px 2px 0px #9BB5A1;
   text-align: center;
+  cursor: pointer;
 }
 
 .save-btn .save-list span {
