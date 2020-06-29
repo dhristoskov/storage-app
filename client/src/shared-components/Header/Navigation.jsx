@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 const Navigation = () => {
 
     return(
+        //Nav menu  component
         <div className='navbar'>
             <li><NavLink exact to='/'>home</NavLink></li>
             <li><NavLink to='/storage'>Storages</NavLink></li>

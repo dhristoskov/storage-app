@@ -4,6 +4,7 @@ import { AiOutlineFilePdf, AiOutlineFileText, AiOutlineMail } from 'react-icons/
 const SaveButtons = (props) => {
 
     return (
+        //Save  Buttons in List Page
         <div className='save-btn'>
             <p className='save-list'><span>save as </span><AiOutlineFileText /></p> 
             <p className='save-list'><span>save as </span><AiOutlineFilePdf /></p>

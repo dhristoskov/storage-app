@@ -11,10 +11,12 @@ const MainHeader = () => {
     const [ toggleNav, setToggleNav ] = useState(false);
     const [ toggleStorages, setToggleStorages ] = useState(false);
 
+    //Show Nav-Bar menu
     const toggleNavigation = () => {
         setToggleNav(prevState => !prevState)
     };
 
+    //Drop-down storage list
     const toggleStoragesView= () => {
         setToggleStorages(prevState => !prevState)
     }

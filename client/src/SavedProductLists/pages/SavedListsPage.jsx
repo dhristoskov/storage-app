@@ -8,6 +8,8 @@ const StorageListsPage = () => {
   
     const [ savedLists ] = useState(DATA)
     const { storageName } = useParams();
+    
+    //Fix first letter in the storage Name
     const fixedName = storageName.replace(/^./, str => str.toUpperCase());
 
     return (
