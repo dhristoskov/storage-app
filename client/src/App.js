@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import MainHeader from './shared-components/Header/MainHeader';
 import NewListPage from './CreateNewList/pages/NewListPage';
 import StoragePage from './StorageList/page/StoragePage';
-import StorageListsPage from './StorageList/page/StorageListsPage';
+import StorageListsPage from './SavedProductLists/pages/SavedListsPage';
 
 function App() {
   return (
