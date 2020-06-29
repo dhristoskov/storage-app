@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SavedListItem from './SavedListItem';
+
 const SavedProductsList = (props) => {
 
      //If saved list is empty array
@@ -13,7 +15,20 @@ const SavedProductsList = (props) => {
     }
 
     return (
-        <p>List</p>
+        <div>
+            {
+                props.savedLists.map(list => {
+                    return (
+                        <SavedListItem key={list.id}
+                        storage={list.storage}
+                        data={list.data}
+                        totalPrice={list.totalPrice}
+                        totalVat={list.totalVat}
+                        products={list.products}/>
+                    )
+                })
+            }
+        </div>
     )
 }
 
