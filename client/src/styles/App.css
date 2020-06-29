@@ -935,6 +935,49 @@ html {
   color: blue;
 }
 
+.upload-form {
+  color: blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: none;
+  border: 1px solid blue;
+  padding: 8px 16px;
+  font-weight: 700;
+  border-radius: 20px;
+  white-space: nowrap;
+  width: 40%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-form input[type=submit] {
+  width: 30%;
+  padding: 3px 15px;
+  color: blue;
+  background: none;
+  border: 1px solid blue;
+  border-radius: 20px;
+  outline: none;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  -webkit-box-shadow: 2px 2px 2px 0px #9BB5A1;
+          box-shadow: 2px 2px 2px 0px #9BB5A1;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.upload-form input[type=submit]:hover {
+  background-color: blue;
+  color: white;
+}
+
 .storage-main {
   width: 55%;
   display: -webkit-box;

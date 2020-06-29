@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import ProductList from '../components/ProductList';
 import ProductForm from '../components/ProductForm';
 import SaveButtons from '../../shared-components/Buttons/SaveButtons';
+import ProductsUpload from '../components/ProductsUpload';
 
 const productsReducer = ( state, action ) => {
     switch(action.type){
@@ -146,6 +147,7 @@ const NewList = () => {
             onLowPrice={onLowPrice}
             editHandler={editHandler}/>    
             <SaveButtons /> 
+            <ProductsUpload />
         </div>
     )
 }
