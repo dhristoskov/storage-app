@@ -11,14 +11,16 @@
     .login {
         display: flex;
         align-items: center;
-        font-size: 22px;
-        font-weight: 700;
-        color: blue;
-        cursor: pointer;
-        transition: all .4s ease-in-out;   
-        &:hover {
-            color: burlywood;
-            transform: scale(1.25);
+        a {
+            font-size: 24px;
+            font-weight: 700;
+            color: blue;
+            cursor: pointer;
+            transition: all .4s ease-in-out;   
+            &:hover {
+                color: burlywood;
+                transform: scale(1.25);
+            }
         }
     }
 }

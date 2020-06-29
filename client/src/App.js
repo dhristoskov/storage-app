@@ -7,6 +7,7 @@ import NewListPage from './CreateNewList/pages/NewListPage';
 import StoragePage from './StorageList/page/StoragePage';
 import StorageListsPage from './SavedProductLists/pages/SavedListsPage';
 import LandingPage from './LandingPage/pages/LandingPage';
+import AuthPage from './Auth/pages/AuthPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <MainHeader />
           <Switch >
             <Route exact path='/' component={LandingPage} />
+            <Route path='/auth' component={AuthPage} />
             <Route path='/storage/storage-list/:storageName' component={StorageListsPage} />
             <Route path='/storage/create-list/:storageName' component={NewListPage} />
             <Route path='/storage' component={StoragePage} />

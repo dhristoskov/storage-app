@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from 'react';
+import { NavLink } from 'react-router-dom';
 import { AiOutlineLogin } from 'react-icons/ai'
 
 import Navigation from './Navigation';
@@ -26,7 +27,7 @@ const MainHeader = () => {
                     toggleNav &&  <Navigation />
                 }          
                 <p className='logo'>Logo</p>
-                <div className='login'><AiOutlineLogin /></div>
+                <div className='login'><NavLink to='/auth'><AiOutlineLogin /></NavLink></div>
             </div>
             <LowerHeader toggleStoragesView={toggleStoragesView}
                          toggleStorages={toggleStorages}/>    
