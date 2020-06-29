@@ -935,7 +935,12 @@ html {
   color: blue;
 }
 
-.upload-form {
+.upload-file {
+  margin: 10px auto;
+  width: 35%;
+}
+
+.upload-file .upload-form {
   color: blue;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -952,12 +957,37 @@ html {
   font-weight: 700;
   border-radius: 20px;
   white-space: nowrap;
-  width: 40%;
+  width: 100%;
   text-align: center;
   cursor: pointer;
 }
 
-.upload-form input[type=submit] {
+.upload-file .upload-form .upload-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.upload-file .upload-form .upload-input::before {
+  content: 'Select files';
+  background: none;
+  border: 1px solid blue;
+  border-radius: 20px;
+  padding: 3px 10px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-box-shadow: 2px 2px 2px 0px #9BB5A1;
+          box-shadow: 2px 2px 2px 0px #9BB5A1;
+  -webkit-user-select: none;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  cursor: pointer;
+}
+
+.upload-file .upload-form .upload-input:hover::before {
+  background-color: blue;
+  color: white;
+}
+
+.upload-file .upload-form input[type=submit] {
   width: 30%;
   padding: 3px 15px;
   color: blue;
@@ -973,7 +1003,7 @@ html {
   text-align: center;
 }
 
-.upload-form input[type=submit]:hover {
+.upload-file .upload-form input[type=submit]:hover {
   background-color: blue;
   color: white;
 }
