@@ -1077,7 +1077,26 @@ html {
 }
 
 .auth-container .auth-form .input-fied {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
+}
+
+.auth-container .auth-form .input-fied .form-icon {
+  position: absolute;
+  top: 11px;
+  left: 2px;
+  font-size: 16px;
+  color: #c9e292;
 }
 
 .auth-container .auth-form .input-fied input[type=text],
@@ -1085,7 +1104,7 @@ html {
 .auth-container .auth-form .input-fied input[type=password] {
   width: 100%;
   margin-bottom: 10px;
-  padding: 15px 0 2px 15px;
+  padding: 15px 0 2px 25px;
   outline: none;
   border: none;
   border-bottom: 1px solid blue;

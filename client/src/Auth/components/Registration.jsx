@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { AiOutlineLock, AiOutlineUser, AiOutlineMail} from 'react-icons/ai';
 
 const Registration = (props) => {
 
@@ -33,14 +33,17 @@ const Registration = (props) => {
             <p>Before using the app, you need to create an account</p>
             <form className='auth-form' onSubmit={onSubmitHandler}>
                 <div className='input-fied'>
+                    <p className='form-icon'><AiOutlineUser /></p>
                     <input type='text' name='name' value={name} placeholder='Name...' 
                     onChange={onChangeHandler} required/>
                 </div>
                 <div className='input-fied'>
+                    <p className='form-icon'><AiOutlineMail /></p>
                     <input type="email" name='email' value={email} placeholder='E-mail...'
                     onChange={onChangeHandler} required/>        
                 </div>
                 <div className='input-fied'>
+                    <p className='form-icon'><AiOutlineLock /></p>
                     <input type="password" name='password' value={password} placeholder='Password...' 
                     onChange={onChangeHandler} required/>
                 </div>

@@ -16,6 +16,7 @@ const CheckUser = (props) => {
 
     return (
         <div className='auth-container'>
+            <p>Enter E-mail to log-in or to start Registration process</p>
             <form className='auth-form' onSubmit={onAuthHandler}>
             <div className='input-fied'>
                 <input type='email' name='email' value={email} placeholder='E-mail...' 
