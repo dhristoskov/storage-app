@@ -27,10 +27,14 @@ const AuthPage = () => {
 
     return (
         <div>
-            <form onSubmit={onAuthHandler}>
-                <input type='email' name='email' value={email} onChange={e => setEmail(e.target.value)}/>
-                <input type='submit' value='submit' />
-            </form>
+            {
+                onLogin === null ?
+                <form onSubmit={onAuthHandler}>
+                    <input type='email' name='email' value={email} onChange={e => setEmail(e.target.value)}/>
+                    <input type='submit' value='submit' />
+                </form>
+                : null
+            }
             {
                 onLogin === 'login' ? <Login email={email} /> 
                 : onLogin === 'register' ? <Registration email={email} /> 
