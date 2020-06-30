@@ -52,7 +52,6 @@ const Registration = (props) => {
                     <input type="submit" value='Register'/>
                 </div>
             </form>
-            <p className='psw-question'><NavLink to='/'>Already have an account? Log-in instead</NavLink></p>
         </div>
     )
 }

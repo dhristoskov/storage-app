@@ -16,9 +16,9 @@ const CheckUser = (props) => {
 
     return (
         <div className='auth-container'>
-            <form onSubmit={onAuthHandler}>
+            <form className='auth-form' onSubmit={onAuthHandler}>
             <div className='input-fied'>
-                <input type='email' name='email' value={email} 
+                <input type='email' name='email' value={email} placeholder='E-mail...' 
                 onChange={e => setEmail(e.target.value)}/>
             </div>
             <div className='input-fied'>

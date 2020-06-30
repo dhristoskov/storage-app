@@ -1045,5 +1045,91 @@ html {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  width: 27%;
+}
+
+.auth-container h3, .auth-container p, .auth-container .psw-question {
+  text-align: center;
+  color: blue;
+}
+
+.auth-container h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.auth-container p {
+  font-size: 14px;
+}
+
+.auth-container .psw-question {
+  margin-top: 15px;
+}
+
+.auth-container .psw-question a {
+  text-decoration: none;
+  color: blue;
+}
+
+.auth-container .auth-form {
+  margin: 15px auto;
+  width: 100%;
+}
+
+.auth-container .auth-form .input-fied {
+  width: 100%;
+}
+
+.auth-container .auth-form .input-fied input[type=text],
+.auth-container .auth-form .input-fied input[type=email],
+.auth-container .auth-form .input-fied input[type=password] {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px 0 2px 15px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid blue;
+}
+
+.auth-container .auth-form .input-fied input::-webkit-input-placeholder {
+  color: blue;
+  font-size: 14px;
+}
+
+.auth-container .auth-form .input-fied input:-ms-input-placeholder {
+  color: blue;
+  font-size: 14px;
+}
+
+.auth-container .auth-form .input-fied input::-ms-input-placeholder {
+  color: blue;
+  font-size: 14px;
+}
+
+.auth-container .auth-form .input-fied input::placeholder {
+  color: blue;
+  font-size: 14px;
+}
+
+.auth-container .auth-form .input-fied input[type=submit] {
+  width: 35%;
+  padding: 5px 15px;
+  margin-top: 15px;
+  color: blue;
+  background: none;
+  border: 1px solid blue;
+  border-radius: 20px;
+  outline: none;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  -webkit-box-shadow: 2px 2px 2px 0px #9BB5A1;
+          box-shadow: 2px 2px 2px 0px #9BB5A1;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.auth-container .auth-form .input-fied input[type=submit]:hover {
+  background-color: blue;
+  color: white;
 }
 /*# sourceMappingURL=App.css.map */

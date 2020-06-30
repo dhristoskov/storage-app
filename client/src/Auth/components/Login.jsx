@@ -26,7 +26,7 @@ const Login = (props) => {
     return (
         <div className='auth-container'>
             <h3>Log-in</h3>
-            <p>enter your credentials to log-in</p>
+            <p>Enter your credentials to log-in</p>
             <form className='auth-form' onSubmit={onSubmitHandler}>
                 <div className='input-fied'>
                     <input type="email" name='email' value={email} placeholder='E-mail...'
