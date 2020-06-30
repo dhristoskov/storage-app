@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom'
 
-const Login = () => {
+const Login = (props) => {
+
+    const [ email, setEmail ] = useState(props.email);
 
     return (
         <div className='auth-container'>
@@ -9,7 +11,8 @@ const Login = () => {
             <p>enter your credentials to log-in</p>
             <form className='auth-form'>
                 <div className='input-fied'>
-                    <input type="email" name='email' placeholder='E-mail...' required/>        
+                    <input type="email" name='email' value={email} placeholder='E-mail...'
+                        onChange={e => setEmail(e.target.value)} required/>             
                 </div>
                  <div className='input-fied'>
                     <input type="password" name='password' placeholder='Password...' required/>

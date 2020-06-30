@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Registration = () => {
+const Registration = (props) => {
+
+    const [ email, setEmail ] = useState(props.email);
 
     // const [ register, setRegister ] = useState({
     //     name: '',
@@ -19,7 +21,8 @@ const Registration = () => {
                     <input type='text' name='name' placeholder='Name...' required/>
                 </div>
                 <div className='input-fied'>
-                    <input type="email" name='email' placeholder='E-mail...' required/>        
+                    <input type="email" name='email' value={email} placeholder='E-mail...'
+                    onChange={e => setEmail(e.target.value)} required/>        
                 </div>
                 <div className='input-fied'>
                     <input type="password" name='password' placeholder='Password...' required/>
