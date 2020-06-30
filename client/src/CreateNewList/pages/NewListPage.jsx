@@ -46,6 +46,8 @@ const NewList = () => {
     const { storageName } = useParams(); 
     const fixedName = storageName.replace(/^./, str => str.toUpperCase());
     const [ onEdit, setOnEdit ] = useState();
+
+    //DUMMY DATA
     const [ products, dispatch ] = useReducer(productsReducer, [
         {
             id: '01',

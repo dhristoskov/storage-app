@@ -9,6 +9,7 @@ import { FaMoneyBillWave } from 'react-icons/fa';
 
 import PriorityBtns from '../../shared-components/Buttons/PriorityBtns';
 
+//Priority options map
 const PRIORITES = {
     high: <GoIssueOpened style={{color: 'red'}} />,
     normal: null,
@@ -26,14 +27,17 @@ const ProductItem = (props) => {
     const totalPrice = parseFloat(price * props.qty).toFixed(2);
     const priceWithVat = parseFloat(props.price * (1 + taxes / 100)).toFixed(2);
 
+    //Open priority buttons
     const togglePriority = () => {
         setToggle(prevState => !prevState)
     };
 
+    //Check the priority option
     const priorityHandler = (priority) => {
         setIcon(PRIORITES[priority])
     };
 
+    //Toggle between price with taxes and without taxes
     const togglePrice = () => {
         setToggledPrice(prevState => !prevState)
     };

@@ -38,6 +38,8 @@ const StoragePage = () => {
     const [ itemToDelete, setItemToDelete ] = useState(null);
     const [ detailList, setDetailList ] = useState(true)
     const history = useHistory();
+
+    //DUMMY DATA
     const [ storages, dispatch ] = useReducer(storageReducer, [
         { id: '001', name: 'Dragor' },
         { id: '002', name: 'Pazardzhik' }

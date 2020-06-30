@@ -1,5 +1,6 @@
 import React from 'react'
 
+//Warning to prevent deleting importand data
 const DeleteWarning = (props) => {
     return(
         <div className='delete-container'>
