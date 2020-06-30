@@ -5,6 +5,18 @@ const ProductsUpload = () => {
 
     const [file, setFile] = useState();
     const [ showForm, setShowForm ] = useState(false);
+    //const [previewText, setPreviewText] = useState();
+
+    // useEffect(() => {
+    //     if (!file) {
+    //       return;
+    //     }
+    //     const fileReader = new FileReader();
+    //     fileReader.onload = () => {
+    //         setPreviewText(fileReader.result);
+    //     };
+    //     fileReader.readAsText(file);
+    // }, [file]);
 
     const uploadFile = (e) => {
         let newFile;

@@ -58,9 +58,9 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: fixed;
+  position: absolute;
   left: 2%;
-  top: 20%;
+  top: 150%;
 }
 
 .navbar li {
@@ -779,7 +779,7 @@ html {
   display: -ms-flexbox;
   display: flex;
   width: 35%;
-  margin: 20px auto 0 auto;
+  margin: 20px auto 20px auto;
 }
 
 .save-btn .save-list {
