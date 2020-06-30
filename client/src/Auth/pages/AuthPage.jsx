@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 
+import CheckUser from '../components/CheckUser';
 import Registration from '../components/Registration';
 import Login from '../components/Login';
 
-const User_Data = [ 'test@test.com', 'mike@mail.com' ];
-
 const AuthPage = () => {
 
-    const [ onLogin, setOnLogin ] = useState(null)
-    const [ email, setEmail ] = useState('');
+    const [ onLogin, setOnLogin ] = useState(null);
+    const [ newEmail, setNewEmail ] = useState('');
 
-
-    const onAuthHandler = (e) => {
-        e.preventDefault();
-        const result = User_Data.includes(email);
-
+    const onAuthHandler = (result) => {
         if(result){
             setOnLogin('login');
         }
@@ -29,15 +24,13 @@ const AuthPage = () => {
         <div>
             {
                 onLogin === null ?
-                <form onSubmit={onAuthHandler}>
-                    <input type='email' name='email' value={email} onChange={e => setEmail(e.target.value)}/>
-                    <input type='submit' value='submit' />
-                </form>
+                <CheckUser onAuthHandler={onAuthHandler} 
+                               setNewEmail={setNewEmail}/>
                 : null
             }
             {
-                onLogin === 'login' ? <Login email={email} /> 
-                : onLogin === 'register' ? <Registration email={email} /> 
+                onLogin === 'login' ? <Login email={newEmail} /> 
+                : onLogin === 'register' ? <Registration email={newEmail} /> 
                 : null
             }           
         </div>

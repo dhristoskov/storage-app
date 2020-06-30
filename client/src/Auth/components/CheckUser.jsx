@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const User_Data = [ 'test@test.com', 'mike@mail.com' ];
 
@@ -9,7 +9,9 @@ const CheckUser = (props) => {
     const onAuthHandler = (e) => {
         e.preventDefault();
         const result = User_Data.includes(email);
-        console.log(result);
+        props.onAuthHandler(result);
+        props.setNewEmail(email)
+        setEmail('')
     }
 
     return (

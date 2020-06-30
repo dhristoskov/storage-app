@@ -3,32 +3,50 @@ import { NavLink } from 'react-router-dom';
 
 const Registration = (props) => {
 
-    const [ email, setEmail ] = useState(props.email);
+    const [ register, setRegister ] = useState({
+        name: '',
+        email: props.email,
+        password: '',
+        password2: ''
+     });
 
-    // const [ register, setRegister ] = useState({
-    //     name: '',
-    //     email: '',
-    //     password: '',
-    //     password2: ''
-    //  });
+    const { name, email, password, password2 } = register;
+
+    const onChangeHandler = (e) => {
+        setRegister({...register, [ e.target.name ]: e.target.value})
+    };
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        console.log(register)    
+        setRegister({
+            name: '',
+            email: '',
+            password: '',
+            password2: ''
+        });
+    };
 
     return (
         <div className='auth-container'>
             <h3>Registration</h3>
             <p>Before using the app, you need to create an account</p>
-            <form className='auth-form'>
+            <form className='auth-form' onSubmit={onSubmitHandler}>
                 <div className='input-fied'>
-                    <input type='text' name='name' placeholder='Name...' required/>
+                    <input type='text' name='name' value={name} placeholder='Name...' 
+                    onChange={onChangeHandler} required/>
                 </div>
                 <div className='input-fied'>
                     <input type="email" name='email' value={email} placeholder='E-mail...'
-                    onChange={e => setEmail(e.target.value)} required/>        
+                    onChange={onChangeHandler} required/>        
                 </div>
                 <div className='input-fied'>
-                    <input type="password" name='password' placeholder='Password...' required/>
+                    <input type="password" name='password' value={password} placeholder='Password...' 
+                    onChange={onChangeHandler} required/>
                 </div>
                 <div className='input-fied'>
-                    <input type="password" name='password2' placeholder='Confirm password...' required/>
+                    <input type="password" name='password2' value={password2} placeholder='Confirm password...' 
+                    onChange={onChangeHandler} required/>
                 </div>
                 <div className='input-fied'>
                     <input type="submit" value='Register'/>
@@ -37,7 +55,6 @@ const Registration = (props) => {
             <p className='psw-question'><NavLink to='/'>Already have an account? Log-in instead</NavLink></p>
         </div>
     )
-
 }
 
 export default Registration;
