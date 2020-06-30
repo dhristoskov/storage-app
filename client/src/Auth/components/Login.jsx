@@ -43,7 +43,7 @@ const Login = (props) => {
                     <input type="submit" value='Log-in'/>
                 </div>            
             </form>
-            <p className='psw-question'><NavLink to='/'>Forgotten password?</NavLink></p>
+            <p className='psw-question'><NavLink to='/reset-password'>Forgotten password?</NavLink></p>
         </div>
     )
 
