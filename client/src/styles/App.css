@@ -1027,18 +1027,6 @@ html {
   color: white;
 }
 
-.storage-main {
-  width: 55%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: auto;
-}
-
 .auth-container {
   position: absolute;
   top: 50%;
@@ -1150,5 +1138,17 @@ html {
 .auth-container .auth-form .input-fied input[type=submit]:hover {
   background-color: blue;
   color: white;
+}
+
+.storage-main {
+  width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
 }
 /*# sourceMappingURL=App.css.map */

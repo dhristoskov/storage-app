@@ -30,6 +30,7 @@ const Registration = (props) => {
     return (
         <div className='auth-container'>
             <h3>Registration</h3>
+            <p>Your E-mail is not yet registered</p>
             <p>Before using the app, you need to create an account</p>
             <form className='auth-form' onSubmit={onSubmitHandler}>
                 <div className='input-fied'>
