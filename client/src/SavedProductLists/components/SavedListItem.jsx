@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import ProductItem from '../../CreateNewList/components/ProductItem';
+import SavedProductItem from './SavedProductItem';
 
 const SavedListItem = (props) => {
 
@@ -25,7 +25,7 @@ const SavedListItem = (props) => {
                 {
                     props.products.map(product => {
                         return (
-                            <ProductItem key={product.id}
+                            <SavedProductItem key={product.id}
                             name={product.name}
                             price={product.price}
                             priceWithVat={product.priceWithVat}
