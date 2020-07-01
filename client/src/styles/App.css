@@ -1172,7 +1172,7 @@ html {
   text-align: end;
 }
 
-.storage-list-item .storage-name {
+.storage-list-item .storageName {
   width: 25%;
   text-align: start;
 }

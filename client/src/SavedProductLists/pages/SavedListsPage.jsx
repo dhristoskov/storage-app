@@ -13,8 +13,8 @@ const StorageListsPage = () => {
     const fixedName = storageName.replace(/^./, str => str.toUpperCase());
 
     return (
-        <div>
-            <p>You are in <span>{fixedName}</span> storage.</p>
+        <div className='main-wrapper'>
+            <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
             <SavedProductsList savedLists={savedLists}/>
         </div>
     )
