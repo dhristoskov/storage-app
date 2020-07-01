@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MdVisibility, MdVisibilityOff } from 'react-icons/md'
+import { AiOutlineLock } from 'react-icons/ai';
 
 const ConfirmPassword = (props) => {
 
@@ -12,10 +13,10 @@ const ConfirmPassword = (props) => {
     return (
         <div className='input-fied'>
             <p className='form-icon'><AiOutlineLock /></p>
-            <input type={ unVisible ? 'password' : 'text' } name='password' value={props.value}
-            onChange={props.onHandleChange} placeholder='Password...' required/>
-            <span onClick={toggleVisibal}>{unVisible ? <i className='iconVisibility'><MdVisibilityOff /></i> : 
-            <i className='iconVisibility'><MdVisibility  /></i> }</span>
+            <div className='iconVisibility' onClick={toggleVisibal}>{unVisible ? <p><MdVisibilityOff /></p> : 
+            <p><MdVisibility /></p> }</div>
+            <input type={ unVisible ? 'password' : 'text' } name={props.name} value={props.value}
+            onChange={props.onChangeHandler} placeholder='Password...' required/>
         </div>       
     )
 }

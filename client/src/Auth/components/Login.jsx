@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AiOutlineLock, AiOutlineMail} from 'react-icons/ai';
+import { AiOutlineMail } from 'react-icons/ai';
+
+import ConfirmPassword from './ConfirmPassword';
 
 const Login = (props) => {
 
@@ -34,11 +36,7 @@ const Login = (props) => {
                     <input type="email" name='email' value={email} placeholder='E-mail...'
                     onChange={onChangeHandler} required/>             
                 </div>
-                <div className='input-fied'>
-                    <p className='form-icon'><AiOutlineLock /></p>
-                    <input type="password" name='password' value={password} placeholder='Password...'
-                    onChange={onChangeHandler} required/>
-                </div>
+                <ConfirmPassword onChangeHandler={onChangeHandler} name={'password'} value={password}/>
                 <div className='input-fied'>
                     <input type="submit" value='Log-in'/>
                 </div>            

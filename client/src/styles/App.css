@@ -1079,6 +1079,17 @@ html {
   width: 100%;
 }
 
+.auth-container .auth-form .input-fied .iconVisibility {
+  position: absolute;
+  top: 11px;
+  right: 2px;
+}
+
+.auth-container .auth-form .input-fied .iconVisibility p {
+  font-size: 16px;
+  color: #c9e292;
+}
+
 .auth-container .auth-form .input-fied .form-icon {
   position: absolute;
   top: 11px;

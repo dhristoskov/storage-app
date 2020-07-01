@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { AiOutlineLock, AiOutlineUser, AiOutlineMail} from 'react-icons/ai';
+import { AiOutlineUser, AiOutlineMail } from 'react-icons/ai';
+
+import ConfirmPassword from './ConfirmPassword';
 
 const Registration = (props) => {
 
@@ -43,11 +45,7 @@ const Registration = (props) => {
                     <input type="email" name='email' value={email} placeholder='E-mail...'
                     onChange={onChangeHandler} required/>        
                 </div>
-                <div className='input-fied'>
-                    <p className='form-icon'><AiOutlineLock /></p>
-                    <input type="password" name='password' value={password} placeholder='Password...' 
-                    onChange={onChangeHandler} required/>
-                </div>
+                <ConfirmPassword onChangeHandler={onChangeHandler} name={'password'} value={password}/>
                 <div className='input-fied'>
                     <input type="password" name='password2' value={password2} placeholder='Confirm password...' 
                     onChange={onChangeHandler} required/>
