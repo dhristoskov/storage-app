@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineDelete, AiOutlineDown } from 'react-icons/ai';
 
 import SavedProductItem from './SavedProductItem';
+import StorageTableHeader from './StorageTableHeader';
 
 const SavedListItem = (props) => {
 
@@ -26,20 +27,21 @@ const SavedListItem = (props) => {
             {
                 showDetails &&
                 <div className='list-wrapper'>
-                {
-                    props.products.map(product => {
-                        return (
-                            <SavedProductItem key={product.id}
-                            name={product.name}
-                            price={product.price}
-                            priceWithVat={product.priceWithVat}
-                            qty={product.qty}
-                            type={product.type}
-                            storage={product.storage}
-                            isDone={product.isDone} />
-                        )
-                    })
-                }
+                    <StorageTableHeader />
+                    {
+                        props.products.map(product => {
+                            return (
+                                <SavedProductItem key={product.id}
+                                name={product.name}
+                                price={product.price}
+                                priceWithVat={product.priceWithVat}
+                                qty={product.qty}
+                                type={product.type}
+                                storage={product.storage}
+                                isDone={product.isDone} />
+                            )
+                        })
+                    }
                 </div>
             }
         </div>

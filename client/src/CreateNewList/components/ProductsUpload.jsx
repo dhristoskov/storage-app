@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai';
 
-const ProductsUpload = () => {
+const ProductsUpload = (props) => {
 
     const [file, setFile] = useState();
     const [ showForm, setShowForm ] = useState(false);
-    //const [previewText, setPreviewText] = useState();
+    const [ previewText, setPreviewText ] = useState();
 
-    // useEffect(() => {
-    //     if (!file) {
-    //       return;
-    //     }
-    //     const fileReader = new FileReader();
-    //     fileReader.onload = () => {
-    //         setPreviewText(fileReader.result);
-    //     };
-    //     fileReader.readAsText(file);
-    // }, [file]);
+    useEffect(() => {
+        if (!file) {
+          return;
+        }
+        const fileReader = new FileReader();
+        fileReader.onload = () => {
+            setPreviewText(fileReader.result);
+        };
+        fileReader.readAsText(file);
+    }, [file]);
 
     const uploadFile = (e) => {
         let newFile;
@@ -40,6 +40,26 @@ const ProductsUpload = () => {
         setShowForm(prevState => !prevState);
     };
 
+    // const addUploaded = (newArray) => {
+    //     if(newArray){
+    //         const array = newArray.toString().split("\n").map(item => item.trim());
+    //         for(let i = 0; i < array.length; i++) {
+    //             const line = array[i].split(',').map(e => e.trim());
+    //             const [ name, price, qty, type, storage ] = line;
+    
+    //             const product = {
+    //                 name,
+    //                 price,
+    //                 qty,
+    //                 type,
+    //                 storage,
+    //                 isDone: false
+    //             };    
+    //             props.addNewProduct(product);
+    //         }
+    //     }
+    // }
+
     return (
         <div className='upload-file'>
             {
@@ -56,6 +76,7 @@ const ProductsUpload = () => {
                     </form>
                 :   <p>Upload File</p>
             }
+            <p>{previewText}</p>
         </div>
     )
 }

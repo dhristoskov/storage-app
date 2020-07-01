@@ -139,7 +139,7 @@ const NewList = () => {
             onUpdateHandler={onUpdateHandler}
             storageName={storageName}
             onEdit={onEdit}/>   
-            <ProductsUpload />             
+            <ProductsUpload addNewProduct={addNewProduct}/>             
             <ProductList products={products}
             removeProduct={removeProduct}
             isDoneHandler={isDoneHandler}
