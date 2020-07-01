@@ -1156,7 +1156,7 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 55%;
+  width: 65%;
   margin: 10px auto 0 auto;
   border-bottom: 1px solid blue;
   padding: 0 5px;
@@ -1213,6 +1213,87 @@ html {
 }
 
 .storage-list-item .detail-settings p:hover {
+  color: #e64444;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.product-instorage-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: auto;
+  border-bottom: 1px solid blue;
+  padding: 0 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  padding-top: 12px;
+}
+
+.product-instorage-wrapper p {
+  font-size: 14px;
+  text-align: end;
+}
+
+.product-instorage-wrapper .name {
+  width: 30%;
+  text-align: start;
+}
+
+.product-instorage-wrapper .price {
+  width: 20%;
+  position: relative;
+  text-align: start;
+}
+
+.product-instorage-wrapper .price .vat-icon {
+  position: absolute;
+  top: 2px;
+  left: -20px;
+  color: #9ba585;
+}
+
+.product-instorage-wrapper .quantity {
+  width: 8%;
+}
+
+.product-instorage-wrapper .type {
+  width: 7%;
+  text-align: start;
+}
+
+.product-instorage-wrapper .total {
+  width: 20%;
+}
+
+.product-instorage-wrapper .settings {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 15%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product-instorage-wrapper .settings p {
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: blue;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.product-instorage-wrapper .settings p:hover {
   color: #e64444;
   -webkit-transform: scale(1.15);
           transform: scale(1.15);

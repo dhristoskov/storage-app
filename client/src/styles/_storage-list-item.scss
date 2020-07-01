@@ -1,6 +1,7 @@
+//Single storage item
 .storage-list-item {
     display: flex;
-    width: 55%;
+    width: 65%;
     margin:10px auto 0 auto;
     border-bottom: 1px solid blue;
     padding: 0 5px;
@@ -43,4 +44,65 @@
         }
     }
 }
+
+//Single product
+.product-instorage-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    border-bottom: 1px solid blue;
+    padding: 0 5px;
+    align-items: center;
+    height: 30px;
+    padding-top: 12px;
+    p{
+        font-size: 14px;
+        text-align: end;
+    }
+    .name {
+        width: 30%;
+        text-align: start;
+    }
+    .price {
+        width: 20%;
+        position: relative;
+        text-align: start;
+        .vat-icon {
+            position: absolute;
+            top: 2px;
+            left: -20px;
+            color: #9ba585;
+        }
+    }
+    .quantity {
+        width: 8%;
+    }
+    .type {
+        width: 7%;
+        text-align: start;
+    }
+    .total {
+        width: 20%;
+    }
+    .settings {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        width: 15%;
+        align-items: center;
+        p {
+            margin-left: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            color: blue;
+            transition: all .2s ease-in;
+            &:hover {
+                color: rgb(230, 68, 68);
+                transform: scale(1.15);
+            }
+        }
+    }
+}
+
 

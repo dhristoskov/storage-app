@@ -19,7 +19,7 @@ const SavedProductItem = (props) => {
     };
 
     return(
-        <div className='product-wrapper' 
+        <div className='product-instorage-wrapper' 
         style={props.isDone ? {background: '#D2DDBB', color: 'white'} : null}>
             <p className='name'>{props.name}</p>
             <p className='price'>{toggledPrice ?  priceWithVat : price } { toggledPrice ? '€/vat' : '€'}
