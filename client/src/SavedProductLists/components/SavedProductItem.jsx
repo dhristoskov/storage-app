@@ -17,7 +17,7 @@ const SavedProductItem = (props) => {
     const togglePrice = () => {
         setToggledPrice(prevState => !prevState)
     };
-    
+
     return(
         <div className='product-wrapper' 
         style={props.isDone ? {background: '#D2DDBB', color: 'white'} : null}>
@@ -26,7 +26,6 @@ const SavedProductItem = (props) => {
             <span className='vat-icon' onClick={togglePrice}><FaMoneyBillWave/></span></p>
             <p className='quantity'>{props.qty}</p>
             <p className='type'>/ {props.type}</p>
-            <p className='storage'>{props.storage}</p>
             <p className='total'>{totalPrice} €</p>
             <div className='settings'>
                 <p><AiOutlineDelete /></p>

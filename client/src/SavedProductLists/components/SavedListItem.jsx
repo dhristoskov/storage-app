@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 
 import SavedProductItem from './SavedProductItem';
 
@@ -12,16 +13,19 @@ const SavedListItem = (props) => {
 
     return (
         <div>
-            <div style={{display: 'flex', width: '55%', justifyContent:'space-between'}}>
-                <p>{props.storage}</p>
-                <p>{props.data}</p>
-                <p>{props.totalPrice}</p>
-                <p>{props.totalVat}</p>
-                <p onClick={onDetailsHandler}>details</p>
+            <div className='storage-list-item'>
+                <p className='storage-name'>{props.storage}</p>
+                <p className='data'>Date: {props.data}</p>
+                <p className='price'>Price: {props.totalPrice} €</p>
+                <p className='vatPrice'>Price: {props.totalVat} €/vat</p>
+                <div className='detail-settings'>
+                    <p><AiOutlineDelete /></p>
+                    <p onClick={onDetailsHandler}><AiOutlineEdit /></p>                      
+                </div>
             </div>
             {
                 showDetails &&
-                <div>
+                <div className='list-wrapper'>
                 {
                     props.products.map(product => {
                         return (

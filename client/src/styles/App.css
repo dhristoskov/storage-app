@@ -492,11 +492,12 @@ html {
 }
 
 .list-wrapper {
-  margin: 50px auto 0 auto;
+  margin: 0 auto;
   width: 65%;
 }
 
 .list-wrapper .counter {
+  margin-top: 50px;
   font-size: 13px;
   font-weight: 600;
   text-align: start;
@@ -1149,6 +1150,72 @@ html {
 .auth-container .auth-form .input-fied input[type=submit]:hover {
   background-color: blue;
   color: white;
+}
+
+.storage-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 55%;
+  margin: 10px auto 0 auto;
+  border-bottom: 1px solid blue;
+  padding: 0 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  padding-top: 12px;
+}
+
+.storage-list-item p {
+  font-size: 14px;
+  text-align: end;
+}
+
+.storage-list-item .storage-name {
+  width: 25%;
+  text-align: start;
+}
+
+.storage-list-item .price {
+  width: 20%;
+}
+
+.storage-list-item .vatPrice {
+  width: 20%;
+}
+
+.storage-list-item .data {
+  width: 20%;
+  text-align: start;
+}
+
+.storage-list-item .detail-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 15%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.storage-list-item .detail-settings p {
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: blue;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.storage-list-item .detail-settings p:hover {
+  color: #e64444;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 .storage-main {
