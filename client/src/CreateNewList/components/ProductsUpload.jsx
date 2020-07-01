@@ -28,37 +28,37 @@ const ProductsUpload = (props) => {
 
     const submitFile = (e) => {
         e.preventDefault();
-        console.log(file);
 
         if (file) {
           let data = new FormData();
           data.append('file', file);
         }
+        addUploaded();
     };
 
     const onFormHandler = () => {
         setShowForm(prevState => !prevState);
     };
 
-    // const addUploaded = (newArray) => {
-    //     if(newArray){
-    //         const array = newArray.toString().split("\n").map(item => item.trim());
-    //         for(let i = 0; i < array.length; i++) {
-    //             const line = array[i].split(',').map(e => e.trim());
-    //             const [ name, price, qty, type, storage ] = line;
+    const addUploaded = () => {
+        if(file){
+            const array = previewText.toString().split("\n").map(item => item.trim());
+            for(let i = 0; i < array.length; i++) {
+                const line = array[i].split(',').map(e => e.trim());
+                const [ name, price, qty, type, storage ] = line;
     
-    //             const product = {
-    //                 name,
-    //                 price,
-    //                 qty,
-    //                 type,
-    //                 storage,
-    //                 isDone: false
-    //             };    
-    //             props.addNewProduct(product);
-    //         }
-    //     }
-    // }
+                const product = {
+                    name,
+                    price,
+                    qty,
+                    type,
+                    storage,
+                    isDone: false
+                };    
+                props.addNewProduct(product);
+            }
+        }
+    }
 
     return (
         <div className='upload-file'>
@@ -76,7 +76,6 @@ const ProductsUpload = (props) => {
                     </form>
                 :   <p>Upload File</p>
             }
-            <p>{previewText}</p>
         </div>
     )
 }
