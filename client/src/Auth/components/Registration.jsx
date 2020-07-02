@@ -21,7 +21,7 @@ const Registration = (props) => {
 
     const onChangeHandler = (e) => {
         let error = productValidation(e.target.name, e.target.value);
-        setErrors(error)
+        setErrors(error);
         setRegister({...register, [ e.target.name ]: e.target.value})
     };
 
@@ -30,12 +30,12 @@ const Registration = (props) => {
         if(password !== password2){
             setErrors({msg:'Passwords and confirm password does not match'})
         }else{
-        console.log(register)    
-        setRegister({
-            username: '',
-            email: '',
-            password: '',
-            password2: ''
+            console.log(register)    
+            setRegister({
+                username: '',
+                email: '',
+                password: '',
+                password2: ''
         })};
         history.push('/storage')
     };

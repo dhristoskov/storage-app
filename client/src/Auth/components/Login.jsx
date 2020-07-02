@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 
 import ConfirmPassword from './ConfirmPassword';
 import EmailField from './EmailField';
@@ -7,6 +7,7 @@ import { productValidation } from '../../shared-components/productValidation';
 
 const Login = (props) => {
 
+    const history = useHistory();
     const [ errors, setErrors ] = useState({});
     const [ login, setLogin ] = useState({
         email: props.email,
@@ -29,6 +30,7 @@ const Login = (props) => {
                 email: '',
                 password: ''
             });
+            history.push('/')  
         }
     };
 
