@@ -36,8 +36,9 @@ const Registration = (props) => {
                 email: '',
                 password: '',
                 password2: ''
-        })};
-        history.push('/storage')
+            })
+        history.push('/storage');
+        };
     };
 
     return (
