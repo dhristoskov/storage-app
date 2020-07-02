@@ -1,3 +1,5 @@
+const ValidateEmail = RegExp(/^\S+@\S+\.\S+$/);
+
 export const  productValidation = (name, value) => {
 
     let errors = {
@@ -10,6 +12,11 @@ export const  productValidation = (name, value) => {
         case 'name':
             errors.name = value.length < 2
                 ? 'Product name must be at least 2 characters long!'
+                : '';
+                break; 
+        case 'username':
+            errors.username = value.length < 3
+                ? 'Username must be at least 3 characters long!'
                 : '';
                 break; 
         case 'price':
@@ -26,7 +33,22 @@ export const  productValidation = (name, value) => {
             errors.type = value === null
                 ? 'Product must have a type kg or pcs!'
                 : '';
-                break;      
+                break;   
+        case 'email':
+            errors.email = ValidateEmail.test(value)
+                ? ''
+                : 'Email is not valid!';
+                break;   
+        case 'password':
+            errors.password = value.length < 6
+                ? 'Password must be at least 6 characters long!'
+                : '';   
+                break;    
+        case 'password2':
+            errors.password2 = value.length < 6
+                ? 'Password must be at least 6 characters long!'
+                : '';   
+                break;       
         default:
             throw new Error('Something went wrong!');
     };

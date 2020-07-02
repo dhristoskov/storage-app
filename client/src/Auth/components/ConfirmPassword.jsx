@@ -17,6 +17,7 @@ const ConfirmPassword = (props) => {
             <p><MdVisibility /></p> }</div>
             <input type={ unVisible ? 'password' : 'text' } name={props.name} value={props.value}
             onChange={props.onChangeHandler} placeholder='Password...' required/>
+            {props.errors && <p className='errors'>{props.errors}</p>}
         </div>       
     )
 }

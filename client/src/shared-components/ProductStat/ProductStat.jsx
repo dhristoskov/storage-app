@@ -1,18 +1,18 @@
 import React from 'react';
 
+import StatItem from './StatItem';
 import { STAT } from '../data';
 
 const ProductStat = () => {
 
     return (
-       <div style={{display:'flex', width: '400px', justifyContent:'center', marginTop: '150px'}}>
+       <div>
            {
                STAT.map(product => {
                    return (
-                       <div key={product.id} style={{width: '100px'}}>
-                           <p style={{width: (product.price*100)+'%', backgroundColor: 'red', transform: 'rotate(90deg)'}}>{product.price}</p>
-                           <p>{product.time}</p>
-                       </div>
+                           <StatItem key={product.id}
+                           price={product.price}
+                           time={product.time} />
                    )
                })
            }

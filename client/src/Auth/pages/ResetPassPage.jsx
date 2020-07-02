@@ -1,24 +1,30 @@
-import React from 'react';
-import { AiOutlineMail } from 'react-icons/ai';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
-//import EmailField from '../components/EmailField'; <--Later use 
+import EmailField from '../components/EmailField';
 
 const ResetPassPage = () => {
+
+    const history = useHistory();
+    const [ email, setEmail ] = useState('')
+
+    const onSubmitHandle = (e) => {
+        e.preventDefault();
+        console.log(email)
+        setEmail('');
+        history.push('/')
+    };
 
     return(
         <div className='auth-container'>
             <h3>Reset password</h3>
             <p>We will send you reset link per E-mail</p>
-            <form className='auth-form'>
-                {/* <EmailField onChangeHandler={onChangeHandler} name={'email'} value={email} required/> */}
-                <div className='input-fied'>
-                    <p className='form-icon'><AiOutlineMail /></p>
-                    <input type="email" name='email' placeholder='E-mail...' required/>        
-                </div>
+            <form className='auth-form' onSubmit={onSubmitHandle}>
+                <EmailField onChangeHandler={ e => setEmail(e.target.value) } name={'email'} value={email} required/>
                 <div className='input-fied'>     
                     <input type="submit" value='Reset Password'/>
                 </div>
-            </form>
+            </form>          
         </div>
     )
 }

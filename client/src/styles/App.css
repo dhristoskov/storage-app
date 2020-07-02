@@ -1079,6 +1079,14 @@ html {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  min-height: 50px;
+}
+
+.auth-container .auth-form .input-fied .errors {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ce5252;
 }
 
 .auth-container .auth-form .input-fied .iconVisibility {
@@ -1134,7 +1142,7 @@ html {
 .auth-container .auth-form .input-fied input[type=submit] {
   width: 50%;
   padding: 7px 15px;
-  margin-top: 15px;
+  margin: 15px auto 10px;
   color: blue;
   background: none;
   border: 1px solid blue;

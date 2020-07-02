@@ -32,7 +32,7 @@ const AuthPage = () => {
                 onLogin === 'login' ? <Login email={newEmail} /> 
                 : onLogin === 'register' ? <Registration email={newEmail} /> 
                 : null
-            }           
+            }         
         </div>
     )
 }
