@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import SavedProductsList from '../components/SavedProductsList';
 import { DATA } from '../../shared-components/data';
-import ProductStat from '../../shared-components/ProductStat/ProductStat';
+//import ProductStat from '../../shared-components/ProductStat/ProductStat';
 
 const StorageListsPage = () => {
   
@@ -17,7 +17,7 @@ const StorageListsPage = () => {
         <div className='main-wrapper'>
             <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
             <SavedProductsList savedLists={savedLists}/>
-            <ProductStat />
+            {/* <ProductStat /> */}
         </div>
     )
 }
