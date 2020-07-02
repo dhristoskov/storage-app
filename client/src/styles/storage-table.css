@@ -1,0 +1,104 @@
+.storage-table-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: auto;
+  border-bottom: 1px solid #D2DDBB;
+  padding: 0 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  padding-top: 8px;
+}
+
+.storage-table-header p {
+  font-size: 15px;
+  font-weight: 700;
+  text-align: end;
+  color: #D2DDBB;
+}
+
+.storage-table-header .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+}
+
+.storage-table-header .name p {
+  text-align: start;
+  margin-right: 5px;
+}
+
+.storage-table-header .name .order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.storage-table-header .name .order p {
+  padding-top: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.storage-table-header .name .order p:hover {
+  color: #e64444;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.storage-table-header .price {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+}
+
+.storage-table-header .price p {
+  margin-right: 5px;
+}
+
+.storage-table-header .price .order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.storage-table-header .price .order p {
+  padding-top: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.storage-table-header .price .order p:hover {
+  color: #e64444;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.storage-table-header .quantity {
+  width: 15%;
+}
+
+.storage-table-header .total {
+  width: 20%;
+}
+/*# sourceMappingURL=storage-table.css.map */

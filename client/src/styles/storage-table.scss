@@ -1,0 +1,69 @@
+.storage-table-header {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    border-bottom: 1px solid #D2DDBB;
+    padding: 0 5px;
+    align-items: center;
+    height: 30px;
+    padding-top: 8px;
+    p{
+        font-size: 15px;
+        font-weight: 700;
+        text-align: end;
+        color: #D2DDBB;
+    }
+    .name {
+        display: flex;
+        align-items: center;
+        width: 30%;
+        p {
+            text-align: start;
+            margin-right: 5px;
+        }
+        .order {
+            display: flex;
+            p {
+                padding-top: 4px;
+                font-size: 14px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all .2s ease-in;
+                &:hover {
+                    color: rgb(230, 68, 68);
+                    transform: scale(1.15);
+                }
+            }
+        }
+    }
+    .price {
+        justify-content: flex-start;
+        display: flex;
+        align-items: center;
+        width: 20%;
+        p {
+            margin-right: 5px;
+        }
+        .order {
+            display: flex;
+            p {
+                padding-top: 4px;
+                font-size: 14px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all .2s ease-in;
+                &:hover {
+                    color: rgb(230, 68, 68);
+                    transform: scale(1.15);
+                }
+            }
+        }
+    }
+    .quantity {
+        width: 15%;
+    }
+    .total {
+        width: 20%;
+    }
+    
+}

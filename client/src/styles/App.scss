@@ -21,6 +21,7 @@
 @import './upload-file';
 @import './auth-form';
 @import './storage-list-item';
+@import './storage-table';
 
 //Storage main page
 .storage-main {
@@ -30,73 +31,22 @@
     margin: auto;
 }
 
-.storage-table-header {
+//stats bar
+.stats-wrapper{
     display: flex;
-    width: 100%;
+    justify-content: center;
     margin: auto;
-    border-bottom: 1px solid #D2DDBB;
-    padding: 0 5px;
+    width: 35%;
     align-items: center;
-    height: 30px;
-    padding-top: 8px;
-    p{
-        font-size: 15px;
-        font-weight: 700;
-        text-align: end;
-        color: #D2DDBB;
-    }
-    .name {
-        display: flex;
-        align-items: center;
-        width: 30%;
-        p {
-            text-align: start;
-            margin-right: 5px;
-        }
-        .order {
-            display: flex;
-            p {
-                padding-top: 4px;
-                font-size: 14px;
-                font-weight: 700;
-                cursor: pointer;
-                transition: all .2s ease-in;
-                &:hover {
-                    color: rgb(230, 68, 68);
-                    transform: scale(1.15);
-                }
-            }
+    .price-wrapper{
+        height: 200px;
+        .price-bar {
+            height: 100%;
+            width: 20px;
+            background-color: #D2DDBB;
         }
     }
-    .price {
-        justify-content: flex-start;
-        display: flex;
-        align-items: center;
-        width: 20%;
-        p {
-            margin-right: 5px;
-        }
-        .order {
-            display: flex;
-            p {
-                padding-top: 4px;
-                font-size: 14px;
-                font-weight: 700;
-                cursor: pointer;
-                transition: all .2s ease-in;
-                &:hover {
-                    color: rgb(230, 68, 68);
-                    transform: scale(1.15);
-                }
-            }
-        }
-    }
-    .quantity {
-        width: 15%;
-    }
-    .total {
-        width: 20%;
-    }
-    
 }
+
+
 
