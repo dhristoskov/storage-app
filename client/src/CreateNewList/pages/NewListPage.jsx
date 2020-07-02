@@ -1,4 +1,5 @@
 import React, { useReducer, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useParams } from 'react-router-dom';
 
 import ProductList from '../components/ProductList';
@@ -88,7 +89,7 @@ const NewList = () => {
     ])
 
     const addNewProduct = ( item ) => {
-        dispatch({ type:'ADD', product:{ id: Date.now(), ...item }})
+        dispatch({ type:'ADD', product:{ id: uuidv4, ...item }})
     }
 
     const removeProduct = (pid) => {
