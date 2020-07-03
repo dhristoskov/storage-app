@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
-import { AiOutlineMail } from 'react-icons/ai';
 
+import EmailField from './EmailField';
+import { productValidation } from '../../shared-components/productValidation';
 const User_Data = [ 'test@test.com', 'mike@mail.com' ];
 
 const CheckUser = (props) => {
 
-    const [ email, setEmail ] = useState('');
+    const [ errors, setErrors ] = useState({});
+    const [ emailToCheck, setEmail ] = useState({
+        email: ''
+    });
+
+    const { email } = emailToCheck;
+
+    const onChangeHandler = (e) => {
+        let error = productValidation(e.target.name, e.target.value);
+        setErrors(error)
+        setEmail({...emailToCheck, [ e.target.name]: e.target.value})
+    };
 
     const onAuthHandler = (e) => {
         e.preventDefault();
         const result = User_Data.includes(email);
         props.onAuthHandler(result);
-        props.setNewEmail(email)
-        setEmail('')
+        props.setNewEmail(emailToCheck.email)
+        setEmail({
+            email: ''
+        });
     }
 
     return (
@@ -20,11 +34,8 @@ const CheckUser = (props) => {
             <h3>Login/ Registration</h3>
             <p>Enter E-mail to log-in or to start Registration process</p>
             <form className='auth-form' onSubmit={onAuthHandler}>
-            <div className='input-fied'>
-                <p className='form-icon'><AiOutlineMail /></p>
-                <input type='email' name='email' value={email} placeholder='E-mail...' 
-                onChange={e => setEmail(e.target.value)}/>
-            </div>
+            <EmailField onChangeHandler={onChangeHandler} name={'email'} value={email}
+                    errors={errors.email} required/>
             <div className='input-fied'>
                 <input type='submit' value='submit' />
             </div>

@@ -10,7 +10,6 @@ const ResetPassPage = () => {
 
     const onSubmitHandle = (e) => {
         e.preventDefault();
-        console.log(email)
         setEmail('');
         history.push('/')
     };

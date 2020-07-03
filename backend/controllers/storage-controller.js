@@ -9,10 +9,23 @@ const createStorage = async ( req, res ) => {
         return res.status(422).json({msg: 'Invalid inputs, please check your data.'});
     }
 
+    const { name } = req.body
+
+    //Check if Storage name already exist
+    let storage
+    try{
+        storage = await Storage.findOne({ name })
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send({msg: 'Server Error!'});
+    }
+
+    if(storage){
+        return res.status(422).json({ msg: 'Storage already exists.' })
+    }
+
     try {
-        const storage = new Storage({
-            name: req.body.name
-        });
+        const storage = new Storage({ name });
         const newStorage = await storage.save();
         res.status(201).json({ storage: newStorage });
     }catch(err){

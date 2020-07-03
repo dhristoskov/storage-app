@@ -61,11 +61,12 @@ const StoragePage = () => {
                    });
     };
 
-
+    //Change with ID
     const moveToStoragePage = (name) => {
         history.push(`/storage/storage-list/${name.toLowerCase()}`);
     };
 
+    //Change with ID
     const moveToCreateList = (name) => {
         history.push(`/storage/create-list/${name.toLowerCase()}`);
     };

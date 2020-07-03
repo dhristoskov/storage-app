@@ -25,8 +25,7 @@ const ResetPassForm = () => {
         e.preventDefault();
         if(password !== password2){
             setErrors({msg:'Passwords and confirm password does not match'})
-        }else{
-            console.log(reset)    
+        }else{ 
             setReset({
                 password: '',
                 password2: ''
