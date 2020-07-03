@@ -32,6 +32,11 @@ const postSingleProduct = async ( req, res ) => {
         console.error(err.message);
         res.status(500).send({msg: 'Creating a new product failed, try again'});
     }
-}
+};
+
+const postManyProducts = async ( req, res ) => {
+    //ToDO
+};
 
 exports.postSingleProduct = postSingleProduct;
+exports.postManyProducts = postManyProducts;

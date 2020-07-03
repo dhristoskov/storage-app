@@ -4,6 +4,7 @@ const Storage = require('../models/storage');
 
 //Create new Storage
 const createStorage = async ( req, res ) => {
+
     const errors = validationResult(req);
     if(!errors.isEmpty()){
         return res.status(422).json({msg: 'Invalid inputs, please check your data.'});
@@ -43,10 +44,28 @@ const getAllStorages = async ( req, res ) => {
         allStorages = await Storage.find({}).sort({name: 1});
     }catch(err){
         console.error(err.message)
-        res.status(500).send('Server Error')
+        res.status(500).send('Server Error');
     }
 
     res.json({ storages: allStorages.map(storage => storage.toObject({ getters: true })) });
+};
+
+//Get storage by ID
+const getStorageByID = async ( req, res ) => {
+
+    let storage;
+    try{
+        storage = await Storage.findById(req.params.id);
+    }catch(err){
+        console.error(err.message)
+        res.status(500).send('Server Error')
+    }
+
+    if(!storage){
+        return res.status(404).json({ msg: 'Storage not found' });
+    };
+
+    res.json({storage: storage.toObject({ getters: true}) });
 };
 
 //Delete Storage by ID
@@ -77,3 +96,4 @@ const deleteStorage = async ( req, res ) => {
 exports.createStorage = createStorage;
 exports.getAllStorages = getAllStorages;
 exports.deleteStorage = deleteStorage;
+exports.getStorageByID = getStorageByID;
