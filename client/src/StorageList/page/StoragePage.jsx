@@ -1,5 +1,6 @@
-import React, { useReducer, useState, Fragment } from 'react';
+import React, { useReducer, useState, Fragment, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from '../../axios';
 
 import StorageForm from '../components/StorageForm';
 import StorageList from '../components/StorageList';
@@ -17,16 +18,6 @@ const storageReducer = ( state, action ) => {
             return [...state, action.storage ]
         case 'DELETE':
             return state.filter(storage => storage.id !== action.id);
-        // case 'UPDATE':
-        //     return state.map(storage => {
-        //         if(storage.id === action.id){ 
-        //         return {
-        //             ...storage,
-        //             ...action.update
-        //         }               
-        //     }
-        //     return product
-        // });
         default:
             return state;
     }
@@ -34,25 +25,42 @@ const storageReducer = ( state, action ) => {
 
 const StoragePage = () => {
 
+    const [ storages, dispatch ] = useReducer(storageReducer, []);
     const [showWarning, setShowWarning ] = useState(false);
     const [ itemToDelete, setItemToDelete ] = useState(null);
     const [ detailList, setDetailList ] = useState(true)
     const history = useHistory();
 
-    //DUMMY DATA
-    const [ storages, dispatch ] = useReducer(storageReducer, [
-        { id: '001', name: 'Dragor' },
-        { id: '002', name: 'Pazardzhik' }
-    ]);
+    useEffect(() => {
+        axios.get('/storage')
+             .then(res => {
+                dispatch({type: 'GET', storages: res.data.storages})
+             }).catch(err => {
+                 console.log(err)
+             })
+    }, []);
 
-    const deleteStorage = () => {
-        dispatch({type: 'DELETE', id: itemToDelete});
-        setShowWarning(false);
+    const addStorage = async ( newStorage ) => {
+        await axios.post('/storage', newStorage,
+          { 'Content-Type': 'application/json' })
+                   .then(res => {
+                       dispatch({ type:'ADD', 
+                       storage: {id: res.data.storage._id, ...res.data.storage}})
+                   }).catch(err => {
+                    console.log(err)
+                   });
+    }
+
+    const deleteStorage = async () => {
+        await axios.delete(`/storage/${itemToDelete}`)
+                   .then(res => {
+                       dispatch({type: 'DELETE', id: itemToDelete});
+                       setShowWarning(false);
+                   }).catch(err => {
+                    console.log(err)
+                   });
     };
 
-    const addStorage = ( newStorage ) => {
-        dispatch({ type:'ADD', storage: newStorage})
-    }
 
     const moveToStoragePage = (name) => {
         history.push(`/storage/storage-list/${name.toLowerCase()}`);

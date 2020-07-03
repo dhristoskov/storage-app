@@ -6,15 +6,9 @@ const StorageForm = (props) => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        const storage = {
-            id: Date.now(), 
-            name: name
-        };
-
-        props.addStorage(storage);
+        props.addStorage({name: name});
         setName('')
     }
-
 
     return (
         <div className='storage-form'>
