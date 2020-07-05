@@ -30,7 +30,7 @@ const ResetPassForm = () => {
                 password: '',
                 password2: ''
         })};
-        history.push('/')
+        history.push('/') //<-- Remove 
     };
 
     return(

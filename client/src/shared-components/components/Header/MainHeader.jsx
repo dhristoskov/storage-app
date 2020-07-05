@@ -6,6 +6,7 @@ import axios from '../../../axios';
 import Navigation from './Navigation';
 import NavButton from './NavButton';
 import LowerHeader from './LowerHeader';
+import Logo from './Logo';
 
 const MainHeader = () => {
 
@@ -41,7 +42,7 @@ const MainHeader = () => {
                 {
                     toggleNav &&  <Navigation />
                 }          
-                <p className='logo'>Logo</p>
+                <Logo />
                 <div className='login'><NavLink to='/auth'><AiOutlineLogin /></NavLink></div>
             </div>
             <LowerHeader toggleStoragesView={toggleStoragesView}

@@ -101,6 +101,8 @@ html {
 .main-header .logo {
   position: absolute;
   right: 50%;
+  width: 80px;
+  height: auto;
 }
 
 .main-header .login {
