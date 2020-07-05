@@ -15,6 +15,10 @@ const NewList = () => {
     const fixedName = storageName.replace(/^./, str => str.toUpperCase());
     const [ onEdit, setOnEdit ] = useState();
 
+    //Add Products to Specific Storage
+    const currentStorage = products.filter(product =>
+         product.storage.toLowerCase() === storageName.toLowerCase())
+
     const addNewProduct = ( item ) => {
         dispatch({ type:'ADD', product:{ id: uuidv4(), ...item }});
     }
@@ -68,7 +72,7 @@ const NewList = () => {
             storageName={storageName}
             onEdit={onEdit}/>   
             <ProductsUpload addNewProduct={addNewProduct}/>             
-            <ProductList products={products}
+            <ProductList products={currentStorage}
             removeProduct={removeProduct}
             isDoneHandler={isDoneHandler}
             isUndoneHandler={isUndoneHandler}

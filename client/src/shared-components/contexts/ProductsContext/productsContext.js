@@ -17,7 +17,7 @@ const ProductsContextProcider = (props) => {
             price: 12.25,
             qty: 25,
             type: 'psc',
-            storage: 'Storage First',
+            storage: 'Dragor',
             isDone: false
         },
         {
@@ -26,7 +26,7 @@ const ProductsContextProcider = (props) => {
             price: 2.25,
             qty: 15,
             type: 'kg',
-            storage: 'Storage First',
+            storage: 'Dragor',
             isDone: false
         },
         {
@@ -35,7 +35,7 @@ const ProductsContextProcider = (props) => {
             price: 0.55,
             qty: 35,
             type: 'pcs',
-            storage: 'Storage Two',
+            storage: 'Pazardjik',
             isDone: false
         },
         {
@@ -44,7 +44,7 @@ const ProductsContextProcider = (props) => {
             price: 1.55,
             qty: 55,
             type: 'kg',
-            storage: 'Storage Two',
+            storage: 'Pazardjik',
             isDone: false
         }
     ]);

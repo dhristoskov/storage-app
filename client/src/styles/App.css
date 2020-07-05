@@ -309,6 +309,7 @@ html {
   top: 2px;
   right: -20px;
   color: #9ba585;
+  cursor: pointer;
 }
 
 .product-wrapper .quantity {
