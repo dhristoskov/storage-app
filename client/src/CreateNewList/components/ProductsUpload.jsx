@@ -53,7 +53,8 @@ const ProductsUpload = (props) => {
                     qty,
                     type,
                     storage,
-                    isDone: false
+                    isDone: false,
+                    priority: null
                 };    
                 props.addNewProduct(product);
             }
