@@ -1,6 +1,5 @@
-import React, { useReducer, useState, useEffect } from 'react';
+import React, { useReducer, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import axios from '../../axios';
 import { useParams } from 'react-router-dom';
 
 import ProductList from '../components/ProductList';
@@ -45,8 +44,8 @@ const productsReducer = ( state, action ) => {
 
 const NewList = () => {
 
-    //const fixedName = storageName.replace(/^./, str => str.toUpperCase());
-    const { id } = useParams(); 
+    const { storageName } = useParams(); 
+    const fixedName = storageName.replace(/^./, str => str.toUpperCase());
     const [ onEdit, setOnEdit ] = useState();
 
     //DUMMY DATA
@@ -87,16 +86,7 @@ const NewList = () => {
             storage: 'Storage Two',
             isDone: false
         }
-    ]);
-
-    useEffect(() => {
-        axios.get(`/storage/${id}`)
-             .then(res => {
-                console.log(res.data.storage.name)
-             }).catch(err => {
-                 console.log(err)
-             });
-    }, [id]);
+    ])
 
     const addNewProduct = ( item ) => {
         dispatch({ type:'ADD', product:{ id: uuidv4, ...item }})
@@ -144,11 +134,11 @@ const NewList = () => {
 
     return (
         <div className='main-wrapper'>     
-            {/* <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p> */}
+            <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
             <ProductForm addNewProduct={addNewProduct}
             onClearEditHandler={onClearEditHandler}
             onUpdateHandler={onUpdateHandler}
-            // storageName={storageName}
+            storageName={storageName}
             onEdit={onEdit}/>   
             <ProductsUpload addNewProduct={addNewProduct}/>             
             <ProductList products={products}

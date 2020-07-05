@@ -26,9 +26,9 @@ const StorageSimpleList = (props) => {
                             <div className='simple-btn'>
                                 <button onClick={() => props.showDeleteWarning(item.id)}>
                                     <AiOutlineDelete /></button>
-                                <button onClick={() => props.moveToCreateList(item.id)}>
+                                <button onClick={() => props.moveToCreateList(item.name)}>
                                     <AiOutlineEdit /></button>
-                                <button onClick={() => props.moveToStoragePage(item.id)}>
+                                <button onClick={() => props.moveToStoragePage(item.name)}>
                                     <AiOutlineOrderedList /></button>
                             </div>
                         </div>

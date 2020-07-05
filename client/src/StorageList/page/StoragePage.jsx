@@ -61,15 +61,14 @@ const StoragePage = () => {
                    });
     };
 
-    //Move to Lists page
-    const moveToStoragePage = (storageID) => {
-        history.push(`/storage/storage-list/${storageID}`);
+    //Move to Storage Lists Page
+    const moveToStoragePage = (name) => {
+        history.push(`/storage/storage-list/${name.toLowerCase()}`);
     };
 
-
-    //Move to create new list page
-    const moveToCreateList = (storageID) => {
-        history.push(`/storage/create-list/${storageID}`);
+    //Move to Create List page
+    const moveToCreateList = (name) => {
+        history.push(`/storage/create-list/${name.toLowerCase()}`);
     };
 
     const showDetailedList = () => {

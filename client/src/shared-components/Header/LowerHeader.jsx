@@ -16,8 +16,8 @@ const LowerHeader = (props) => {
              });
     }, []);
 
-    const moveToStorage = (storageID) => {
-        history.push(`/storage/storage-list/${storageID}`);
+    const moveToStorage = (name) => {
+        history.push(`/storage/storage-list/${name.toLowerCase()}`);
     };
 
     return (
@@ -32,7 +32,7 @@ const LowerHeader = (props) => {
                         {
                             buttonList.map( button => {
                                 return (
-                                    <p onClick={() => moveToStorage(button.id)} 
+                                    <p onClick={() => moveToStorage(button.name)} 
                                     key={button.id}>{button.name}</p>
                                 )
                             })
