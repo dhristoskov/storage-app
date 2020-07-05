@@ -7,6 +7,7 @@ import { productValidation } from '../../shared-components/productValidation';
 
 const ProductForm = ( props ) => {
 
+    // const fixedName = storageName.replace(/^./, str => str.toUpperCase())
     const { onEdit, 
         addNewProduct, 
         onClearEditHandler,
@@ -14,14 +15,13 @@ const ProductForm = ( props ) => {
         storageName } = props;
 
     const [ errors, setErrors ] = useState({});   
-    const fixedName = storageName.replace(/^./, str => str.toUpperCase())
     const [ showForm, setShowForm ] = useState(false);
     const [ product, setProduct ] = useState({
         name: '',
         price: '',
         qty: '',
         type: '' || 'n.a', // <---Default value if it is not picked
-        storage: fixedName,
+        // storage: fixedName,
         isDone: false
     });
 
@@ -36,11 +36,11 @@ const ProductForm = ( props ) => {
                 price: '',
                 qty: '',
                 type: '' || 'n.a', 
-                storage: fixedName,
+                // storage: fixedName,
                 isDone: false
             });
         }
-    }, [onEdit, fixedName]);
+    }, [onEdit]);
 
     const { name, price, qty, type } = product;
 
@@ -64,7 +64,7 @@ const ProductForm = ( props ) => {
             price: '',
             qty: '',
             type: '' || 'n.a',
-            storage: fixedName,
+            // storage: fixedName,
             isDone: false
         });
     };
