@@ -22,7 +22,7 @@ const StorageSimpleList = (props) => {
                 props.storages.map( item => {
                     return (
                         <div className='simple-item' key={item.id}>
-                            <p>{item.name}</p>
+                            <p>{(item.name).replace(/^./, str => str.toUpperCase())}</p>
                             <div className='simple-btn'>
                                 <button onClick={() => props.showDeleteWarning(item.id)}>
                                     <AiOutlineDelete /></button>

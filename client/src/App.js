@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import './styles/App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import MainHeader from './shared-components/Header/MainHeader';
+import MainHeader from './shared-components/components/Header/MainHeader';
 import NewListPage from './CreateNewList/pages/NewListPage';
 import StoragePage from './StorageList/page/StoragePage';
 import StorageListsPage from './SavedProductLists/pages/SavedListsPage';

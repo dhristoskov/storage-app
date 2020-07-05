@@ -1,6 +1,7 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AiOutlineLogin } from 'react-icons/ai'
+import { AiOutlineLogin } from 'react-icons/ai';
+import axios from '../../../axios';
 
 import Navigation from './Navigation';
 import NavButton from './NavButton';
@@ -10,6 +11,16 @@ const MainHeader = () => {
 
     const [ toggleNav, setToggleNav ] = useState(false);
     const [ toggleStorages, setToggleStorages ] = useState(false);
+    const [ buttonList, setButtonList ] = useState([]);
+
+    useEffect(() => {
+        axios.get('/storage')
+             .then(res => {
+                setButtonList(res.data.storages)
+             }).catch(err => {
+                 console.log(err)
+             });
+    }, []);
 
     //Show Nav-Bar menu
     const toggleNavigation = () => {
@@ -18,7 +29,9 @@ const MainHeader = () => {
 
     //Drop-down storage list
     const toggleStoragesView= () => {
-        setToggleStorages(prevState => !prevState)
+        if(buttonList.length){
+            setToggleStorages(prevState => !prevState);
+        }
     }
 
     return(
@@ -32,7 +45,8 @@ const MainHeader = () => {
                 <div className='login'><NavLink to='/auth'><AiOutlineLogin /></NavLink></div>
             </div>
             <LowerHeader toggleStoragesView={toggleStoragesView}
-                         toggleStorages={toggleStorages}/>    
+                         toggleStorages={toggleStorages}
+                         buttonList={buttonList}/>    
         </Fragment>
     )
 }

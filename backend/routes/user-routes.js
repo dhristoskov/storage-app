@@ -1,7 +1,7 @@
 const express = require('express');
 const { check } = require('express-validator');
 
-// const usersController = require('../controllers/users-controllers');
+const usersController = require('../controllers/user-controller');
 const router = express.Router();
 
 router.post('/register',
@@ -10,7 +10,7 @@ router.post('/register',
         check('email', 'Please provide an email').isEmail().not().isEmpty().isLength({ min: 6 }).normalizeEmail(),
         check('password', 'Password at least 6 character long').isLength({ min: 6 }).trim()
     ],
-    //usersController.registerUser
+    usersController.registerUser
 );
 
 router.post('/login',
@@ -18,7 +18,7 @@ router.post('/login',
         check('email', 'Please provide an email').isEmail().not().isEmpty().isLength({ min: 6 }).normalizeEmail(),
         check('password', 'Password at least 6 character long').isLength({ min: 6 }).trim()
     ],
-    //usersController.loginUser
+    usersController.loginUser
 );
 
 router.get('/check-email')

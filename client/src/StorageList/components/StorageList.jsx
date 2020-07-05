@@ -15,7 +15,7 @@ const StorageList = (props) => {
                 <p className='line'/>
             </div>  
         )   
-    }
+    };
 
     return (
         <div className='storage-wrapper'>
@@ -23,7 +23,7 @@ const StorageList = (props) => {
                 props.storages.map( item => {
                     return (
                         <div className='storage-item' key={item.id}>
-                            <p>{item.name}</p>
+                            <p>{(item.name).replace(/^./, str => str.toUpperCase())}</p>
                             <img src={shop} alt='shop' />
                             <div className='stgs-btn'>
                                 <button onClick={() => props.showDeleteWarning(item.id)}>

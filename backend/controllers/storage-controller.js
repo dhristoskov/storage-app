@@ -26,9 +26,12 @@ const createStorage = async ( req, res ) => {
     }
 
     try {
-        const storage = new Storage({ name });
-        const newStorage = await storage.save();
-        res.status(201).json({ storage: newStorage });
+        const fixedName = name.toLowerCase()
+        const storage = new Storage({ 
+            name: fixedName
+        });
+        await storage.save();
+        res.status(201).json({ storage: storage });
     }catch(err){
         console.error(err.message);
         res.status(500).send({msg: 'Creating a new Storage failed, try again'});
