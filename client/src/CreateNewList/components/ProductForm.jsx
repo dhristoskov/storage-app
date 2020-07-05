@@ -3,7 +3,7 @@ import { AiOutlineMinusCircle,
     AiOutlinePlusCircle, 
     AiOutlineCloseCircle } from 'react-icons/ai';
 
-import { productValidation } from '../../shared-components/productValidation';
+import { productValidation } from '../../shared-components/utils/productValidation';
 
 const ProductForm = ( props ) => {
 

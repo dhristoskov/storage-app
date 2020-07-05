@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import EmailField from './EmailField';
-import { productValidation } from '../../shared-components/productValidation';
+import { productValidation } from '../../shared-components/utils/productValidation';
 const User_Data = [ 'test@test.com', 'mike@mail.com' ];
 
 const CheckUser = (props) => {

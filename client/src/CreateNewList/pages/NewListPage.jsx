@@ -89,7 +89,7 @@ const NewList = () => {
     ])
 
     const addNewProduct = ( item ) => {
-        dispatch({ type:'ADD', product:{ id: uuidv4, ...item }})
+        dispatch({ type:'ADD', product:{ id: uuidv4(), ...item }});
     }
 
     const removeProduct = (pid) => {

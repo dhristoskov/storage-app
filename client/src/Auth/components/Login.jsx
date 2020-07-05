@@ -3,7 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 
 import ConfirmPassword from './ConfirmPassword';
 import EmailField from './EmailField';
-import { productValidation } from '../../shared-components/productValidation';
+import { productValidation } from '../../shared-components/utils/productValidation';
 
 const Login = (props) => {
 
