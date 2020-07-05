@@ -11,7 +11,7 @@ const registerUser = async ( req, res ) => {
         return res.status(422).json({ msg: 'Invalid input, please check your data' });
     }
 
-    const { name, email, password } = req.body;
+    const { username, email, password } = req.body;
 
     let user;
     try {
@@ -34,7 +34,7 @@ const registerUser = async ( req, res ) => {
     }
 
     user = new User({
-        name,
+        username,
         email,
         password: hashedPassword,
         resetToken: '',
@@ -51,7 +51,7 @@ const registerUser = async ( req, res ) => {
     let token;
     try{
         token = jwt.sign(
-            {userId: user.id, name: user.name},
+            {userId: user.id, username: user.username},
             process.env.JWT_SECRET, 
             {expiresIn: '1h'});
     }catch(err){
@@ -59,7 +59,7 @@ const registerUser = async ( req, res ) => {
         res.status(500).send({ msg: 'Server Error' });
     };
 
-    res.status(201).json({userId: user.id, name: user.name, token: token});
+    res.status(201).json({userId: user.id, username: user.username, token: token});
 };
 
 const loginUser = async ( req, res ) => {
@@ -96,7 +96,7 @@ const loginUser = async ( req, res ) => {
     let token;
     try{
         token = jwt.sign(
-            {userId: user.id, name: user.name},
+            {userId: user.id, username: user.username},
             process.env.JWT_SECRET, 
             {expiresIn: '1h'});
     }catch(err){
@@ -104,7 +104,7 @@ const loginUser = async ( req, res ) => {
         res.status(500).send({ msg: 'Server Error' });
     };
 
-    res.json({userId: user.id, name: user.name, token: token});
+    res.json({userId: user.id, username: user.username, token: token});
 };
 
 const checkEmail = async ( req, res ) => {

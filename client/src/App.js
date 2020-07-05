@@ -21,7 +21,7 @@ function App() {
             <Route path='/reset-password' component={ResetPassPage} />
             <Route path='/storage/storage-list/:storageName' component={StorageListsPage} />
             <Route path='/storage/create-list/:storageName' component={NewListPage} />
-            <Route path='/storage' component={StoragePage} />
+            <Route path='/storages' component={StoragePage} />
           </Switch>
       </Router>
     </Fragment>

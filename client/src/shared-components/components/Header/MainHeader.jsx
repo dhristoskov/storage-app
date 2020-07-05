@@ -14,7 +14,7 @@ const MainHeader = () => {
     const [ buttonList, setButtonList ] = useState([]);
 
     useEffect(() => {
-        axios.get('/storage')
+        axios.get('/storages')
              .then(res => {
                 setButtonList(res.data.storages)
              }).catch(err => {

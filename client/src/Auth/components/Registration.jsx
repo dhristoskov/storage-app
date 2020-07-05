@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
-import { useHistory } from 'react-router-dom';
 
 import ConfirmPassword from './ConfirmPassword';
 import EmailField from './EmailField';
@@ -8,7 +7,6 @@ import { productValidation } from '../../shared-components/utils/productValidati
 
 const Registration = (props) => {
 
-    const history = useHistory()
     const [ errors, setErrors ] = useState({});
     const [ register, setRegister ] = useState({
         username: '',
@@ -30,14 +28,13 @@ const Registration = (props) => {
         if(password !== password2){
             setErrors({msg:'Passwords and confirm password does not match'})
         }else{
-            console.log(register)    
+            props.registerUser(register)    
             setRegister({
                 username: '',
                 email: '',
                 password: '',
                 password2: ''
             })
-        history.push('/storage');
         };
     };
 

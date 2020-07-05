@@ -32,7 +32,7 @@ const StoragePage = () => {
     const history = useHistory();
 
     useEffect(() => {
-        axios.get('/storage')
+        axios.get('/storages')
              .then(res => {
                 dispatch({type: 'GET', storages: res.data.storages})
              }).catch(err => {
@@ -41,7 +41,7 @@ const StoragePage = () => {
     }, []);
 
     const addStorage = async ( newStorage ) => {
-        await axios.post('/storage', newStorage,
+        await axios.post('/storages', newStorage,
           { 'Content-Type': 'application/json' })
                    .then(res => {
                        dispatch({ type:'ADD', 
@@ -52,7 +52,7 @@ const StoragePage = () => {
     }
 
     const deleteStorage = async () => {
-        await axios.delete(`/storage/${itemToDelete}`)
+        await axios.delete(`/storages/${itemToDelete}`)
                    .then(res => {
                        dispatch({type: 'DELETE', id: itemToDelete});
                        setShowWarning(false);

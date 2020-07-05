@@ -23,9 +23,12 @@ app.use((req, res, next) => {
     next();
 });
 
+//Product routes
 app.use('/api/produtcs', produtsRoutes);
-app.use('/api/storage', storagesRoutes);
-app.use('/api/user', userRoutes);
+//Storages routes
+app.use('/api/storages', storagesRoutes);
+//User routes
+app.use('/api/users', userRoutes);
 
 
 //Connect to DB - MongoDB
