@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import EmailField from './EmailField';
 import { productValidation } from '../../shared-components/utils/productValidation';
-const User_Data = [ 'test@test.com', 'mike@mail.com' ];
 
 const CheckUser = (props) => {
 
@@ -21,8 +20,7 @@ const CheckUser = (props) => {
 
     const onAuthHandler = (e) => {
         e.preventDefault();
-        const result = User_Data.includes(email);
-        props.onAuthHandler(result);
+        props.onAuthHandler(emailToCheck);
         props.setNewEmail(emailToCheck.email)
         setEmail({
             email: ''

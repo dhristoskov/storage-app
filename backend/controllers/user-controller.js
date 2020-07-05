@@ -107,6 +107,30 @@ const loginUser = async ( req, res ) => {
     res.json({userId: user.id, name: user.name, token: token});
 };
 
+const checkEmail = async ( req, res ) => {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+        return res.status(422).json({ msg: 'Invalid input, please check your data' });
+    }
+
+    const { email } = req.body;
+
+    let isItExist
+    try {
+        isItExist = await User.findOne({ email });
+    }catch(err){
+        console.errors(err.message);
+        res.status(500).send({ msg: 'Server Error' });
+    }
+
+    if(isItExist){
+        return res.json({result: true});
+    }else{
+        return res.json({result: false});
+    }  
+};
+
 
 exports.registerUser = registerUser;
 exports.loginUser = loginUser;
+exports.checkEmail = checkEmail;

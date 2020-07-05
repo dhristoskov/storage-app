@@ -4,6 +4,7 @@ const { check } = require('express-validator');
 const usersController = require('../controllers/user-controller');
 const router = express.Router();
 
+//Register new User
 router.post('/register',
     [
         check('name', 'Please provide a name').not().isEmpty().isLength({ min: 3 }).trim(),
@@ -13,6 +14,7 @@ router.post('/register',
     usersController.registerUser
 );
 
+//Log-in already existing User
 router.post('/login',
     [
         check('email', 'Please provide an email').isEmail().not().isEmpty().isLength({ min: 6 }).normalizeEmail(),
@@ -21,7 +23,14 @@ router.post('/login',
     usersController.loginUser
 );
 
-router.get('/check-email')
+
+//Check if user exist
+router.post('/check-email', 
+    [
+        check('email', 'Please provide an email').isEmail().not().isEmpty().isLength({ min: 6 }).normalizeEmail()
+    ],
+    usersController.checkEmail
+);
 
 // router.post('/update',
 //     [

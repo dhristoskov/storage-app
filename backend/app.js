@@ -5,6 +5,7 @@ const ConnectDB = require('./connectDB');
 //Routes
 const produtsRoutes = require('./routes/product-routes');
 const storagesRoutes = require('./routes/storage-router');
+const userRoutes = require('./routes/user-routes');
 
 const app = express();
 ConnectDB();
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
 
 app.use('/api/produtcs', produtsRoutes);
 app.use('/api/storage', storagesRoutes);
+app.use('/api/user', userRoutes);
 
 
 //Connect to DB - MongoDB
