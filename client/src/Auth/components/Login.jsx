@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import ConfirmPassword from './ConfirmPassword';
 import EmailField from './EmailField';
@@ -7,7 +7,6 @@ import { productValidation } from '../../shared-components/utils/productValidati
 
 const Login = (props) => {
 
-    const history = useHistory();
     const [ errors, setErrors ] = useState({});
     const [ login, setLogin ] = useState({
         email: props.email,
@@ -25,12 +24,11 @@ const Login = (props) => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         if(!errors.email && !errors.password){
-            console.log(login);       
+            props.loginUser(login)
             setLogin({
                 email: '',
                 password: ''
             });
-            history.push('/')  
         }
     };
 

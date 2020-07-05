@@ -22,7 +22,7 @@ const LowerHeader = (props) => {
                             props.buttonList.map( button => {
                                 return (
                                     <p onClick={() => moveToStorage(button.name)} 
-                                    key={button.id}>{button.name}</p>
+                                    key={button.id}>{(button.name).replace(/^./, str => str.toUpperCase())}</p>
                                 )
                             })
                         }
