@@ -7,7 +7,7 @@ import StorageList from '../components/StorageList';
 import StorageCounter from '../components/StorageCounter';
 import StorageSimpleList from '../components/StorageSimpleList';
 import ListButtons from '../components/ListButtons';
-import Modal from '../../shared-components/Modal/Modal';
+import Modal from '../../shared-components/components/Modal/Modal';
 import DeleteWarning from '../components/DeleteWarning';
 
 const storageReducer = ( state, action ) => {

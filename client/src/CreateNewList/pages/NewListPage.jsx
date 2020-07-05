@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useParams } from 'react-router-dom';
+import axios from '../../axios';
 
 import ProductList from '../components/ProductList';
 import ProductForm from '../components/ProductForm';
@@ -17,7 +18,18 @@ const NewList = () => {
 
     //Add Products to Specific Storage
     const currentStorage = products.filter(product =>
-         product.storage.toLowerCase() === storageName.toLowerCase())
+         product.storage.toLowerCase() === storageName.toLowerCase());
+
+    //Upload data to DB
+    const saveListToDB = async () => {
+        await axios.post('/archive', {data: currentStorage},
+                {'Content-Type': 'application/json'})
+                   .then(res => {
+                       console.log(res.data)
+                   }).catch(err => {
+                       console.log(err)
+                   });
+    }     
 
     const addNewProduct = ( item ) => {
         dispatch({ type:'ADD', product:{ id: uuidv4(), ...item }});
@@ -81,7 +93,7 @@ const NewList = () => {
             onHighPrice={onHighPrice}
             onLowPrice={onLowPrice}
             editHandler={editHandler}/>    
-            <SaveButtons />           
+            <SaveButtons saveListToDB={saveListToDB}/>           
         </div>
     )
 }
