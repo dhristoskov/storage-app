@@ -7,7 +7,7 @@ import { AiOutlineDelete,
 import { GoIssueOpened, GoHistory } from 'react-icons/go';    
 import { FaMoneyBillWave } from 'react-icons/fa';
 
-import PriorityBtns from '../../shared-components/Buttons/PriorityBtns';
+import PriorityBtns from '../../shared-components/components/Buttons/PriorityBtns';
 
 //Priority options map
 const PRIORITES = {
