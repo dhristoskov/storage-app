@@ -58,9 +58,9 @@ const addToArchive = async ( req, res ) => {
     //         bulk.insert(el);
     //         listCounter--;
 
-    //         if(studentsCounter % 1000 === 0){
+    //         if(listCounter % 1000 === 0){
     //             bulk.execute()
-    //             bulk = Student.collection.initializeOrderedBulkOp();
+    //             bulk = Archive.collection.initializeOrderedBulkOp();
     //         }
     //         if(listCounter === 0){
     //             bulk.execute();
