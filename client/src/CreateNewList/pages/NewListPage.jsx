@@ -22,6 +22,12 @@ const NewList = () => {
 
     //Upload data to DB
     const saveListToDB = async () => {
+        // const data = {
+        //     storage: storageName,
+        //     addDate: Date.now(),
+        //     data: currentStorage <-- Add Archive Storage Item to DB
+        // }
+
         await axios.post('/archive', {data: currentStorage},
                 {'Content-Type': 'application/json'})
                    .then(res => {
