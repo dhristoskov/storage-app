@@ -1,4 +1,4 @@
-import React, { useReducer, useState, Fragment, useEffect } from 'react';
+import React, { useState, Fragment, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from '../../axios';
 
@@ -9,23 +9,11 @@ import StorageSimpleList from '../components/StorageSimpleList';
 import ListButtons from '../components/ListButtons';
 import Modal from '../../shared-components/components/Modal/Modal';
 import DeleteWarning from '../components/DeleteWarning';
-
-const storageReducer = ( state, action ) => {
-    switch(action.type){
-        case 'GET':
-            return action.storages;
-        case 'ADD':
-            return [...state, action.storage ]
-        case 'DELETE':
-            return state.filter(storage => storage.id !== action.id);
-        default:
-            return state;
-    }
-};
+import { StorageContext } from '../../shared-components/contexts/StorageContext/storageContext';
 
 const StoragePage = () => {
 
-    const [ storages, dispatch ] = useReducer(storageReducer, []);
+    const { storages, dispatch } = useContext(StorageContext);
     const [showWarning, setShowWarning ] = useState(false);
     const [ itemToDelete, setItemToDelete ] = useState(null);
     const [ detailList, setDetailList ] = useState(true)
@@ -38,7 +26,7 @@ const StoragePage = () => {
              }).catch(err => {
                  console.log(err)
              })
-    }, []);
+    }, [dispatch]);
 
     const addStorage = async ( newStorage ) => {
         await axios.post('/storages', newStorage,
