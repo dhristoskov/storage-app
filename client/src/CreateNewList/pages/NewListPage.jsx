@@ -22,13 +22,13 @@ const NewList = () => {
 
     //Upload data to DB
     const saveListToDB = async () => {
-        // const data = {
-        //     storage: storageName,
-        //     addDate: Date.now(),
-        //     data: currentStorage <-- Add Archive Storage Item to DB
-        // }
+        const dataToSave = {
+            name: storageName,
+            addDate: Date.now(),
+            data: currentStorage
+        }
 
-        await axios.post('/archive', {data: currentStorage},
+        await axios.post('/archive', dataToSave,
                 {'Content-Type': 'application/json'})
                    .then(res => {
                        console.log(res.data)
