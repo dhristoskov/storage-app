@@ -1570,6 +1570,42 @@ html {
   }
 }
 
+.date-container {
+  width: 15%;
+  margin: 0 auto 15px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.date-container .date-picker {
+  background: #D2DDBB;
+  border: 1px solid blue;
+  border-radius: 20px;
+  outline: none;
+  padding: 7px 0;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.date-container .date-info {
+  color: blue;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
 .storage-main {
   width: 55%;
   display: -webkit-box;

@@ -1,0 +1,24 @@
+.date-container{
+    width: 15%;
+    margin:0 auto 15px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .date-picker {
+        background: #D2DDBB;
+        border: 1px solid blue;
+        border-radius: 20px;
+        outline: none;
+        padding: 7px 0;
+        text-align: center;
+        margin: auto;
+        cursor: pointer;
+    }
+    .date-info{
+        color: blue;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+}

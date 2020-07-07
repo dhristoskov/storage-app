@@ -8,13 +8,17 @@ const DatePickerForm = (props) => {
     const [startDate, setStartDate] = useState(new Date());
 
     return (
-        <DatePicker
-            selected={startDate}
-            onChange={date => setStartDate(date)}
-            minDate={Date.now()}
-            dateFormat="dd/MM/yyyy"
-            placeholderText="Click to select a date"
-        />
+        <div className='date-container'>
+            <p className='date-info'>Enter list Date</p>
+            <DatePicker
+                selected={startDate}
+                onChange={date => setStartDate(date)}
+                minDate={Date.now()}
+                dateFormat="dd/MM/yyyy"
+                placeholderText="Click to select a date"
+                className="date-picker"
+            />
+        </div>
     )
 }
 
