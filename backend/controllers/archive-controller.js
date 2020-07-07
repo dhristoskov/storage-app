@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
 const Archive = require('../models/archive');
 const Storage = require('../models/storage');
@@ -53,8 +53,6 @@ const addToArchive = async ( req, res ) => {
         return prev + (cur.price * cur.qty)
     }, 0);
 
-    console.log(totalListPrice)
-
     //   const archive = new Archive({
     //         storage: storageToCheck._id,
     //         addDate,
@@ -63,7 +61,7 @@ const addToArchive = async ( req, res ) => {
 
     try{
         //Need to be not a local server 
-        // const session = await mongoose.startSession(); <--To be add later on global server
+        // const session = await mongoose.startSession(); <--To be added later on global server
         // session.startTransaction();
         // await archive.save({session: session});
         // storageToCheck.archives.push(archive);

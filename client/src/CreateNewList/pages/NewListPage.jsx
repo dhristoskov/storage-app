@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useParams } from 'react-router-dom';
 import axios from '../../axios';
 
+import DatePicker from '../components/DatePickerForm';
 import ProductList from '../components/ProductList';
 import ProductForm from '../components/ProductForm';
 import SaveButtons from '../../shared-components/components/Buttons/SaveButtons';
@@ -84,6 +85,7 @@ const NewList = () => {
     return (
         <div className='main-wrapper'>     
             <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
+            <DatePicker />
             <ProductForm addNewProduct={addNewProduct}
             onClearEditHandler={onClearEditHandler}
             onUpdateHandler={onUpdateHandler}
