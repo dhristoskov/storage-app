@@ -69,6 +69,7 @@ const ProductForm = ( props ) => {
         });
     };
 
+    //Open - Close products form
     const onFormHandler = () => {
         setShowForm(prevState => !prevState);
     };

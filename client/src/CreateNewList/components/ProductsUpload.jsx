@@ -40,10 +40,12 @@ const ProductsUpload = (props) => {
         addUploaded();
     };
 
+    //Show upload form
     const onFormHandler = () => {
         setShowForm(prevState => !prevState);
     };
 
+    //Add products to list 
     const addUploaded = () => {
         let storageNames = storages.map(e => e.name);
         if(file){

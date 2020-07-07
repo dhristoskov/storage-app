@@ -11,7 +11,7 @@ const ResetPassPage = () => {
     const onSubmitHandle = (e) => {
         e.preventDefault();
         setEmail('');
-        history.push('/') //<-- Remove
+        history.push('/') //<-- Remove leter
     };
 
     return(

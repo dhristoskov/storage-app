@@ -69,7 +69,7 @@ const addToArchive = async ( req, res ) => {
         // await session.commitTransaction();
 
         const archive = new Archive({
-            storage: storageToCheck._id,
+            storage: storageToCheck,
             totalListPrice: parseFloat(totalListPrice).toFixed(2),
             totalListVat: parseFloat(totalListPrice * (1 + taxes / 100)).toFixed(2),
             addDate,
@@ -108,4 +108,9 @@ const addToArchive = async ( req, res ) => {
     // }
 };
 
+const getListsByStorageName = async ( req, res ) => {
+    //ToDo
+};
+
 exports.addToArchive = addToArchive;
+exports.getListsByStorageName = getListsByStorageName;
