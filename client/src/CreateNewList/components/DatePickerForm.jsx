@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
 const DatePickerForm = (props) => {
 
-    const [startDate, setStartDate] = useState(new Date());
-
     return (
         <div className='date-container'>
             <p className='date-info'>Enter list Date</p>
             <DatePicker
-                selected={startDate}
-                onChange={date => setStartDate(date)}
+                selected={props.expDate}
+                onChange={date => props.setExpDate(date)}
                 minDate={Date.now()}
                 dateFormat="dd/MM/yyyy"
                 placeholderText="Click to select a date"

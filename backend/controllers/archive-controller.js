@@ -11,7 +11,7 @@ const addToArchive = async ( req, res ) => {
         return res.status(422).json({msg: 'Invalid inputs, please check your data.'});
     }
 
-    const { name, addDate, data } = req.body;
+    const { name, addDate, expDate, data } = req.body;
 
     let storageToCheck;
     try{
@@ -73,6 +73,7 @@ const addToArchive = async ( req, res ) => {
             totalListPrice: parseFloat(totalListPrice).toFixed(2),
             totalListVat: parseFloat(totalListPrice * (1 + taxes / 100)).toFixed(2),
             addDate,
+            expDate,
             products: productList
         });
 

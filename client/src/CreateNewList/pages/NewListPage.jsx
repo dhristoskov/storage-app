@@ -16,16 +16,18 @@ const NewList = () => {
     const { storageName } = useParams(); 
     const fixedName = storageName.replace(/^./, str => str.toUpperCase());
     const [ onEdit, setOnEdit ] = useState();
+    const [ expDate, setExpDate ] = useState(new Date());
 
     //Add Products to Specific Storage
     const currentStorage = products.filter(product =>
-         product.storage.toLowerCase() === storageName.toLowerCase());
+         product.storage.toLowerCase() === storageName);
 
     //Upload data to DB
     const saveListToDB = async () => {
         const dataToSave = {
             name: storageName,
             addDate: Date.now(),
+            expDate: '' || expDate,
             data: currentStorage
         }
 
@@ -85,7 +87,8 @@ const NewList = () => {
     return (
         <div className='main-wrapper'>     
             <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
-            <DatePicker />
+            <DatePicker expDate={expDate}
+                   setExpDate={setExpDate}/>
             <ProductForm addNewProduct={addNewProduct}
             onClearEditHandler={onClearEditHandler}
             onUpdateHandler={onUpdateHandler}

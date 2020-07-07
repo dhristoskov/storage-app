@@ -5,7 +5,7 @@ const archivSchema = new mongoose.Schema({
     addDate: { type: Date, default: Date.now, required: true},
     totalListPrice: { type: Number, required: true },
     totalListVat: { type: Number, required: true },
-    //expDate: { type: Date },
+    expDate: { type: Date },
     //creator: {type: mongoose.Types.ObjectId, required: true, ref: 'User'},
     products:[{
         name:{ type: String, required: true, minlength: 2 },
