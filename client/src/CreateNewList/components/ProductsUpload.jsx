@@ -46,7 +46,6 @@ const ProductsUpload = (props) => {
 
     const addUploaded = () => {
         let storageNames = storages.map(e => e.name);
-        console.log(storageNames)
         if(file){
             const array = previewText.toString().split("\n").map(item => item.trim());
             for(let i = 0; i < array.length; i++) {
@@ -54,19 +53,19 @@ const ProductsUpload = (props) => {
                 const [ name, price, qty, type, storage ] = line;
 
                 //Add new Storage if not exist
-                // if(!storageNames.includes(storage.toLowerCase())){
-                //         const data = {
-                //             name: storage.toLowerCase()
-                //         }
-                //         axios.post('/storages', data,
-                //              { 'Content-Type': 'application/json' })
-                //              .then(res => {
-                //               dispatch({ type:'ADD', 
-                //               storage: {id: res.data.storage._id, ...res.data.storage}})
-                //             }).catch(err => {
-                //                 console.log(err)
-                //             });
-                // }
+                if(!storageNames.includes(storage.toLowerCase())){
+                        const data = {
+                            name: storage
+                        }
+                        axios.post('/storages', data,
+                             { 'Content-Type': 'application/json' })
+                             .then(res => {
+                              dispatch({ type:'ADD', 
+                              storage: {id: res.data.storage._id, ...res.data.storage}})
+                            }).catch(err => {
+                                console.log(err)
+                            });
+                }
   
                 const product = {
                     name,
@@ -74,8 +73,7 @@ const ProductsUpload = (props) => {
                     qty,
                     type,
                     storage,
-                    isDone: false,
-                    priority: null
+                    isDone: false
                 };    
                 props.addNewProduct(product);
             }

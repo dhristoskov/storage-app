@@ -23,6 +23,7 @@ const ProductItem = (props) => {
     const [ toggledPrice, setToggledPrice ] = useState(false);
     const taxes = 20;
 
+    const fixedName = props.storage.replace(/^./, str => str.toUpperCase())
     const price = parseFloat(props.price).toFixed(2);
     const totalPrice = parseFloat(price * props.qty).toFixed(2);
     const priceWithVat = parseFloat(props.price * (1 + taxes / 100)).toFixed(2);
@@ -50,7 +51,7 @@ const ProductItem = (props) => {
             <span className='vat-icon' onClick={togglePrice}><FaMoneyBillWave/></span></p>
             <p className='quantity'>{props.qty}</p>
             <p className='type'>/ {props.type}</p>
-            <p className='storage'>{props.storage}</p>
+            <p className='storage'>{fixedName}</p>
             <p className='total'>{totalPrice} €</p>
             <div className='settings'>
                 <p onClick={props.removeProduct}><AiOutlineDelete /></p>

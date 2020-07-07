@@ -22,8 +22,7 @@ const ProductForm = ( props ) => {
         qty: '',
         type: '' || 'n.a', // <---Default value if it is not picked
         storage: fixedName,
-        isDone: false,
-        priority: null
+        isDone: false
     });
 
     //Checking if edit is not null
@@ -38,8 +37,7 @@ const ProductForm = ( props ) => {
                 qty: '',
                 type: '' || 'n.a', 
                 storage: fixedName,
-                isDone: false,
-                priority: null
+                isDone: false
             });
         }
     }, [onEdit, fixedName]);
@@ -67,8 +65,7 @@ const ProductForm = ( props ) => {
             qty: '',
             type: '' || 'n.a',
             storage: fixedName,
-            isDone: false,
-            priority: null
+            isDone: false
         });
     };
 

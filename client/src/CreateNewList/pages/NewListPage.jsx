@@ -20,7 +20,7 @@ const NewList = () => {
 
     //Add Products to Specific Storage
     const currentStorage = products.filter(product =>
-         product.storage.toLowerCase() === storageName);
+         product.storage === storageName);
 
     //Upload data to DB
     const saveListToDB = async () => {
