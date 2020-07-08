@@ -8,7 +8,7 @@ import StorageCounter from '../components/StorageCounter';
 import StorageSimpleList from '../components/StorageSimpleList';
 import ListButtons from '../components/ListButtons';
 import Modal from '../../shared-components/components/Modal/Modal';
-import DeleteWarning from '../components/DeleteWarning';
+import DeleteWarning from '../../shared-components/components/DeleteWarning/DeleteWarning';
 import { StorageContext } from '../../shared-components/contexts/StorageContext/storageContext';
 
 const StoragePage = () => {
@@ -96,7 +96,7 @@ const StoragePage = () => {
             {
                 showWarning &&   
                 <Modal removeModal={hideDeleteWarning}>
-                    <DeleteWarning 
+                    <DeleteWarning msg={'Do you want to proceed and delete this storage? Please note that it cant be undone thereafter.And you will lose all entries'}
                     delete={deleteStorage}
                     cancel={hideDeleteWarning}/>
                 </Modal>

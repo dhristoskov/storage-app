@@ -21,7 +21,7 @@ const SavedListItem = (props) => {
                 <p className='price'>Price: {props.totalListPrice} €</p>
                 <p className='vatPrice'>Price: {props.totalListVat} €/vat</p>
                 <div className='detail-settings'>
-                    <p><AiOutlineDelete /></p>
+                    <p onClick={props.showDeleteWarning}><AiOutlineDelete /></p>
                     <p onClick={onDetailsHandler}><AiOutlineDown /></p>                      
                 </div>
             </div>

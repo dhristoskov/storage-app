@@ -4,10 +4,14 @@ import { useParams } from 'react-router-dom';
 
 import SavedProductsList from '../components/SavedProductsList';
 import Loader from '../../shared-components/components/Loader/Loader';
+import Modal from '../../shared-components/components/Modal/Modal';
+import DeleteWarning from '../../shared-components/components/DeleteWarning/DeleteWarning';
 //import ProductStat from '../../shared-components/ProductStat/ProductStat';
 
 const StorageListsPage = () => {
   
+    const [showWarning, setShowWarning ] = useState(false);
+    const [ setItemToDelete ] = useState(null); //To be added --- itemToDelete
     const [ isLoading, setIsLoading ] = useState(false);
     const [ savedLists, setSavedLists ] = useState([])
     const { storageName } = useParams();
@@ -25,22 +29,53 @@ const StorageListsPage = () => {
                 setIsLoading(false);
                 console.log(err)
              })
-    }, [storageName])
+    }, [storageName]);
+
+    // const deleteStorage = async () => {
+    //     await axios.delete(`/archive/${itemToDelete}`)
+    //                .then(res => {
+    //                    //dispatch({type: 'DELETE', id: itemToDelete});
+    //                    setShowWarning(false);
+    //                }).catch(err => {
+    //                 console.log(err)
+    //                });
+    // };
+
+    const showDeleteWarning = (storageId) => {
+        setShowWarning(true);
+        setItemToDelete(storageId);
+    };
+
+    const hideDeleteWarning = () => {
+        setShowWarning(false);
+        setItemToDelete(null)
+    };
 
     return (
-        <div className='main-wrapper'>
-            {
-                isLoading 
-                ? <Loader />
-                :
-                <Fragment>
-                    <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
-                    <SavedProductsList savedLists={savedLists}
-                                    fixedName={fixedName}/>
-                </Fragment>
+        <Fragment>
+             {
+                showWarning &&   
+                <Modal removeModal={hideDeleteWarning}>
+                    <DeleteWarning msg={'Do you want to proceed and delete this list? Please note that it cant be undone thereafter.And you will lose all data'}
+                    //delete={deleteStorage}
+                    cancel={hideDeleteWarning}/>
+                </Modal>
             }
-            {/* <ProductStat /> */}
-        </div>
+            <div className='main-wrapper'>
+                {
+                    isLoading 
+                    ? <Loader />
+                    :
+                    <Fragment>
+                        <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
+                        <SavedProductsList savedLists={savedLists}
+                                showDeleteWarning={showDeleteWarning}
+                                fixedName={fixedName}/>
+                    </Fragment>
+                }
+                {/* <ProductStat /> */}
+            </div>
+        </Fragment>
     )
 }
 

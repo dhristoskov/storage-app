@@ -25,7 +25,8 @@ const SavedProductsList = (props) => {
                         totalListPrice={list.totalListPrice}
                         totalListVat={list.totalListVat}
                         expDate={list.expDate}
-                        products={list.products}/>
+                        products={list.products}
+                        showDeleteWarning={() => props.showDeleteWarning(list.id)}/>
                     )
                 })
             }

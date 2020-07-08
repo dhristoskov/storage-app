@@ -121,7 +121,7 @@ const getListsByStorageName = async ( req, res ) => {
 
     let storageLists
     try{
-        storageLists =await Archive.find({storage: archive})
+        storageLists = await Archive.find({storage: archive}).sort({expDate: 1})
     }catch(err){
         console.error(err.message);
         res.status(500).send('Server error!');
@@ -138,7 +138,7 @@ const getListsByStorageName = async ( req, res ) => {
 const getAllLists = async ( req, res ) => {
     let allLists;
     try{
-        allLists = Archive.find({}).sort({expDate: 1})
+        allLists = await Archive.find({}).sort({expDate: 1})
     }catch(err){
         console.error(err.message);
         res.status(500).send('Server error!');
