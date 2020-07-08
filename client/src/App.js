@@ -11,6 +11,7 @@ import AuthPage from './Auth/pages/AuthPage';
 import ResetPassPage from './Auth/pages/ResetPassPage';
 import ProductsContextProcider from './shared-components/contexts/ProductsContext/productsContext';
 import StorageContextProvider from './shared-components/contexts/StorageContext/storageContext';
+import AllSavedLists from './SavedProductLists/pages/AllSavedLists';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path='/storage/storage-list/:storageName' component={StorageListsPage} />
                 <Route path='/storage/create-list/:storageName' component={NewListPage} />
                 <Route path='/storages' component={StoragePage} />
+                <Route path='/all-lists' component={AllSavedLists} />
               </Switch>
           </StorageContextProvider>
         </ProductsContextProcider>

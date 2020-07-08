@@ -34,8 +34,8 @@ const ProductItem = (props) => {
     };
 
     //Check the priority option
-    const priorityHandler = (priority) => {
-        setIcon(PRIORITES[priority])
+    const priorityHandler = (newPriority) => {
+        setIcon(PRIORITES[newPriority]);
     };
 
     //Toggle between price with taxes and without taxes

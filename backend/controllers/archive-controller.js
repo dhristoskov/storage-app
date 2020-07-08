@@ -134,5 +134,23 @@ const getListsByStorageName = async ( req, res ) => {
     res.json({ lists: storageLists.map(list => list.toObject({ getters: true })) });
 };
 
+//Get all avaliable Lists
+const getAllLists = async ( req, res ) => {
+    let allLists;
+    try{
+        allLists = Archive.find({}).sort({expDate: 1})
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error!');
+    }
+
+    if(!allLists || allLists === 0){
+        return res.status(404).json({msg: 'Could not find any lists.'});
+    }
+
+    res.json({ lists: allLists.map(list => list.toObject({ getters: true })) });
+};
+
 exports.addToArchive = addToArchive;
 exports.getListsByStorageName = getListsByStorageName;
+exports.getAllLists = getAllLists;

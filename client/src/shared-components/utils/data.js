@@ -13,7 +13,7 @@ export const DATA = [
                 qty: 25,
                 type: 'psc',
                 storage: 'Dragor',
-                isDone: false
+                isDone: false              
             },
             {
                 id: '02',
