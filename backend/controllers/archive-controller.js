@@ -108,8 +108,30 @@ const addToArchive = async ( req, res ) => {
     // }
 };
 
+//Get Lists by Storage Name <-- will be remade later by ID
 const getListsByStorageName = async ( req, res ) => {
-    //ToDo
+    
+    let archive;
+    try{
+        archive = await Storage.find({name: req.params.name})
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error!');
+    }
+
+    let storageLists
+    try{
+        storageLists =await Archive.find({storage: archive})
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error!');
+    }
+
+    if(!storageLists || storageLists === 0){
+        return res.status(404).json({msg: 'Could not find any lists with this storage name.'});
+    }
+
+    res.json({ lists: storageLists.map(list => list.toObject({ getters: true })) });
 };
 
 exports.addToArchive = addToArchive;

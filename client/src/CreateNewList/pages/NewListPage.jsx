@@ -20,7 +20,7 @@ const NewList = () => {
 
     //Add Products to Specific Storage
     const currentStorage = products.filter(product =>
-         product.storage === storageName);
+         product.storage.toLowerCase() === storageName);
 
     //Upload data to DB
     const saveListToDB = async () => {
@@ -90,10 +90,10 @@ const NewList = () => {
             <DatePicker expDate={expDate}
                    setExpDate={setExpDate}/>
             <ProductForm addNewProduct={addNewProduct}
-            onClearEditHandler={onClearEditHandler}
-            onUpdateHandler={onUpdateHandler}
-            storageName={storageName}
-            onEdit={onEdit}/>   
+                    onClearEditHandler={onClearEditHandler}
+                    onUpdateHandler={onUpdateHandler}
+                    storageName={storageName}
+                    onEdit={onEdit}/>   
             <ProductsUpload addNewProduct={addNewProduct}/>             
             <ProductList products={currentStorage}
             removeProduct={removeProduct}

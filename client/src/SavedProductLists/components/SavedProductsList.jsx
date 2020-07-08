@@ -20,10 +20,11 @@ const SavedProductsList = (props) => {
                 props.savedLists.map(list => {
                     return (
                         <SavedListItem key={list.id}
-                        storage={list.storage}
-                        data={list.data}
-                        totalPrice={list.totalPrice}
-                        totalVat={list.totalVat}
+                        storage={props.fixedName}
+                        addDate={list.addDate}
+                        totalListPrice={list.totalListPrice}
+                        totalListVat={list.totalListVat}
+                        expDate={list.expDate}
                         products={list.products}/>
                     )
                 })

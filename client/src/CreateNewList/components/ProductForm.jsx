@@ -58,6 +58,7 @@ const ProductForm = ( props ) => {
             addNewProduct(product) 
         }else{
             onUpdateHandler(product)
+            console.log(product)
         }
         setProduct({
             name: '',
@@ -113,10 +114,3 @@ const ProductForm = ( props ) => {
 }
 
 export default ProductForm;
-
-// id: '04',
-// name: 'Oranges',
-// price: 1.55,
-// qty: 55,
-// type: 'kg',
-// storage: 'Storage Two'
