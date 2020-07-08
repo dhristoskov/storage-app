@@ -3,7 +3,6 @@ import axios from '../../axios';
 import { useParams } from 'react-router-dom';
 
 import SavedProductsList from '../components/SavedProductsList';
-//import { DATA } from '../../shared-components/utils/data';
 //import ProductStat from '../../shared-components/ProductStat/ProductStat';
 
 const StorageListsPage = () => {

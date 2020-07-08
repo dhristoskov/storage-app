@@ -1185,16 +1185,16 @@ html {
 }
 
 .storage-list-item .storageName {
-  width: 25%;
+  width: 24%;
   text-align: start;
 }
 
 .storage-list-item .price {
-  width: 20%;
+  width: 23%;
 }
 
 .storage-list-item .vatPrice {
-  width: 20%;
+  width: 23%;
 }
 
 .storage-list-item .data {
@@ -1209,7 +1209,7 @@ html {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  width: 15%;
+  width: 10%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
