@@ -84,6 +84,15 @@
     }
     .total {
         width: 20%;
+        position: relative;
+        text-align: center;
+        .total-vat-icon{
+            position: absolute;
+            top: 2px;
+            right: 10px;
+            color: #9ba585;
+            cursor: pointer;
+        }
     }
     .settings {
         position: relative;

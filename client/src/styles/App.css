@@ -1280,6 +1280,16 @@ html {
 
 .product-instorage-wrapper .total {
   width: 20%;
+  position: relative;
+  text-align: center;
+}
+
+.product-instorage-wrapper .total .total-vat-icon {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  color: #9ba585;
+  cursor: pointer;
 }
 
 .product-instorage-wrapper .settings {
