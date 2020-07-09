@@ -35,7 +35,9 @@ const SavedListItem = (props) => {
                                 <SavedProductItem key={product.id}
                                 name={product.name}
                                 price={product.price}
-                                priceWithVat={product.priceWithVat}
+                                priceVat={product.priceVat}
+                                totalPrice={product.totalPrice}
+                                totalVat={product.totalVat}
                                 qty={product.qty}
                                 type={product.type}
                                 storage={product.storage}

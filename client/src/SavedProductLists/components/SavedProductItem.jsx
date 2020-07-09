@@ -1,40 +1,38 @@
 import React, { useState } from 'react';
-import { AiOutlineDelete, 
-    AiOutlineEdit, 
-    AiOutlineCheckCircle, 
-    AiOutlineUndo } from 'react-icons/ai';
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 import { FaMoneyBillWave } from 'react-icons/fa';
 
 const SavedProductItem = (props) => {
 
     const [ toggledPrice, setToggledPrice ] = useState(false);
-    const taxes = 20;
+    const [ toggledTotalPrice, setToggledTotalPrice ] = useState(false);
 
     const price = parseFloat(props.price).toFixed(2);
-    const totalPrice = parseFloat(price * props.qty).toFixed(2);
-    const priceWithVat = parseFloat(props.price * (1 + taxes / 100)).toFixed(2);
+    const priceVat = parseFloat(props.priceVat).toFixed(2);
+    const totalPrice = parseFloat(props.totalPrice).toFixed(2);
+    const totalVat = parseFloat(props.totalVat).toFixed(2);
 
     const togglePrice = () => {
         setToggledPrice(prevState => !prevState)
+    };
+
+    const toggleTotalPrice = () => {
+        setToggledTotalPrice(prevState => !prevState)
     };
 
     return(
         <div className='product-instorage-wrapper' 
         style={props.isDone ? {background: '#D2DDBB', color: 'white'} : null}>
             <p className='name'>{props.name}</p>
-            <p className='price'>{toggledPrice ?  priceWithVat : price } { toggledPrice ? '€/vat' : '€'}
+            <p className='price'>{toggledPrice ?  priceVat : price } { toggledPrice ? '€/vat' : '€'}
             <span className='vat-icon' onClick={togglePrice}><FaMoneyBillWave/></span></p>
             <p className='quantity'>{props.qty}</p>
             <p className='type'>/ {props.type}</p>
-            <p className='total'>{totalPrice} €</p>
+            <p className='total'>{toggledTotalPrice ?  totalVat : totalPrice } { toggledTotalPrice ? '€/vat' : '€'}
+            <span className='total-vat-icon' onClick={toggleTotalPrice}><FaMoneyBillWave/></span></p>
             <div className='settings'>
                 <p><AiOutlineDelete /></p>
-                <p><AiOutlineEdit /></p>
-                {
-                    props.isDone 
-                    ? <p><AiOutlineUndo /></p>
-                    : <p><AiOutlineCheckCircle /></p>
-                }                         
+                <p><AiOutlineEdit /></p>                 
             </div>
         </div>
     )

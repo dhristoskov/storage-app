@@ -11,7 +11,7 @@ import DeleteWarning from '../../shared-components/components/DeleteWarning/Dele
 const StorageListsPage = () => {
   
     const [showWarning, setShowWarning ] = useState(false);
-    const [ setItemToDelete ] = useState(null); //To be added --- itemToDelete
+    const [ itemToDelete, setItemToDelete ] = useState(null); 
     const [ isLoading, setIsLoading ] = useState(false);
     const [ savedLists, setSavedLists ] = useState([])
     const { storageName } = useParams();
@@ -31,15 +31,17 @@ const StorageListsPage = () => {
              })
     }, [storageName]);
 
-    // const deleteStorage = async () => {
-    //     await axios.delete(`/archive/${itemToDelete}`)
-    //                .then(res => {
-    //                    //dispatch({type: 'DELETE', id: itemToDelete});
-    //                    setShowWarning(false);
-    //                }).catch(err => {
-    //                 console.log(err)
-    //                });
-    // };
+    const deleteStorageList = async () => {
+        await axios.delete(`/archive/${itemToDelete}`)
+                   .then(res => {
+                       setShowWarning(false);
+                       //To be removed later
+                       const newList = savedLists.filter(list => list.id !== itemToDelete);
+                       setSavedLists(newList);
+                   }).catch(err => {
+                    console.log(err)
+                   });
+    };
 
     const showDeleteWarning = (storageId) => {
         setShowWarning(true);
@@ -57,7 +59,7 @@ const StorageListsPage = () => {
                 showWarning &&   
                 <Modal removeModal={hideDeleteWarning}>
                     <DeleteWarning msg={'Do you want to proceed and delete this list? Please note that it cant be undone thereafter.And you will lose all data'}
-                    //delete={deleteStorage}
+                    delete={deleteStorageList}
                     cancel={hideDeleteWarning}/>
                 </Modal>
             }

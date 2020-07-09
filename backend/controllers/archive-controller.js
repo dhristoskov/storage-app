@@ -151,6 +151,31 @@ const getAllLists = async ( req, res ) => {
     res.json({ lists: allLists.map(list => list.toObject({ getters: true })) });
 };
 
+//Delete single list 
+const deleteListById = async ( req, res ) => {
+    let listToDelete
+    try{
+        listToDelete = Archive.findById(req.params.id)
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error!');
+    }
+
+    if (!listToDelete) {
+        return res.status(404).json({ msg: 'List not found' });
+    }
+
+    try{
+        await Archive.findByIdAndRemove(req.params.id);      
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error!');
+    }
+
+    res.send('List successfully removed');
+};
+
 exports.addToArchive = addToArchive;
 exports.getListsByStorageName = getListsByStorageName;
 exports.getAllLists = getAllLists;
+exports.deleteListById = deleteListById;

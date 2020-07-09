@@ -58,7 +58,6 @@ const ProductForm = ( props ) => {
             addNewProduct(product) 
         }else{
             onUpdateHandler(product)
-            console.log(product)
         }
         setProduct({
             name: '',

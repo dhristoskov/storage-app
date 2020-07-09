@@ -7,5 +7,6 @@ const router = express.Router();
 router.post('/', archivesController.addToArchive);
 router.get('/:name', archivesController.getListsByStorageName);
 router.get('/', archivesController.getAllLists);
+router.delete('/:id', archivesController.deleteListById);
 
 module.exports = router;
