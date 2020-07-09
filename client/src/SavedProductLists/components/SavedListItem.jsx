@@ -18,8 +18,8 @@ const SavedListItem = (props) => {
             <div className='storage-list-item' style={showDetails ? {backgroundColor: '#D2DDBB'} : null}>
                 <p className='storageName'>{props.storage}</p>
                 <p className='data'>Date: {expDate}</p>
-                <p className='price'>Price: {props.totalListPrice} €</p>
-                <p className='vatPrice'>Price: {props.totalListVat} €/vat</p>
+                <p className='price'>Price: {parseFloat(props.totalListPrice).toFixed(2)} €</p>
+                <p className='vatPrice'>Price: {parseFloat(props.totalListVat).toFixed(2)} €/vat</p>
                 <div className='detail-settings'>
                     <p onClick={props.showDeleteWarning}><AiOutlineDelete /></p>
                     <p onClick={onDetailsHandler}><AiOutlineDown /></p>                      
