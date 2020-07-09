@@ -43,10 +43,6 @@ const StorageListsPage = () => {
                    });
     };
 
-    const deleteSingleItem = async (sid, eid) => {
-        console.log(id)
-    };
-
     const showDeleteWarning = (storageId) => {
         setShowWarning(true);
         setItemToDelete(storageId);
@@ -76,8 +72,7 @@ const StorageListsPage = () => {
                         <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
                         <SavedProductsList savedLists={savedLists}
                                 showDeleteWarning={showDeleteWarning}
-                                fixedName={fixedName}
-                                deleteSingleItem={deleteSingleItem}/>
+                                fixedName={fixedName}/>
                     </Fragment>
                 }
                 {/* <ProductStat /> */}
