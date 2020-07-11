@@ -15,10 +15,9 @@ import Loader from '../../shared-components/components/Loader/Loader';
 
 const StoragePage = () => {
 
-    const { storages, dispatch } = useContext(StorageContext);
+    const { storages, dispatch, detailList, showDetailedList, showSimpleList } = useContext(StorageContext);
     const [showWarning, setShowWarning ] = useState(false);
     const [ itemToDelete, setItemToDelete ] = useState(null);
-    const [ detailList, setDetailList ] = useState(true);
     const [ isLoading, setIsLoading ] = useState(false);
     const history = useHistory();
 
@@ -69,14 +68,6 @@ const StoragePage = () => {
     //Move to Create List page
     const moveToCreateList = (id) => {
         history.push(`/storage/create-list/${id}`);
-    };
-
-    const showDetailedList = () => {
-        setDetailList(true)
-    };
-
-    const showSimpleList = () => {
-        setDetailList(false)
     };
 
     const showDeleteWarning = (storageId) => {
