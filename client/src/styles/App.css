@@ -1529,6 +1529,15 @@ html {
           align-items: center;
 }
 
+.stats-wrapper .close-modal {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 600;
+  top: -60px;
+  right: -30px;
+  cursor: pointer;
+}
+
 .stats-wrapper .price-range {
   position: absolute;
   font-size: 13px;

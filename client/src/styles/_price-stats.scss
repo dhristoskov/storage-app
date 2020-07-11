@@ -5,6 +5,14 @@
     margin: 30px auto 50px auto;
     justify-content: space-evenly;
     align-items: center;
+    .close-modal{
+        position: absolute;
+        font-size: 18px;
+        font-weight: 600;
+        top: -60px;
+        right: -30px;
+        cursor: pointer;
+    }
     .price-range{
         position: absolute;
         font-size: 13px;

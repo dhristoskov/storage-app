@@ -112,7 +112,7 @@ const NewList = () => {
         <Layout>
             {
                 showInfo &&   
-                <StatsModal removeModal={hideInfoHandler}>
+                <StatsModal>
                     <ProductStat hideInfoHandler={hideInfoHandler}/>
                 </StatsModal>
             }

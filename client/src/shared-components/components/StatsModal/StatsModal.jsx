@@ -6,7 +6,7 @@ const StatsModal = (props) => {
 
     return(
         <Fragment>
-            <Overlay removeModal={props.removeModal}/>
+            <Overlay/>
             <div className='stats-modal'>
                 {props.children}
             </div>
