@@ -299,6 +299,7 @@ html {
 .product-wrapper .name {
   width: 30%;
   text-align: start;
+  cursor: pointer;
 }
 
 .product-wrapper .price {

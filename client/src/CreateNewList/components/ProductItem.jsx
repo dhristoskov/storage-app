@@ -46,7 +46,7 @@ const ProductItem = (props) => {
     return(
         <div className='product-wrapper' 
         style={props.isDone ? {background: '#D2DDBB', color: 'white'} : null}>
-            <p className='name'>{props.name}</p>
+            <p onClick={props.showInfoHandler} className='name'>{props.name}</p>
             <p className='price'>{toggledPrice ?  priceWithVat : price } { toggledPrice ? '€/vat' : '€'}
             <span className='vat-icon' onClick={togglePrice}><FaMoneyBillWave/></span></p>
             <p className='quantity'>{props.qty}</p>

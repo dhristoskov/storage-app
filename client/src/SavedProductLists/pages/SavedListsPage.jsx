@@ -6,7 +6,6 @@ import SavedProductsList from '../components/SavedProductsList';
 import Loader from '../../shared-components/components/Loader/Loader';
 import Modal from '../../shared-components/components/Modal/Modal';
 import DeleteWarning from '../../shared-components/components/DeleteWarning/DeleteWarning';
-import ProductStat from '../../shared-components/components/ProductStat/ProductStat';
 
 const StorageListsPage = () => {
   
@@ -87,7 +86,6 @@ const StorageListsPage = () => {
                                 fixedName={fixedName}/>
                     </Fragment>
                 }
-                <ProductStat />
             </div>
         </Fragment>
     )

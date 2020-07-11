@@ -38,7 +38,8 @@ const ProductList = (props) => {
                         removeProduct={() => props.removeProduct(product.id)}
                         isDoneHandler={() => props.isDoneHandler(product.id)}
                         isUndoneHandler={() => props.isUndoneHandler(product.id)}
-                        editHandler={() => props.editHandler(product.id)}/>
+                        editHandler={() => props.editHandler(product.id)}
+                        showInfoHandler={() => props.showInfoHandler(product.id)}/>
                     )
             })}
             <TotalCalculation products={props.products}/>

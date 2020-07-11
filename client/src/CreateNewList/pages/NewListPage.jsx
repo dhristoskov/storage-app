@@ -10,6 +10,7 @@ import SaveButtons from '../../shared-components/components/Buttons/SaveButtons'
 import ProductsUpload from '../components/ProductsUpload';
 import { ProductsContext } from '../../shared-components/contexts/ProductsContext/productsContext';
 import Layout from '../../shared-components/components/Layout/Layout';
+import Modal from '../../shared-components/components/Modal/Modal';
 
 const NewList = () => {
 
@@ -18,6 +19,7 @@ const NewList = () => {
     const [ storageName, setStorageName ] = useState('')
     const [ onEdit, setOnEdit ] = useState();
     const [ expDate, setExpDate ] = useState(new Date());
+    const [ showInfo, setShowInfo ] = useState(false);
     const fixedName = storageName.replace(/^./, str => str.toUpperCase());
 
     //Add Products to Specific Storage
@@ -96,8 +98,22 @@ const NewList = () => {
         setOnEdit(null);
     }
 
+    const showInfoHandler = (id) => {
+        setShowInfo(true);
+        console.log(id)
+    };
+
+    const hideInfoHandler = () => {
+        setShowInfo(false);
+    };
+
     return (
         <Layout>
+            {
+                showInfo &&   
+                <Modal removeModal={hideInfoHandler}>
+                </Modal>
+            }
             <div className='main-wrapper'>     
                 <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
                 <DatePicker expDate={expDate}
@@ -116,7 +132,8 @@ const NewList = () => {
                 onAscOrder={onAscOrder}
                 onHighPrice={onHighPrice}
                 onLowPrice={onLowPrice}
-                editHandler={editHandler}/>    
+                editHandler={editHandler}
+                showInfoHandler={showInfoHandler}/>    
                 <SaveButtons saveListToDB={saveListToDB}/>           
             </div>
         </Layout>
