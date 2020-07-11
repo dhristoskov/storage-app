@@ -13,8 +13,8 @@ import Layout from '../../shared-components/components/Layout/Layout';
 
 const NewList = () => {
 
-    const { products, dispatch } = useContext(ProductsContext);
     const { id } = useParams(); 
+    const { products, dispatch } = useContext(ProductsContext);
     const [ storageName, setStorageName ] = useState('')
     const [ onEdit, setOnEdit ] = useState();
     const [ expDate, setExpDate ] = useState(new Date());

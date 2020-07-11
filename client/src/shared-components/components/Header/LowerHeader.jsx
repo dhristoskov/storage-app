@@ -8,8 +8,8 @@ const LowerHeader = (props) => {
     const { storages } = useContext(StorageContext);
     const [ toggleStorages, setToggleStorages ] = useState(false);
 
-    const moveToStorage = (name) => {
-        history.push(`/storage/storage-list/${name.toLowerCase()}`);
+    const moveToStorage = (id) => {
+        history.push(`/storage/storage-list/${id}`);
     };
 
     //Drop-down storage list
@@ -31,7 +31,7 @@ const LowerHeader = (props) => {
                         {
                             storages.map( button => {
                                 return (
-                                    <p onClick={() => moveToStorage(button.name)} 
+                                    <p onClick={() => moveToStorage(button.id)} 
                                     key={button.id}>{(button.name).replace(/^./, str => str.toUpperCase())}</p>
                                 )
                             })

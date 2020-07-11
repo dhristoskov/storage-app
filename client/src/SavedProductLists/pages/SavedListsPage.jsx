@@ -10,18 +10,30 @@ import DeleteWarning from '../../shared-components/components/DeleteWarning/Dele
 
 const StorageListsPage = () => {
   
+    const { id } = useParams();
     const [showWarning, setShowWarning ] = useState(false);
     const [ itemToDelete, setItemToDelete ] = useState(null); 
     const [ isLoading, setIsLoading ] = useState(false);
-    const [ savedLists, setSavedLists ] = useState([])
-    const { storageName } = useParams();
+    const [ savedLists, setSavedLists ] = useState([]);
+    const [ storageName, setStorageName ] = useState('');
     
     //Fix first letter in the storage Name
     const fixedName = storageName.replace(/^./, str => str.toUpperCase());
 
+    //Get storage name prop
+    useEffect(() => {
+        axios.get(`/storages/${id}`)
+             .then(res => {
+                setStorageName(res.data.storage.name)
+             }).catch(err => {
+                 console.log(err)
+             })
+    }, [id]);
+
+    //Get archives by id
     useEffect(() => {
         setIsLoading(true);
-        axios.get(`/archive/${storageName}`)
+        axios.get(`/archive/${id}`)
              .then(res => {
                 setIsLoading(false);
                 setSavedLists(res.data.lists)
@@ -29,7 +41,7 @@ const StorageListsPage = () => {
                 setIsLoading(false);
                 console.log(err)
              })
-    }, [storageName]);
+    }, [id]);
 
     const deleteStorageList = async () => {
         await axios.delete(`/archive/${itemToDelete}`)

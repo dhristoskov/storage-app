@@ -109,11 +109,11 @@ const addToArchive = async ( req, res ) => {
 };
 
 //Get Lists by Storage Name <-- will be remade later by ID
-const getListsByStorageName = async ( req, res ) => {
+const getListsByStorageId = async ( req, res ) => {
     
     let archive;
     try{
-        archive = await Storage.find({name: req.params.name})
+        archive = await Storage.findById(req.params.id)
     }catch(err){
         console.error(err.message);
         res.status(500).send('Server error!');
@@ -176,6 +176,6 @@ const deleteListById = async ( req, res ) => {
 };
 
 exports.addToArchive = addToArchive;
-exports.getListsByStorageName = getListsByStorageName;
+exports.getListsByStorageId = getListsByStorageId;
 exports.getAllLists = getAllLists;
 exports.deleteListById = deleteListById;
