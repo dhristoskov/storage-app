@@ -1597,18 +1597,6 @@ html {
           transform: rotate(-90deg);
 }
 
-.storage-main {
-  width: 55%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: auto;
-}
-
 .stats-modal {
   position: fixed;
   z-index: 50;
@@ -1629,5 +1617,17 @@ html {
   .modal {
     width: 80%;
   }
+}
+
+.storage-main {
+  width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
 }
 /*# sourceMappingURL=App.css.map */

@@ -99,11 +99,13 @@ const NewList = () => {
         setOnEdit(null);
     }
 
+    //Open Info Modal
     const showInfoHandler = (id) => {
         setShowInfo(true);
         console.log(id)
     };
 
+    //Close Info Modal
     const hideInfoHandler = () => {
         setShowInfo(false);
     };
