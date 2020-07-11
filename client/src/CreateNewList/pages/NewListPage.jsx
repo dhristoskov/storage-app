@@ -9,6 +9,7 @@ import ProductForm from '../components/ProductForm';
 import SaveButtons from '../../shared-components/components/Buttons/SaveButtons';
 import ProductsUpload from '../components/ProductsUpload';
 import { ProductsContext } from '../../shared-components/contexts/ProductsContext/productsContext';
+import Layout from '../../shared-components/components/Layout/Layout';
 
 const NewList = () => {
 
@@ -85,27 +86,29 @@ const NewList = () => {
     }
 
     return (
-        <div className='main-wrapper'>     
-            <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
-            <DatePicker expDate={expDate}
-                   setExpDate={setExpDate}/>
-            <ProductForm addNewProduct={addNewProduct}
-                    onClearEditHandler={onClearEditHandler}
-                    onUpdateHandler={onUpdateHandler}
-                    storageName={storageName}
-                    onEdit={onEdit}/>   
-            <ProductsUpload addNewProduct={addNewProduct}/>             
-            <ProductList products={currentStorage}
-            removeProduct={removeProduct}
-            isDoneHandler={isDoneHandler}
-            isUndoneHandler={isUndoneHandler}
-            onDescOrder={onDescOrder}
-            onAscOrder={onAscOrder}
-            onHighPrice={onHighPrice}
-            onLowPrice={onLowPrice}
-            editHandler={editHandler}/>    
-            <SaveButtons saveListToDB={saveListToDB}/>           
-        </div>
+        <Layout>
+            <div className='main-wrapper'>     
+                <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
+                <DatePicker expDate={expDate}
+                    setExpDate={setExpDate}/>
+                <ProductForm addNewProduct={addNewProduct}
+                        onClearEditHandler={onClearEditHandler}
+                        onUpdateHandler={onUpdateHandler}
+                        storageName={storageName}
+                        onEdit={onEdit}/>   
+                <ProductsUpload addNewProduct={addNewProduct}/>             
+                <ProductList products={currentStorage}
+                removeProduct={removeProduct}
+                isDoneHandler={isDoneHandler}
+                isUndoneHandler={isUndoneHandler}
+                onDescOrder={onDescOrder}
+                onAscOrder={onAscOrder}
+                onHighPrice={onHighPrice}
+                onLowPrice={onLowPrice}
+                editHandler={editHandler}/>    
+                <SaveButtons saveListToDB={saveListToDB}/>           
+            </div>
+        </Layout>
     )
 }
 

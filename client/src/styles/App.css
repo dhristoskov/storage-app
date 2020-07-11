@@ -1510,6 +1510,10 @@ html {
   margin-bottom: 5px;
 }
 
+.layout {
+  padding: 30px 0;
+}
+
 .storage-main {
   width: 55%;
   display: -webkit-box;
