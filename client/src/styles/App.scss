@@ -25,6 +25,7 @@
 @import './loader';
 @import './data-picker';
 @import './layout';
+@import './price-stats';
 
 //Storage main page
 .storage-main {
@@ -34,29 +35,7 @@
     margin: auto;
 }
 
-//stats bar
-.stats-wrapper{
-    display: flex;
-    margin: auto;
-    align-items: center;
-    .price-wrapper{
-        height: 200px;
-        .price-bar {
-            position: relative;
-            height: 100%;
-            width: 25px;
-            background-color: #D2DDBB;
-            border: 1px solid blue;
-            box-shadow: 6px 6px 5px 0px #9BB5A1;
-            span {
-                position: absolute;
-                top: 6px;
-                left: -4px;
-                transform: rotate(-90deg);
-            }
-        }
-    }
-}
+
 
 
 

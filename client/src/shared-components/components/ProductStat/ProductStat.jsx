@@ -20,9 +20,9 @@ const ProductStat = () => {
                    )
                })
            }
-           <div>
-                <p>{lowerPrice}</p>
-                <p>{highestPrice}</p>
+           <div className='price-range'>
+                <p>Lowest Price<span> {lowerPrice} </span>€</p>
+                <p>Heiest Price<span> {highestPrice} </span>€</p>
            </div>
        </div>
     )

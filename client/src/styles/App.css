@@ -1514,8 +1514,39 @@ html {
   padding: 30px 0;
 }
 
-.storage-main {
-  width: 55%;
+.stats-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 35%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stats-wrapper .price-range {
+  position: absolute;
+  font-size: 13px;
+  font-weight: 600;
+  bottom: -60px;
+  right: 30%;
+}
+
+.stats-wrapper .price-range p {
+  width: 130px;
+}
+
+.stats-wrapper .price-range p span {
+  color: blue;
+}
+
+.stats-wrapper .price-wrapper {
+  height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1523,21 +1554,12 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: auto;
-}
-
-.stats-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.stats-wrapper .price-wrapper {
-  height: 200px;
 }
 
 .stats-wrapper .price-wrapper .price-bar {
@@ -1552,9 +1574,30 @@ html {
 
 .stats-wrapper .price-wrapper .price-bar span {
   position: absolute;
-  top: 6px;
-  left: -4px;
+  bottom: 10px;
+  left: 0px;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stats-wrapper .price-wrapper .price-data {
+  font-size: 13px;
+  font-weight: 600;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.storage-main {
+  width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
 }
 /*# sourceMappingURL=App.css.map */

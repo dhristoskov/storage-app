@@ -1,0 +1,50 @@
+//stats bar
+.stats-wrapper{
+    position: relative;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    max-width: 35%;
+    align-items: center;
+    .price-range{
+        position: absolute;
+        font-size: 13px;
+        font-weight: 600;
+        bottom: -60px;
+        right: 30%;
+        p {
+            width: 130px;
+            span {
+                color: blue;
+            }
+        }
+    }
+    .price-wrapper{
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .price-bar {
+            position: relative;
+            height: 100%;
+            width: 25px;
+            background-color: #D2DDBB;
+            border: 1px solid blue;
+            box-shadow: 6px 6px 5px 0px #9BB5A1;
+            span {
+                position: absolute;
+                bottom: 10px;
+                left: 0px;
+                transform: rotate(-90deg);
+                font-size: 13px;
+                font-weight: 600;
+            }
+        }
+        .price-data{
+            font-size: 13px;
+            font-weight: 600;
+            transform: rotate(-90deg);
+        }
+    }
+}
