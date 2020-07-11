@@ -10,7 +10,8 @@ import SaveButtons from '../../shared-components/components/Buttons/SaveButtons'
 import ProductsUpload from '../components/ProductsUpload';
 import { ProductsContext } from '../../shared-components/contexts/ProductsContext/productsContext';
 import Layout from '../../shared-components/components/Layout/Layout';
-import Modal from '../../shared-components/components/Modal/Modal';
+import StatsModal from '../../shared-components/components/StatsModal/StatsModal';
+import ProductStat from '../../shared-components/components/ProductStat/ProductStat';
 
 const NewList = () => {
 
@@ -111,8 +112,9 @@ const NewList = () => {
         <Layout>
             {
                 showInfo &&   
-                <Modal removeModal={hideInfoHandler}>
-                </Modal>
+                <StatsModal removeModal={hideInfoHandler}>
+                    <ProductStat hideInfoHandler={hideInfoHandler}/>
+                </StatsModal>
             }
             <div className='main-wrapper'>     
                 <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>

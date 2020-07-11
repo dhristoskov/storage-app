@@ -2,16 +2,14 @@
 .stats-wrapper{
     position: relative;
     display: flex;
-    margin: auto;
-    justify-content: center;
-    max-width: 35%;
+    margin: 30px auto 50px auto;
+    justify-content: space-evenly;
     align-items: center;
     .price-range{
         position: absolute;
         font-size: 13px;
         font-weight: 600;
         bottom: -60px;
-        right: 30%;
         p {
             width: 130px;
             span {

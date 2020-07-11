@@ -1520,11 +1520,10 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  max-width: 35%;
+  margin: 30px auto 50px auto;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1535,7 +1534,6 @@ html {
   font-size: 13px;
   font-weight: 600;
   bottom: -60px;
-  right: 30%;
 }
 
 .stats-wrapper .price-range p {
@@ -1600,5 +1598,27 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: auto;
+}
+
+.stats-modal {
+  position: fixed;
+  z-index: 50;
+  background-color: white;
+  width: 35%;
+  border: 2px solid blue;
+  -webkit-box-shadow: 6px 6px 5px 0px #9BB5A1;
+          box-shadow: 6px 6px 5px 0px #9BB5A1;
+  border-radius: 20px;
+  padding: 15px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (max-width: 420px) {
+  .modal {
+    width: 80%;
+  }
 }
 /*# sourceMappingURL=App.css.map */
