@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, Fragment } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from '../../axios';
 
@@ -11,41 +11,52 @@ import Modal from '../../shared-components/components/Modal/Modal';
 import DeleteWarning from '../../shared-components/components/DeleteWarning/DeleteWarning';
 import { StorageContext } from '../../shared-components/contexts/StorageContext/storageContext';
 import Layout from '../../shared-components/components/Layout/Layout';
+import Loader from '../../shared-components/components/Loader/Loader';
 
 const StoragePage = () => {
 
     const { storages, dispatch } = useContext(StorageContext);
     const [showWarning, setShowWarning ] = useState(false);
     const [ itemToDelete, setItemToDelete ] = useState(null);
-    const [ detailList, setDetailList ] = useState(true)
+    const [ detailList, setDetailList ] = useState(true);
+    const [ isLoading, setIsLoading ] = useState(false);
     const history = useHistory();
 
     useEffect(() => {
+        setIsLoading(true);
         axios.get('/storages')
              .then(res => {
+                setIsLoading(false);
                 dispatch({type: 'GET', storages: res.data.storages})
              }).catch(err => {
-                 console.log(err)
+                setIsLoading(false);
+                console.log(err)
              })
     }, [dispatch]);
 
     const addStorage = async ( newStorage ) => {
+        setIsLoading(true);
         await axios.post('/storages', newStorage,
           { 'Content-Type': 'application/json' })
                    .then(res => {
-                       dispatch({ type:'ADD', 
-                       storage: {id: res.data.storage._id, ...res.data.storage}})
+                    setIsLoading(false);
+                    dispatch({ type:'ADD', 
+                    storage: {id: res.data.storage._id, ...res.data.storage}})
                    }).catch(err => {
+                    setIsLoading(false);
                     console.log(err)
                    });
     }
 
     const deleteStorage = async () => {
+        setIsLoading(true);
         await axios.delete(`/storages/${itemToDelete}`)
                    .then(res => {
-                       dispatch({type: 'DELETE', id: itemToDelete});
-                       setShowWarning(false);
+                    setIsLoading(false);
+                    dispatch({type: 'DELETE', id: itemToDelete});
+                    setShowWarning(false);
                    }).catch(err => {
+                    setIsLoading(false);
                     console.log(err)
                    });
     };
@@ -102,13 +113,19 @@ const StoragePage = () => {
                     cancel={hideDeleteWarning}/>
                 </Modal>
             }
-            <div className='storage-main'>
-                <StorageForm addStorage={addStorage}/>
-                <StorageCounter storages={storages}/>
-                <ListButtons showDetailedList={showDetailedList}
-                showSimpleList={showSimpleList}/>
-                {details}
-            </div>
+            <Fragment>
+                {
+                    isLoading
+                    ? <Loader />
+                    : <div className='storage-main'>
+                        <StorageForm addStorage={addStorage}/>
+                        <StorageCounter storages={storages}/>
+                        <ListButtons showDetailedList={showDetailedList}
+                        showSimpleList={showSimpleList}/>
+                        {details}
+                     </div>
+                }
+            </Fragment>
         </Layout>
     )
 }

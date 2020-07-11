@@ -18,9 +18,9 @@ const ProductStat = (props) => {
                         price={product.price}
                         time={product.time}
                         low={lowerPrice}/>
-                    )
-                })
-            }
+                        )
+                    })
+                }
             <p className='close-modal' onClick={props.hideInfoHandler}>
                 <AiOutlineCloseCircle /></p>
             <div className='price-range'>
