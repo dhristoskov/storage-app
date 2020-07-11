@@ -50,13 +50,13 @@ const StoragePage = () => {
     };
 
     //Move to Storage Lists Page
-    const moveToStoragePage = (name) => {
-        history.push(`/storage/storage-list/${name.toLowerCase()}`);
+    const moveToStoragePage = (id) => {
+        history.push(`/storage/storage-list/${id}`);
     };
 
     //Move to Create List page
-    const moveToCreateList = (name) => {
-        history.push(`/storage/create-list/${name.toLowerCase()}`);
+    const moveToCreateList = (id) => {
+        history.push(`/storage/create-list/${id}`);
     };
 
     const showDetailedList = () => {

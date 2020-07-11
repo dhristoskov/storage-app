@@ -6,48 +6,7 @@ export const ProductsContext = createContext();
 
 const ProductsContextProcider = (props) => {
 
-    // const initialState = {
-    //     products: []
-    // }
-
-    const [ products, dispatch ] = useReducer(productsReducer, [
-        {
-            id: '01',
-            name: 'Cheese',
-            price: 12.25,
-            qty: 25,
-            type: 'psc',
-            storage: 'dragor',
-            isDone: false
-        },
-        {
-            id: '02',
-            name: 'Tomato',
-            price: 2.25,
-            qty: 15,
-            type: 'kg',
-            storage: 'dragor',
-            isDone: false
-        },
-        {
-            id: '03',
-            name: 'Soda',
-            price: 0.55,
-            qty: 35,
-            type: 'pcs',
-            storage: 'pazardjik',
-            isDone: false
-        },
-        {
-            id: '04',
-            name: 'Oranges',
-            price: 1.55,
-            qty: 55,
-            type: 'kg',
-            storage: 'pazardjik',
-            isDone: false
-        }
-    ]);
+    const [ products, dispatch ] = useReducer(productsReducer, []);
 
     return(
         <ProductsContext.Provider value={{ products, dispatch }}>

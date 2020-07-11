@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useParams } from 'react-router-dom';
 import axios from '../../axios';
@@ -14,14 +14,25 @@ import Layout from '../../shared-components/components/Layout/Layout';
 const NewList = () => {
 
     const { products, dispatch } = useContext(ProductsContext);
-    const { storageName } = useParams(); 
-    const fixedName = storageName.replace(/^./, str => str.toUpperCase());
+    const { id } = useParams(); 
+    const [ storageName, setStorageName ] = useState('')
     const [ onEdit, setOnEdit ] = useState();
     const [ expDate, setExpDate ] = useState(new Date());
+    const fixedName = storageName.replace(/^./, str => str.toUpperCase());
 
     //Add Products to Specific Storage
     const currentStorage = products.filter(product =>
          product.storage.toLowerCase() === storageName);
+
+    //Get storage name prop
+    useEffect(() => {
+        axios.get(`/storages/${id}`)
+             .then(res => {
+                setStorageName(res.data.storage.name)
+             }).catch(err => {
+                 console.log(err)
+             })
+    }, [id]);
 
     //Upload data to DB
     const saveListToDB = async () => {
@@ -39,7 +50,7 @@ const NewList = () => {
                    }).catch(err => {
                        console.log(err)
                    });
-    }     
+    }   
 
     const addNewProduct = ( item ) => {
         dispatch({ type:'ADD', product:{ id: uuidv4(), ...item }});
