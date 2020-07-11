@@ -37,16 +37,23 @@
 //stats bar
 .stats-wrapper{
     display: flex;
-    justify-content: center;
     margin: auto;
-    width: 35%;
     align-items: center;
     .price-wrapper{
         height: 200px;
         .price-bar {
+            position: relative;
             height: 100%;
-            width: 20px;
+            width: 25px;
             background-color: #D2DDBB;
+            border: 1px solid blue;
+            box-shadow: 6px 6px 5px 0px #9BB5A1;
+            span {
+                position: absolute;
+                top: 6px;
+                left: -4px;
+                transform: rotate(-90deg);
+            }
         }
     }
 }

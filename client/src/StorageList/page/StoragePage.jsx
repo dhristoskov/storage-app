@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from '../../axios';
 
@@ -10,6 +10,7 @@ import ListButtons from '../components/ListButtons';
 import Modal from '../../shared-components/components/Modal/Modal';
 import DeleteWarning from '../../shared-components/components/DeleteWarning/DeleteWarning';
 import { StorageContext } from '../../shared-components/contexts/StorageContext/storageContext';
+import Layout from '../../shared-components/components/Layout/Layout';
 
 const StoragePage = () => {
 
@@ -92,7 +93,7 @@ const StoragePage = () => {
     }
 
     return (
-        <Fragment>
+        <Layout>
             {
                 showWarning &&   
                 <Modal removeModal={hideDeleteWarning}>
@@ -108,7 +109,7 @@ const StoragePage = () => {
                 showSimpleList={showSimpleList}/>
                 {details}
             </div>
-        </Fragment>
+        </Layout>
     )
 }
 

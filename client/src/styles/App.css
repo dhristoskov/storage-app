@@ -1530,11 +1530,7 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   margin: auto;
-  width: 35%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1545,8 +1541,20 @@ html {
 }
 
 .stats-wrapper .price-wrapper .price-bar {
+  position: relative;
   height: 100%;
-  width: 20px;
+  width: 25px;
   background-color: #D2DDBB;
+  border: 1px solid blue;
+  -webkit-box-shadow: 6px 6px 5px 0px #9BB5A1;
+          box-shadow: 6px 6px 5px 0px #9BB5A1;
+}
+
+.stats-wrapper .price-wrapper .price-bar span {
+  position: absolute;
+  top: 6px;
+  left: -4px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 /*# sourceMappingURL=App.css.map */

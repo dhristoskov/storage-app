@@ -1,7 +1,7 @@
 import React from 'react';
 
 import StatItem from './StatItem';
-import { STAT } from '../data';
+import { STAT } from '../../utils/data';
 
 const ProductStat = () => {
 
@@ -20,8 +20,10 @@ const ProductStat = () => {
                    )
                })
            }
-           <p>{lowerPrice}</p>
-           <p>{highestPrice}</p>
+           <div>
+                <p>{lowerPrice}</p>
+                <p>{highestPrice}</p>
+           </div>
        </div>
     )
 }
