@@ -52,7 +52,7 @@ const MainHeader = () => {
                 {
                     toggleNav &&  <Navigation />
                 }          
-                <Logo />
+                <Logo setToggleNav={setToggleNav}/>
                 {
                     !isLoggedIn 
                     ? <div className='auth-btn'><NavLink to='/auth'><AiOutlineLogin /></NavLink></div>
