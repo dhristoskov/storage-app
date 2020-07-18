@@ -1039,7 +1039,7 @@ html {
 
 .auth-container {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -1057,7 +1057,7 @@ html {
 }
 
 .auth-container p {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .auth-container .psw-question {
