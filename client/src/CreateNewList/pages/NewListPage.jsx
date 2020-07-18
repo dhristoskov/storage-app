@@ -50,9 +50,10 @@ const NewList = () => {
                 {'Content-Type': 'application/json'})
                    .then(res => {
                        console.log(res.data)
+                       dispatch({type: 'CLEAR', products: currentStorage})
                    }).catch(err => {
                        console.log(err)
-                   });
+                   });       
     }   
 
     const addNewProduct = ( item ) => {

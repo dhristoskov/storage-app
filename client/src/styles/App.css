@@ -144,6 +144,7 @@ html {
   color: blue;
   -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
+  cursor: pointer;
 }
 
 .form-main .toggle-form:hover {
@@ -959,6 +960,7 @@ html {
   color: blue;
   -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
+  cursor: pointer;
 }
 
 .upload-file .toggle-upload:hover {

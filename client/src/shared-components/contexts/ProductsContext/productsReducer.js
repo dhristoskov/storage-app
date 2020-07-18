@@ -6,6 +6,8 @@ export default ( state, action ) => {
             return [ action.product, ...state ]
         case 'DELETE':
             return state.filter(product => product.id !== action.id);
+        case 'CLEAR':
+            return action.products = [];
         case 'UPDATE_PRODUCT':
             return state.map(product => {
                 if(product.id === action.id){ 
