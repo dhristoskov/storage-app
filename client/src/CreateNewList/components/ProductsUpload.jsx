@@ -93,7 +93,7 @@ const ProductsUpload = (props) => {
                 showForm
                 ?   <form className='upload-form' onSubmit={submitFile}>
                         <input className='upload-input' type='file' 
-                        accept='text/plain, .csv, .pdf' onChange={uploadFile} required/>
+                        accept='text/plain, .csv' onChange={uploadFile} required/>
                         <input type='submit' value='upload' />
                     </form>
                 :   <p>Upload File</p>

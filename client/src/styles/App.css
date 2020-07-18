@@ -783,8 +783,11 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 35%;
+  width: 30%;
   margin: 20px auto 20px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .save-btn .save-list {
