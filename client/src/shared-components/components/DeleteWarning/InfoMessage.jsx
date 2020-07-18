@@ -7,7 +7,7 @@ const InfoMessage = (props) => {
             <h3>Information Message</h3>
             <p>{props.msg}</p>
             <div className='delete-btns'>
-                <p className='cancel' onClick={props.cancel}>Cancel</p>
+                <p className='cancel' onClick={props.cancel}>ok</p>
             </div>
         </div>
     )

@@ -3,12 +3,12 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { AiOutlineLogin, AiOutlineLogout } from 'react-icons/ai';
 
 import { AuthContext } from '../../contexts/AuthContext/AuthContext';
+import InfoMessage from '../DeleteWarning/InfoMessage';
 import Modal from '../../components/Modal/Modal';
 import Navigation from './Navigation';
 import NavButton from './NavButton';
 import LowerHeader from './LowerHeader';
 import Logo from './Logo';
-import InfoMessage from '../DeleteWarning/InfoMessage';
 
 const MainHeader = () => {
 
@@ -24,6 +24,7 @@ const MainHeader = () => {
         logout();
     }
 
+    //Remove info message
     const hideDeleteWarning = () => {
         setShowWarning(false);
     };

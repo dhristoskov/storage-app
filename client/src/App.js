@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './styles/App.css'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
 import MainHeader from './shared-components/components/Header/MainHeader';
 import NewListPage from './CreateNewList/pages/NewListPage';
@@ -13,6 +13,7 @@ import ProductsContextProcider from './shared-components/contexts/ProductsContex
 import StorageContextProvider from './shared-components/contexts/StorageContext/StorageContext';
 import AuthContextProvider from './shared-components/contexts/AuthContext/AuthContext';
 import AllSavedLists from './SavedProductLists/pages/AllSavedLists';
+import PrivateRoute from './shared-components/components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -26,10 +27,11 @@ function App() {
                   <Route exact path='/' component={LandingPage} />
                   <Route path='/auth' component={AuthPage} />
                   <Route path='/reset-password' component={ResetPassPage} />
-                  <Route path='/storage/storage-list/:id' component={StorageListsPage} />
-                  <Route path='/storage/create-list/:id' component={NewListPage} />
-                  <Route path='/storages' component={StoragePage} />
-                  <Route path='/all-lists' component={AllSavedLists} />
+                  <PrivateRoute path='/storage/storage-list/:id' component={StorageListsPage} />
+                  <PrivateRoute path='/storage/create-list/:id' component={NewListPage} />
+                  <PrivateRoute path='/storages' component={StoragePage} />
+                  <PrivateRoute path='/all-lists' component={AllSavedLists} />
+                  <Redirect to='/'/>
                 </Switch>
             </StorageContextProvider>
           </ProductsContextProcider>
