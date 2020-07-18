@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
-import { FaMoneyBillWave } from 'react-icons/fa';
+import { AiOutlineDelete, AiOutlineEdit, AiOutlinePercentage } from 'react-icons/ai';
 
 const SavedProductItem = (props) => {
 
@@ -25,11 +24,11 @@ const SavedProductItem = (props) => {
         style={props.isDone ? {background: '#D2DDBB', color: 'white'} : null}>
             <p className='name'>{props.name}</p>
             <p className='price'>{toggledPrice ?  priceVat : price } { toggledPrice ? '€/vat' : '€'}
-            <span className='vat-icon' onClick={togglePrice}><FaMoneyBillWave/></span></p>
+            <span className='vat-icon' onClick={togglePrice}><AiOutlinePercentage/></span></p>
             <p className='quantity'>{props.qty}</p>
             <p className='type'>/ {props.type}</p>
             <p className='total'>{toggledTotalPrice ?  totalVat : totalPrice } { toggledTotalPrice ? '€/vat' : '€'}
-            <span className='total-vat-icon' onClick={toggleTotalPrice}><FaMoneyBillWave/></span></p>
+            <span className='total-vat-icon' onClick={toggleTotalPrice}><AiOutlinePercentage/></span></p>
             <div className='settings'>
                 <p><AiOutlineDelete /></p>
                 <p><AiOutlineEdit /></p>                 

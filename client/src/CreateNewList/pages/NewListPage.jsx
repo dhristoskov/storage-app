@@ -50,7 +50,7 @@ const NewList = () => {
                 {'Content-Type': 'application/json'})
                    .then(res => {
                        console.log(res.data)
-                       dispatch({type: 'CLEAR', products: currentStorage})
+                       dispatch({type: 'CLEAR', currentPart: currentStorage})
                    }).catch(err => {
                        console.log(err)
                    });       

@@ -3,9 +3,9 @@ import { AiOutlineDelete,
     AiOutlineEdit, 
     AiOutlineCheckCircle, 
     AiOutlineUndo,
-    AiOutlineOrderedList } from 'react-icons/ai'
+    AiOutlineOrderedList,
+    AiOutlinePercentage } from 'react-icons/ai'
 import { GoIssueOpened, GoHistory } from 'react-icons/go';    
-import { FaMoneyBillWave } from 'react-icons/fa';
 
 import PriorityBtns from '../../shared-components/components/Buttons/PriorityBtns';
 
@@ -48,7 +48,7 @@ const ProductItem = (props) => {
         style={props.isDone ? {background: '#D2DDBB', color: 'white'} : null}>
             <p onClick={props.showInfoHandler} className='name'>{props.name}</p>
             <p className='price'>{toggledPrice ?  priceWithVat : price } { toggledPrice ? '€/vat' : '€'}
-            <span className='vat-icon' onClick={togglePrice}><FaMoneyBillWave/></span></p>
+            <span className='vat-icon' onClick={togglePrice}><AiOutlinePercentage/></span></p>
             <p className='quantity'>{props.qty}</p>
             <p className='type'>/ {props.type}</p>
             <p className='storage'>{fixedName}</p>

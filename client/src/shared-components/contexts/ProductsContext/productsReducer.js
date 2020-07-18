@@ -7,7 +7,7 @@ export default ( state, action ) => {
         case 'DELETE':
             return state.filter(product => product.id !== action.id);
         case 'CLEAR':
-            return action.products = [];
+            return action.currentPart = [];
         case 'UPDATE_PRODUCT':
             return state.map(product => {
                 if(product.id === action.id){ 
