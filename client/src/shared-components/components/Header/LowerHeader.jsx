@@ -7,7 +7,7 @@ const LowerHeader = (props) => {
 
     const history = useHistory();
     const { storages } = useContext(StorageContext);
-    const { isLoggedIn } = useContext(AuthContext);
+    const { isLoggedIn, name } = useContext(AuthContext);
     const [ toggleStorages, setToggleStorages ] = useState(false);
 
     const moveToStorage = (id) => {
@@ -25,10 +25,10 @@ const LowerHeader = (props) => {
         //Lower Header Component to switch fast storages 
         //and for more user information
         <div className='lower-header'>
-            <p className='welcome'>Hello, <span>( Guest )</span></p>
             {
                 isLoggedIn &&
                 <Fragment>
+                    <p className='welcome'>Welcome, <span>{name}</span></p>
                     <p className='storage-btn' onClick={toggleStoragesView}>Storages</p>
                     {
                         toggleStorages 

@@ -892,6 +892,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-height: 30px;
 }
 
 .lower-header .welcome {
