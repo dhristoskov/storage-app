@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from '../../axios';
 
@@ -6,6 +6,7 @@ import CheckUser from '../components/CheckUser';
 import Registration from '../components/Registration';
 import Login from '../components/Login';
 import Loader from '../../shared-components/components/Loader/Loader';
+import { AuthContext } from '../../shared-components/contexts/AuthContext/AuthContext';
 
 const AuthPage = () => {
 
@@ -13,6 +14,7 @@ const AuthPage = () => {
     const [ isLoading, setIsLoading ] = useState(false);
     const [ onLogin, setOnLogin ] = useState(null);
     const [ newEmail, setNewEmail ] = useState('');
+    const { login } = useContext(AuthContext);
 
     //Check if Email exist in DB
     const onAuthHandler = async (email) => {
@@ -35,7 +37,7 @@ const AuthPage = () => {
         { 'Content-Type': 'application/json' })
                    .then(res => {
                         setIsLoading(false);
-                        console.log(res.data.token)
+                        login(res.data.userId, res.data.token, res.data.name);
                         history.push('/storages')
                    }).catch(err => {
                         setIsLoading(false);
@@ -50,7 +52,7 @@ const AuthPage = () => {
         { 'Content-Type': 'application/json' })
                    .then(res => {
                         setIsLoading(false);
-                        console.log(res.data.token)
+                        login(res.data.userId, res.data.token, res.data.name);
                         history.push('/storages')
                    }).catch(err => {
                         setIsLoading(false);
