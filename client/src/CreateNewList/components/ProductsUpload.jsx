@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai';
 import axios from '../../axios';
 
-import { StorageContext } from '../../shared-components/contexts/StorageContext/storageContext';
+import { StorageContext } from '../../shared-components/contexts/StorageContext/StorageContext';
 
 const ProductsUpload = (props) => {
 

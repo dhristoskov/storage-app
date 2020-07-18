@@ -9,7 +9,7 @@ import StorageSimpleList from '../components/StorageSimpleList';
 import ListButtons from '../components/ListButtons';
 import Modal from '../../shared-components/components/Modal/Modal';
 import DeleteWarning from '../../shared-components/components/DeleteWarning/DeleteWarning';
-import { StorageContext } from '../../shared-components/contexts/StorageContext/storageContext';
+import { StorageContext } from '../../shared-components/contexts/StorageContext/StorageContext';
 import Layout from '../../shared-components/components/Layout/Layout';
 import Loader from '../../shared-components/components/Loader/Loader';
 

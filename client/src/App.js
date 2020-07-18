@@ -9,8 +9,8 @@ import StorageListsPage from './SavedProductLists/pages/SavedListsPage';
 import LandingPage from './LandingPage/pages/LandingPage';
 import AuthPage from './Auth/pages/AuthPage';
 import ResetPassPage from './Auth/pages/ResetPassPage';
-import ProductsContextProcider from './shared-components/contexts/ProductsContext/productsContext';
-import StorageContextProvider from './shared-components/contexts/StorageContext/storageContext';
+import ProductsContextProcider from './shared-components/contexts/ProductsContext/ProductsContext';
+import StorageContextProvider from './shared-components/contexts/StorageContext/StorageContext';
 import AllSavedLists from './SavedProductLists/pages/AllSavedLists';
 
 function App() {

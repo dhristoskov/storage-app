@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { StorageContext } from '../../contexts/StorageContext/storageContext';
+import { StorageContext } from '../../contexts/StorageContext/StorageContext';
 
 const LowerHeader = (props) => {
 

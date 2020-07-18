@@ -8,7 +8,7 @@ import ProductList from '../components/ProductList';
 import ProductForm from '../components/ProductForm';
 import SaveButtons from '../../shared-components/components/Buttons/SaveButtons';
 import ProductsUpload from '../components/ProductsUpload';
-import { ProductsContext } from '../../shared-components/contexts/ProductsContext/productsContext';
+import { ProductsContext } from '../../shared-components/contexts/ProductsContext/ProductsContext';
 import Layout from '../../shared-components/components/Layout/Layout';
 import StatsModal from '../../shared-components/components/StatsModal/StatsModal';
 import ProductStat from '../../shared-components/components/ProductStat/ProductStat';
