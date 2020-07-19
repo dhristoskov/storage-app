@@ -26,7 +26,8 @@ const SavedProductsList = (props) => {
                         totalListVat={list.totalListVat}
                         expDate={list.expDate}
                         products={list.products}
-                        showDeleteWarning={() => props.showDeleteWarning(list.id)}/>
+                        showDeleteWarning={() => props.showDeleteWarning(list.id)}
+                        singleItemHandler={() => props.singleItemHandler(list.id)}/>
                     )
                 })
             }

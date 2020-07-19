@@ -1272,6 +1272,7 @@ html {
   top: 2px;
   left: -20px;
   color: #9ba585;
+  cursor: pointer;
 }
 
 .product-instorage-wrapper .quantity {

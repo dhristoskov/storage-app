@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from '../../axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 import SavedProductsList from '../components/SavedProductsList';
 import Loader from '../../shared-components/components/Loader/Loader';
@@ -10,6 +10,7 @@ import DeleteWarning from '../../shared-components/components/DeleteWarning/Dele
 const StorageListsPage = () => {
   
     const { id } = useParams();
+    const history = useHistory();
     const [showWarning, setShowWarning ] = useState(false);
     const [ itemToDelete, setItemToDelete ] = useState(null); 
     const [ isLoading, setIsLoading ] = useState(false);
@@ -64,6 +65,11 @@ const StorageListsPage = () => {
         setItemToDelete(null)
     };
 
+    //Move to Single List Item Page
+    const singleItemHandler = (id) => {
+        history.push(`/storage/storage-item/${id}`)
+    }
+
     return (
         <Fragment>
              {
@@ -83,7 +89,8 @@ const StorageListsPage = () => {
                         <p className='storage-name'>You are in <span>{fixedName}</span> storage.</p>
                         <SavedProductsList savedLists={savedLists}
                                 showDeleteWarning={showDeleteWarning}
-                                fixedName={fixedName}/>
+                                fixedName={fixedName}
+                                singleItemHandler={singleItemHandler}/>
                     </Fragment>
                 }
             </div>

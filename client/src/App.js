@@ -14,6 +14,7 @@ import StorageContextProvider from './shared-components/contexts/StorageContext/
 import AuthContextProvider from './shared-components/contexts/AuthContext/AuthContext';
 import AllSavedLists from './SavedProductLists/pages/AllSavedLists';
 import PrivateRoute from './shared-components/components/PrivateRoute/PrivateRoute';
+import SingleListItem from './SavedProductLists/components/SingleListItem';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                   <Route path='/auth' component={AuthPage} />
                   <Route path='/reset-password' component={ResetPassPage} />
                   <PrivateRoute path='/storage/storage-list/:id' component={StorageListsPage} />
+                  <PrivateRoute path='/storage/storage-item/:id' component={SingleListItem} />
                   <PrivateRoute path='/storage/create-list/:id' component={NewListPage} />
                   <PrivateRoute path='/storages' component={StoragePage} />
                   <PrivateRoute path='/all-lists' component={AllSavedLists} />
