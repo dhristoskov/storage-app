@@ -1,25 +1,45 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from '../../axios';
 
 import EmailField from '../components/EmailField';
+import { productValidation } from '../../shared-components/utils/productValidation';
 
 const ResetPassPage = () => {
 
     const history = useHistory();
-    const [ email, setEmail ] = useState('')
+    const [ errors, setErrors ] = useState({});
+    const [ emailToReset, setEmail ] = useState({ email: ''});
 
-    const onSubmitHandle = (e) => {
+    const { email } = emailToReset;
+
+    const onChangeHandler = (e) => {
+        let error = productValidation(e.target.name, e.target.value);
+        setErrors(error)
+        setEmail({...emailToReset, [ e.target.name ]: e.target.value })
+    };
+
+    //Submit reset email
+    const onSubmitHandler = async (e) => {
         e.preventDefault();
-        setEmail('');
-        history.push('/') //<-- Remove leter
+        await axios.post('/emails/reset', emailToReset, 
+        {'Content-Type': 'application/json'})
+            .then(res => {     
+                console.log('done')          
+            }).catch(err => {
+                console.log(err);
+        });
+        setEmail({email: ''});
+        history.push('/');
     };
 
     return(
         <div className='auth-container'>
             <h3>Reset password</h3>
             <p>We will send you reset password link per E-mail</p>
-            <form className='auth-form' onSubmit={onSubmitHandle}>
-                <EmailField onChangeHandler={ e => setEmail(e.target.value) } name={'email'} value={email} required/>
+            <form className='auth-form' onSubmit={onSubmitHandler}>
+                <EmailField onChangeHandler={onChangeHandler} name={'email'} value={email} 
+                errors={errors.email} required/>
                 <div className='input-fied'>     
                     <input type="submit" value='Reset Password'/>
                 </div>

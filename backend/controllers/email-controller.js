@@ -1,16 +1,17 @@
 const crypto = require('crypto');
-// const nodemailer = require('nodemailer');
-// const sendgridTransport = require('nodemailer-sendgrid-transport');
+const nodemailer = require('nodemailer');
+const sendgridTransport = require('nodemailer-sendgrid-transport');
 const { validationResult } = require('express-validator');
+
 require('dotenv').config();
 
 const User = require('../models/user');
 
-// const transport = nodemailer.createTransport(sendgridTransport({
-//     auth: {
-//         api_user: process.env.SENDGRID_API_KEY
-//     }
-// }));
+const transport = nodemailer.createTransport(sendgridTransport({
+    auth: {
+        api_user: process.env.SENDGRID_API_KEY
+    }
+}));
 
 const resetPassword = async ( req, res ) => {
     const errors = validationResult(req);
@@ -51,7 +52,7 @@ const resetPassword = async ( req, res ) => {
         transport.sendMail({
             to: req.body.email,
             from: 'd_hristoskov@hotmail.com',
-            subject: 'Password reset',
+            subject: 'Reset Password E-Mail',
             html: `<h3>This is your Password reset link</h3>
             <P>Click that <a href="http://localhost:5000/api/users/reset/${token}">Link</a> to reset your password and create a new one</p>
             <p>The key will expired in 1 hour</p>
