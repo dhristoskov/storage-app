@@ -219,9 +219,15 @@ const deleteSingleProduct = async ( req, res ) => {
     res.send('Product successfully removed');
 }
 
+//Update single product
+const updateProductById = async ( req, res ) => {
+    //ToDo
+}
+
 exports.addToArchive = addToArchive;
 exports.getListsByStorageId = getListsByStorageId;
 exports.getAllLists = getAllLists;
 exports.deleteListById = deleteListById;
 exports.getByArchiveId = getByArchiveId;
 exports.deleteSingleProduct = deleteSingleProduct;
+exports.updateProductById = updateProductById;

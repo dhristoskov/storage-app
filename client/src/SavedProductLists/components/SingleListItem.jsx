@@ -40,6 +40,7 @@ const SingleListItem = () => {
                  })
     }
 
+    //Edit single product item
     const editProductHandler = (pid) => {
         console.log(pid)
     }

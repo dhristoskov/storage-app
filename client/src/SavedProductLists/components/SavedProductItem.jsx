@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AiOutlineDelete, AiOutlineEdit, AiOutlinePercentage } from 'react-icons/ai';
+import { AiOutlineDelete, AiOutlineEdit, AiOutlinePercentage, AiOutlineCheckCircle } from 'react-icons/ai';
 
 const SavedProductItem = (props) => {
 
@@ -31,7 +31,8 @@ const SavedProductItem = (props) => {
             <span className='total-vat-icon' onClick={toggleTotalPrice}><AiOutlinePercentage/></span></p>
             <div className='settings'>
                 <p onClick={props.deleteProductHandler}><AiOutlineDelete /></p>
-                <p onClick={props.editProductHandler}><AiOutlineEdit /></p>                 
+                <p onClick={props.editProductHandler}><AiOutlineEdit /></p>  
+                <p><AiOutlineCheckCircle /></p>               
             </div>
         </div>
     )

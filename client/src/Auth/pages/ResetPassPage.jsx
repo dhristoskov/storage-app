@@ -17,7 +17,7 @@ const ResetPassPage = () => {
     return(
         <div className='auth-container'>
             <h3>Reset password</h3>
-            <p>We will send you reset link per E-mail</p>
+            <p>We will send you reset password link per E-mail</p>
             <form className='auth-form' onSubmit={onSubmitHandle}>
                 <EmailField onChangeHandler={ e => setEmail(e.target.value) } name={'email'} value={email} required/>
                 <div className='input-fied'>     
