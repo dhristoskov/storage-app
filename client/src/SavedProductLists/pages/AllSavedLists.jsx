@@ -3,7 +3,7 @@ import React from 'react';
 const AllSavedLists = () => {
 
     return(
-        <p>All lists</p>
+        <p style={{textAlign: 'center'}}>All lists</p>
     )
 }
 

@@ -3,7 +3,7 @@ import React from 'react';
 const LandingPage = () => {
 
     return (
-        <p>Landing Page</p>
+        <p style={{textAlign: 'center'}}>Landing Page</p>
     )
 }
 

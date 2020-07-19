@@ -192,8 +192,24 @@ const deleteListById = async ( req, res ) => {
     res.send('List successfully removed');
 };
 
+//Delete single product item
+const deleteSingleProduct = async ( req, res ) => {
+    let archiveById
+    try{
+        archiveById = await Archive.findById(req.params.id)
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error!');
+    }
+
+    if(!archiveById){
+        return res.status(404).json({msg: 'Could not find archive with this id.'});
+    };
+}
+
 exports.addToArchive = addToArchive;
 exports.getListsByStorageId = getListsByStorageId;
 exports.getAllLists = getAllLists;
 exports.deleteListById = deleteListById;
 exports.getByArchiveId = getByArchiveId;
+exports.deleteSingleProduct = deleteSingleProduct;
