@@ -11,6 +11,7 @@ const SingleListItem = () => {
     const { id } = useParams();
     const [ singleItem, setSingleItem ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(false);
+    let expDate = new Date(singleItem.expDate).toLocaleDateString('en-GB');
 
     //Get single list item by id
     useEffect(() => {
@@ -25,7 +26,20 @@ const SingleListItem = () => {
              })
     }, [id]);
 
-    let expDate = new Date(singleItem.expDate).toLocaleDateString('en-GB');
+    //Delete single product from array
+    const deleteProductHandler = async (pid) => {
+        setIsLoading(true);
+        await axios.delete(`/archive/single-item/${id}/${pid}`)         
+                   .then(res => {
+                    setIsLoading(false);
+                    const newItem = singleItem.products.filter(el => el.id !== pid);
+                    setSingleItem({ ...singleItem, products: newItem})
+                   }).catch(err => {
+                    setIsLoading(false);
+                    console.log(err)
+                 })
+    }
+
 
     return (
         <Fragment>
@@ -52,7 +66,8 @@ const SingleListItem = () => {
                                         qty={product.qty}
                                         type={product.type}
                                         storage={product.storage}
-                                        isDone={product.isDone}/>
+                                        isDone={product.isDone}
+                                        deleteProductHandler={() => deleteProductHandler(product.id)}/>
                                 )
                             })
                         }

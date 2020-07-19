@@ -9,5 +9,6 @@ router.get('/:id', archivesController.getListsByStorageId);
 router.get('/single-item/:id', archivesController.getByArchiveId);
 router.get('/', archivesController.getAllLists);
 router.delete('/:id', archivesController.deleteListById);
+router.delete('/single-item/:id/:pid', archivesController.deleteSingleProduct);
 
 module.exports = router;

@@ -30,7 +30,7 @@ const SavedProductItem = (props) => {
             <p className='total'>{toggledTotalPrice ?  totalVat : totalPrice } { toggledTotalPrice ? '€/vat' : '€'}
             <span className='total-vat-icon' onClick={toggleTotalPrice}><AiOutlinePercentage/></span></p>
             <div className='settings'>
-                <p><AiOutlineDelete /></p>
+                <p onClick={props.deleteProductHandler}><AiOutlineDelete /></p>
                 <p><AiOutlineEdit /></p>                 
             </div>
         </div>

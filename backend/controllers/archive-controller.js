@@ -205,6 +205,18 @@ const deleteSingleProduct = async ( req, res ) => {
     if(!archiveById){
         return res.status(404).json({msg: 'Could not find archive with this id.'});
     };
+
+    let newProducts
+    try{
+        newProducts = archiveById.products.filter(element => element.id !== req.params.pid);
+        archiveById.products = newProducts;
+        await archiveById.save();
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error!');
+    }
+
+    res.send('Product successfully removed');
 }
 
 exports.addToArchive = addToArchive;
