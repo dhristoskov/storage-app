@@ -53,7 +53,7 @@ const resetPassword = async ( req, res ) => {
             from: 'd_hristoskov@hotmail.com',
             subject: 'Password reset',
             html: `<h3>This is your Password reset link</h3>
-            <P>Click the <a href="http://localhost:5000/api/users/reset/${token}">link</a> to reset your password and create a new one</p>
+            <P>Click that <a href="http://localhost:5000/api/users/reset/${token}">Link</a> to reset your password and create a new one</p>
             <p>The key will expired in 1 hour</p>
             </br/
             <h3>Thank you for choosing us</h3>`

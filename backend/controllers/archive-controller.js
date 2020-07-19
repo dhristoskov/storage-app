@@ -78,7 +78,7 @@ const addToArchive = async ( req, res ) => {
         });
 
         await archive.save();
-        res.status(201).json({ archive: archive });
+        res.status(201).json({ archive: archive.toObject({getters: true}) });
     }catch(err){
         console.error(err.message);
         es.status(500).send({msg: 'Server Error!'});
@@ -108,7 +108,7 @@ const addToArchive = async ( req, res ) => {
     // }
 };
 
-//Get Lists by Storage Name <-- will be remade later by ID
+//Get Lists by Storage Id
 const getListsByStorageId = async ( req, res ) => {
     
     let archive;
@@ -133,6 +133,23 @@ const getListsByStorageId = async ( req, res ) => {
 
     res.json({ lists: storageLists.map(list => list.toObject({ getters: true })) });
 };
+
+//Get Archive item by Id
+const getByArchiveId = async ( req, res ) => {
+    let archiveById
+    try{
+        archiveById = await Archive.findById(req.params.id)
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error!');
+    }
+
+    if(!archiveById){
+        return res.status(404).json({msg: 'Could not find archive with this id.'});
+    };
+
+    res.status(201).json({archive: archiveById.toObject({ getters: true}) });
+}
 
 //Get all avaliable Lists
 const getAllLists = async ( req, res ) => {
@@ -179,3 +196,4 @@ exports.addToArchive = addToArchive;
 exports.getListsByStorageId = getListsByStorageId;
 exports.getAllLists = getAllLists;
 exports.deleteListById = deleteListById;
+exports.getByArchiveId = getByArchiveId;
