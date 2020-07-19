@@ -1635,4 +1635,33 @@ html {
           flex-direction: column;
   margin: auto;
 }
+
+.btns-settings {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 15%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btns-settings p {
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: blue;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.btns-settings p:hover {
+  color: #e64444;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
 /*# sourceMappingURL=App.css.map */

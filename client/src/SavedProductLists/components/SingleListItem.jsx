@@ -40,6 +40,10 @@ const SingleListItem = () => {
                  })
     }
 
+    const editProductHandler = (pid) => {
+        console.log(pid)
+    }
+
 
     return (
         <Fragment>
@@ -67,7 +71,8 @@ const SingleListItem = () => {
                                         type={product.type}
                                         storage={product.storage}
                                         isDone={product.isDone}
-                                        deleteProductHandler={() => deleteProductHandler(product.id)}/>
+                                        deleteProductHandler={() => deleteProductHandler(product.id)}
+                                        editProductHandler={() => editProductHandler(product.id)}/>
                                 )
                             })
                         }
