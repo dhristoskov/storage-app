@@ -54,14 +54,14 @@ const ProductItem = (props) => {
             <p className='storage'>{fixedName}</p>
             <p className='total'>{totalPrice} €</p>
             <div className='settings'>
-                <p onClick={props.removeProduct}><AiOutlineDelete /></p>
-                <p onClick={props.editHandler}><AiOutlineEdit /></p>
+                <p title='Delete' onClick={props.removeProduct}><AiOutlineDelete /></p>
+                <p title='Edit' onClick={props.editHandler}><AiOutlineEdit /></p>
                 {
                     props.isDone 
-                    ? <p onClick={props.isUndoneHandler}><AiOutlineUndo /></p>
-                    : <p onClick={props.isDoneHandler}><AiOutlineCheckCircle /></p>
+                    ? <p title='Undone' onClick={props.isUndoneHandler}><AiOutlineUndo /></p>
+                    : <p title='Done' onClick={props.isDoneHandler}><AiOutlineCheckCircle /></p>
                 }              
-                <p onClick={togglePriority}><AiOutlineOrderedList /></p>
+                <p title='Set Priority' onClick={togglePriority}><AiOutlineOrderedList /></p>
                 {
                     toggle && <PriorityBtns priorityHandler={priorityHandler} />
                 }             
