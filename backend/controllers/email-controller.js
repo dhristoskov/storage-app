@@ -7,6 +7,7 @@ require('dotenv').config();
 
 const User = require('../models/user');
 
+//Email config
 const transport = nodemailer.createTransport(sendgridTransport({
     auth: {
         api_user: process.env.SENDGRID_API_KEY
@@ -19,6 +20,7 @@ const resetPassword = async ( req, res ) => {
         return res.status(422).json({ msg: 'Invalid input, please check your data' });
     }
     
+    //Create random token
     let token
     crypto.randomBytes(32, (err, buffer) => {
         if(err){
@@ -39,6 +41,7 @@ const resetPassword = async ( req, res ) => {
         return res.status(403).json({ msg: 'No account with that e-mail'});
     };
 
+    
     try{
         user.resetToken = token;
         user.expToken = Date.now() + 3600000;

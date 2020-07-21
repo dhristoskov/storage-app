@@ -2,6 +2,7 @@ const { validationResult } = require('express-validator');
 
 const Product = require('../models/product');
 
+//Post a single product to DB
 const postSingleProduct = async ( req, res ) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
