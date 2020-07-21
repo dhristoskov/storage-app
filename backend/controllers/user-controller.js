@@ -134,7 +134,44 @@ const checkEmail = async ( req, res ) => {
     }  
 };
 
+//Update User password after reset
+const updateUserPassword = async ( req, res ) => {
+
+    const { password, token } = req.body;
+
+    let user;
+    try{
+        user = await User.findOne({resetToken: token, expToken: {$gt: Date.now()}})
+    }catch(err){
+        console.errors(err.message);
+        res.status(500).send({ msg: 'Server Error, could not find the user' });
+    }
+
+    if(!user){
+        return res.status(403).json({ msg: 'Could not find user, or the time is expired'});
+    }
+
+    let hashedPassword;
+    try {
+        hashedPassword = await bcrypt.hash(password, 12);
+    }catch(err){
+        console.errors(err.message);
+        res.status(500).send({ msg: 'Server Error' });
+    }
+
+    try{
+        user.password = hashedPassword;
+        user.resetToken = undefined;
+        user.expToken = undefined;
+        await user.save();
+    }catch(err){
+        console.errors(err.message);
+        res.status(500).send({ msg: 'Server Error, could not save new passowrd' });
+    }
+};
+
 
 exports.registerUser = registerUser;
 exports.loginUser = loginUser;
 exports.checkEmail = checkEmail;
+exports.updateUserPassword = updateUserPassword;

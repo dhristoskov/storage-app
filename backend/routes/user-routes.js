@@ -33,11 +33,11 @@ router.post('/check-email',
 );
 
 //Update new password
-// router.post('/update',
-//     [
-//         check('password', 'Password at least 6 character long').isLength({ min: 6 }).trim()
-//     ], 
-//     usersController.updateUserPassword
-// );
+router.post('/update',
+    [
+        check('password', 'Password at least 6 character long').isLength({ min: 6 }).trim()
+    ], 
+    usersController.updateUserPassword
+);
 
 module.exports = router;

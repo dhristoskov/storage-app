@@ -28,8 +28,8 @@ function App() {
                 <Switch >
                   <Route exact path='/' component={LandingPage} />
                   <Route path='/auth' component={AuthPage} />
-                  <Route path='/reset' component={ResetPassPage} />
                   <Route path='/reset/:token' component={ResetForm} />
+                  <Route path='/reset' component={ResetPassPage} />
                   <PrivateRoute path='/storage/storage-list/:id' component={StorageListsPage} />
                   <PrivateRoute path='/storage/storage-item/:id' component={SingleListItem} />
                   <PrivateRoute path='/storage/create-list/:id' component={NewListPage} />
