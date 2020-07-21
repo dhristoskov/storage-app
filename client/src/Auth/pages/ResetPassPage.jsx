@@ -34,6 +34,11 @@ const ResetPassPage = () => {
         history.push('/');
     };
 
+    //Back to Email Check Page
+    const backToCheckPage = () => {
+        history.push('/auth')
+    }
+
     return(
         <div className='auth-container'>
             <h3>Reset password</h3>
@@ -45,7 +50,8 @@ const ResetPassPage = () => {
                     <input type="submit" value='Reset Password'/>
                 </div>
             </form>   
-            <p className='back-login'><span><AiOutlineArrowLeft /></span>Back to Log-in page</p>       
+            <p className='back-login' onClick={backToCheckPage}>
+                <AiOutlineArrowLeft /><span>Back to Log-in page</span></p>       
         </div>
     )
 }

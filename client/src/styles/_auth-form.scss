@@ -4,6 +4,21 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 27%;
+    .back-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all .2s ease-in;
+        span {
+            margin-left: 10px;
+        }
+        &:hover {
+            color: burlywood;
+            transform: scale(1.05);
+            font-weight: 700;
+        }
+    }
     h3, p, .psw-question {
         text-align: center;
         color: blue;

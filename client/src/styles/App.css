@@ -1046,6 +1046,32 @@ html {
   width: 27%;
 }
 
+.auth-container .back-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.auth-container .back-login span {
+  margin-left: 10px;
+}
+
+.auth-container .back-login:hover {
+  color: burlywood;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  font-weight: 700;
+}
+
 .auth-container h3, .auth-container p, .auth-container .psw-question {
   text-align: center;
   color: blue;
