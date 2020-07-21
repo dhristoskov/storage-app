@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
+import { useParams, useHistory } from 'react-router-dom';
 
 import ConfirmPassword from '../components/ConfirmPassword';
 import { productValidation } from '../../shared-components/productValidation';
 
 const ResetPassForm = () => {
 
+    const { token } = useParams();
+    const history = useHistory();
     const [ errors, setErrors ] = useState({});
     const [reset, setReset ] = useState({
         password: '',
         password2: '',
-        //token: token <-- ToDo
+        token: token
     });
 
     const { password, password2 } = reset;

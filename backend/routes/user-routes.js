@@ -32,6 +32,7 @@ router.post('/check-email',
     usersController.checkEmail
 );
 
+//Update new password
 // router.post('/update',
 //     [
 //         check('password', 'Password at least 6 character long').isLength({ min: 6 }).trim()
