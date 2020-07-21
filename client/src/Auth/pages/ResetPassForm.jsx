@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
 import ConfirmPassword from '../components/ConfirmPassword';
-import { productValidation } from '../../shared-components/productValidation';
+import { productValidation } from '../../shared-components/utils/productValidation';
 
 const ResetPassForm = () => {
 
@@ -33,7 +33,7 @@ const ResetPassForm = () => {
                 password: '',
                 password2: ''
         })};
-        history.push('/') //<-- Remove later
+        history.push('/')
     };
 
     return(
