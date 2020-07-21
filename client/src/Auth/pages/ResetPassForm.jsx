@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import axios from '../../axios';
 
 import ConfirmPassword from '../components/ConfirmPassword';
 import { productValidation } from '../../shared-components/utils/productValidation';
@@ -29,11 +30,17 @@ const ResetPassForm = () => {
         if(password !== password2){
             setErrors({msg:'Passwords and confirm password does not match'})
         }else{ 
+            axios.post('/emails/update', reset,
+            {'Content-Type': 'application/json'})
+                .then(res => {
+                 history.push('/auth')
+                }).catch(err => {
+                 console.log(err);
+                });
             setReset({
                 password: '',
                 password2: ''
         })};
-        history.push('/')
     };
 
     return(

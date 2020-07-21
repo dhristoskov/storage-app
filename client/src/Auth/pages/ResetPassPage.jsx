@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 import axios from '../../axios';
 
 import EmailField from '../components/EmailField';
@@ -43,7 +44,8 @@ const ResetPassPage = () => {
                 <div className='input-fied'>     
                     <input type="submit" value='Reset Password'/>
                 </div>
-            </form>          
+            </form>   
+            <p className='back-login'><span><AiOutlineArrowLeft /></span>Back to Log-in page</p>       
         </div>
     )
 }
