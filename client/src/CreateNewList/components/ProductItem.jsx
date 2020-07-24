@@ -23,6 +23,7 @@ const ProductItem = (props) => {
     const [ toggledPrice, setToggledPrice ] = useState(false);
     const taxes = 20;
 
+    //Format the price numbers
     const fixedName = props.storage.replace(/^./, str => str.toUpperCase())
     const price = parseFloat(props.price).toFixed(2);
     const totalPrice = parseFloat(price * props.qty).toFixed(2);
