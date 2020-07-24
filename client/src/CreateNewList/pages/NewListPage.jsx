@@ -72,6 +72,7 @@ const NewList = () => {
         dispatch({type: 'UNDONE', id: pid})
     }
 
+    //Set a product to edit mode
     const editHandler = (pid) => {
         const product = products.find(e => e.id === pid);
         setOnEdit(product)
@@ -96,6 +97,7 @@ const NewList = () => {
         dispatch({type: 'LOW_FIRST'});
     }
 
+    //Unset edit mode 
     const onClearEditHandler = () => {
         setOnEdit(null);
     }
