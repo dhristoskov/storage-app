@@ -13,7 +13,7 @@ const SingleListItem = () => {
     const [ isLoading, setIsLoading ] = useState(false);
     let expDate = new Date(singleItem.expDate).toLocaleDateString('en-GB');
 
-    //Get single list item by id
+    //Get single list item by ID
     useEffect(() => {
         setIsLoading(true);
         axios.get(`/archive/single-item/${id}`)
@@ -40,7 +40,7 @@ const SingleListItem = () => {
                  })
     }
 
-    //Edit single product item
+    //Edit single product item <--To be added
     const editProductHandler = (pid) => {
         console.log(pid)
     }
