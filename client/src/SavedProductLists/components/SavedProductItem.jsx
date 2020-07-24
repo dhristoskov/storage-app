@@ -11,10 +11,12 @@ const SavedProductItem = (props) => {
     const totalPrice = parseFloat(props.totalPrice).toFixed(2);
     const totalVat = parseFloat(props.totalVat).toFixed(2);
 
+    //Show/Hide VAT price for a product
     const togglePrice = () => {
         setToggledPrice(prevState => !prevState)
     };
 
+    //Show/Hide VAT total price for a products
     const toggleTotalPrice = () => {
         setToggledTotalPrice(prevState => !prevState)
     };

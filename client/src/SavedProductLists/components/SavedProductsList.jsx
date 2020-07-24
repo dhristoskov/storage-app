@@ -4,7 +4,7 @@ import SavedListItem from './SavedListItem';
 
 const SavedProductsList = (props) => {
 
-     //If saved list is empty array
+     //Check if saved list is empty array, and show message
      if(!props.savedLists.length) {
         return(
             <div className='empty-list'>

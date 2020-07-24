@@ -9,6 +9,7 @@ const SavedListItem = (props) => {
     const [ showDetails, setShowDetails ] = useState(false);  
     let expDate = new Date(props.expDate).toLocaleDateString('en-GB');
 
+    //Show/Hide full product list info
     const onDetailsHandler = () => {
         setShowDetails(prevState => !prevState);
     };
