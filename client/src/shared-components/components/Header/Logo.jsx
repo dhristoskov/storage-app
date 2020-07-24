@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import truck from '../../../assets/truck.svg';
 
+//Logo component
 const Logo = (props) => {
 
     const history = useHistory();

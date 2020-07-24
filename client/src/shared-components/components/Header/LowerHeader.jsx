@@ -14,7 +14,7 @@ const LowerHeader = (props) => {
         history.push(`/storage/storage-list/${id}`);
     };
 
-    //Drop-down storage list
+    //Drop-down storage list menu
     const toggleStoragesView = () => {
         if(storages.length){
             setToggleStorages(prevState => !prevState);
@@ -22,7 +22,7 @@ const LowerHeader = (props) => {
     }
 
     return (
-        //Lower Header Component to switch fast storages 
+        //Lower Header Component to switch between storages 
         //and for more user information
         <div className='lower-header'>
             {

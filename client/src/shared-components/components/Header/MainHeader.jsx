@@ -29,7 +29,7 @@ const MainHeader = () => {
         setShowWarning(false);
     };
 
-    //Show Nav-Bar menu
+    //Show/Hide Nav-Bar menu
     const toggleNavigation = () => {
         if(isLoggedIn){
             setToggleNav(prevState => !prevState);
