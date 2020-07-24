@@ -6,7 +6,7 @@ import { AiOutlineDelete,
 const StorageSimpleList = (props) => {
 
     
-    //If storages list is empty array
+    //Check if storages list is empty array, and show message
     if(!props.storages.length) {
         return(
             <div className='empty-list'>

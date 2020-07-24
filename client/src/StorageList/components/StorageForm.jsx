@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const StorageForm = (props) => {
 
     //ToDo add storage image !!!
+    //or use default one
     const [ name, setName ] = useState('')
 
     const onSubmitHandler = (e) => {
