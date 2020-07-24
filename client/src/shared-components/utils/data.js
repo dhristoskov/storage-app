@@ -29,5 +29,11 @@ export const STAT = [
         time: '07.05.2020',
         name: 'Tomato',
         price: 0.96
+    },
+    {
+        id: '006',
+        time: '08.05.2020',
+        name: 'Tomato',
+        price: 0.76
     }
 ]

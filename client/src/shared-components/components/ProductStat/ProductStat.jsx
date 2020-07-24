@@ -2,10 +2,12 @@ import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 import StatItem from './StatItem';
+//DUMMY data
 import { STAT } from '../../utils/data';
 
 const ProductStat = (props) => {
 
+    //Lower and Highest product price 
     const lowerPrice = Math.min(...STAT.map(it => it.price));
     const highestPrice = Math.max(...STAT.map(it => it.price));
 
