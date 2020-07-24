@@ -60,6 +60,7 @@ const AuthPage = () => {
                    });
     };
 
+    //Set login or register if e-mail exist in DB
     const onLoginHandler = (result) => {
         if(result){
             setOnLogin('login');

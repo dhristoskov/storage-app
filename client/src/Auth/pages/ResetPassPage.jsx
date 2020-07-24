@@ -20,7 +20,7 @@ const ResetPassPage = () => {
         setEmail({...emailToReset, [ e.target.name ]: e.target.value })
     };
 
-    //Submit reset email
+    //Submit email to reset, and send a recet link
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         await axios.post('/emails/reset', emailToReset, 

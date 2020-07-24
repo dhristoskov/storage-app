@@ -18,6 +18,7 @@ const CheckUser = (props) => {
         setEmail({...emailToCheck, [ e.target.name]: e.target.value})
     };
 
+    //Send email to be checked and email
     const onAuthHandler = (e) => {
         e.preventDefault();
         props.onAuthHandler(emailToCheck);
