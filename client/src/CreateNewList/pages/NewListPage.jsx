@@ -21,7 +21,7 @@ const NewList = () => {
     const [ onEdit, setOnEdit ] = useState();
     const [ expDate, setExpDate ] = useState(new Date());
     const [ showInfo, setShowInfo ] = useState(false);
-    const [ setErorrMsg ] = useState(''); //Add errorMsg <-- later
+    const [ errorMsg, setErorrMsg ] = useState('');
     const fixedName = storageName.replace(/^./, str => str.toUpperCase());
 
     //Add Products to Specific Storage
@@ -54,6 +54,7 @@ const NewList = () => {
                        dispatch({type: 'CLEAR', currentPart: currentStorage})
                    }).catch(err => {
                        setErorrMsg(err.response.data);
+                       console.log(errorMsg)
                    });       
     }   
 
