@@ -38,7 +38,7 @@ const resetPassword = async ( req, res ) => {
     };
 
     if(!user){
-        return res.status(403).json({ msg: 'No account with that e-mail'});
+        return res.status(403).json({ msg: 'We could not find a user with that email'});
     };
 
     
