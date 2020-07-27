@@ -15,6 +15,7 @@ const AuthPage = () => {
     const [ onLogin, setOnLogin ] = useState(null);
     const [ newEmail, setNewEmail ] = useState('');
     const { login } = useContext(AuthContext);
+    const [ errorMsg, setErorrMsg ] = useState('');
 
     //Check if Email exist in DB
     const onAuthHandler = async (email) => {
@@ -55,8 +56,9 @@ const AuthPage = () => {
                         login(res.data.userId, res.data.token, res.data.name);
                         history.push('/storages')
                    }).catch(err => {
+                        setErorrMsg(err.response.data);
                         setIsLoading(false);
-                        console.log(err.response.data)
+                        console.log(errorMsg)
                    });
     };
 
