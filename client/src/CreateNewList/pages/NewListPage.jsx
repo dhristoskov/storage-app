@@ -21,6 +21,7 @@ const NewList = () => {
     const [ onEdit, setOnEdit ] = useState();
     const [ expDate, setExpDate ] = useState(new Date());
     const [ showInfo, setShowInfo ] = useState(false);
+    const [ setErorrMsg ] = useState(''); //Add errorMsg <-- later
     const fixedName = storageName.replace(/^./, str => str.toUpperCase());
 
     //Add Products to Specific Storage
@@ -33,7 +34,7 @@ const NewList = () => {
              .then(res => {
                 setStorageName(res.data.storage.name)
              }).catch(err => {
-                 console.log(err)
+                setErorrMsg(err.response.data);
              })
     }, [id]);
 
@@ -52,7 +53,7 @@ const NewList = () => {
                        console.log(res.data)
                        dispatch({type: 'CLEAR', currentPart: currentStorage})
                    }).catch(err => {
-                       console.log(err)
+                       setErorrMsg(err.response.data);
                    });       
     }   
 

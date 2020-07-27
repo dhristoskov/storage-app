@@ -29,11 +29,11 @@ const ResetPassPage = () => {
         axios.post('/emails/reset', emailToReset, 
         {'Content-Type': 'application/json'})
             .then(res => {     
-                console.log('done')    
+                console.log('done')   
+                history.push('/');  
             }).catch(err => {
-                console.log(err.response.data);
-        });
-        history.push('/'); 
+                setErorrMsg(err.response.data);
+        });      
         setEmail({email: ''});
     }, [emailToReset, history]);
 
