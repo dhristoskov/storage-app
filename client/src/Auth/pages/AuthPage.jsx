@@ -56,7 +56,7 @@ const AuthPage = () => {
                         history.push('/storages')
                    }).catch(err => {
                         setIsLoading(false);
-                        console.log(err)
+                        console.log(err.response.data)
                    });
     };
 

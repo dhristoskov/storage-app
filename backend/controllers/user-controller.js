@@ -144,11 +144,11 @@ const updateUserPassword = async ( req, res ) => {
         user = await User.findOne({resetToken: token, expToken: {$gt: Date.now()}})
     }catch(err){
         console.errors(err.message);
-        res.status(500).send({ msg: 'Server Error, could not find the user' });
+        res.status(500).send('Server Error, could not find the user');
     }
 
     if(!user){
-        return res.status(403).json({ msg: 'Could not find user, or the time is expired'});
+        return res.status(403).json('Could not find user, or the time is expired');
     }
 
     let hashedPassword;
@@ -156,7 +156,7 @@ const updateUserPassword = async ( req, res ) => {
         hashedPassword = await bcrypt.hash(password, 12);
     }catch(err){
         console.errors(err.message);
-        res.status(500).send({ msg: 'Server Error' });
+        res.status(500).send('Server Error');
     }
 
     try{
@@ -166,7 +166,7 @@ const updateUserPassword = async ( req, res ) => {
         await user.save();
     }catch(err){
         console.errors(err.message);
-        res.status(500).send({ msg: 'Server Error, could not save new passowrd' });
+        res.status(500).send('Server Error, could not save new passowrd');
     }
 };
 
