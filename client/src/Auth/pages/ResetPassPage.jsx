@@ -49,15 +49,13 @@ const ResetPassPage = () => {
 
     return(
         <Fragment>
-            <div>
-                {
-                    errorMsg &&   
-                    <Modal removeModal={hideDeleteWarning}>
-                        <InfoMessage msg={errorMsg.msg}
-                        cancel={hideDeleteWarning}/>
-                    </Modal>
-                }
-            </div>
+            {
+                errorMsg &&   
+                <Modal removeModal={hideDeleteWarning}>
+                    <InfoMessage msg={errorMsg.msg}
+                    cancel={hideDeleteWarning}/>
+                </Modal>
+            }
             <div className='auth-container'>
                 <h3>Reset password</h3>
                 <p>We will send you reset password link per E-mail</p>
