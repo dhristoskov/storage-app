@@ -7,6 +7,8 @@ import Registration from '../components/Registration';
 import Login from '../components/Login';
 import Loader from '../../shared-components/components/Loader/Loader';
 import { AuthContext } from '../../shared-components/contexts/AuthContext/AuthContext';
+import InfoMessage from '../../shared-components/components/DeleteWarning/InfoMessage';
+import Modal from '../../shared-components/components/Modal/Modal';
 
 const AuthPage = () => {
 
@@ -26,8 +28,8 @@ const AuthPage = () => {
                     setIsLoading(false);
                     onLoginHandler(res.data.result)
                    }).catch(err => {
+                    setErorrMsg(err.response.data);
                     setIsLoading(false);
-                    console.log(err)
                    });    
     };
 
@@ -41,8 +43,8 @@ const AuthPage = () => {
                         login(res.data.userId, res.data.token, res.data.name);
                         history.push('/storages')
                    }).catch(err => {
+                        setErorrMsg(err.response.data);
                         setIsLoading(false);
-                        console.log(err)
                    });
     };
 
@@ -58,7 +60,6 @@ const AuthPage = () => {
                    }).catch(err => {
                         setErorrMsg(err.response.data);
                         setIsLoading(false);
-                        console.log(errorMsg)
                    });
     };
 
@@ -72,10 +73,20 @@ const AuthPage = () => {
         }
     };
 
-
+     //Remove info message
+     const hideDeleteWarning = () => {
+       setErorrMsg(null)
+    };
 
     return (
         <Fragment>
+            {
+                errorMsg &&   
+                <Modal removeModal={hideDeleteWarning}>
+                    <InfoMessage msg={errorMsg.msg}
+                    cancel={hideDeleteWarning}/>
+                </Modal>
+            }
             {
                 isLoading 
                 ? <Loader />

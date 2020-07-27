@@ -9,7 +9,7 @@ require('dotenv').config();
 const registerUser = async ( req, res ) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-        return res.status(422).json('Invalid input, please check your data');
+        return res.status(422).json({ msg: 'Invalid input, please check your data' });
     }
 
     const { username, email, password } = req.body;
@@ -19,11 +19,11 @@ const registerUser = async ( req, res ) => {
         user = await User.findOne({ email });
     }catch(err){
         console.errors(err.message);
-        res.status(500).send('Server Error');
+        res.status(500).send({ msg: 'Server Error' });
     }
 
     if(user){
-        return res.status(422).json('User already exists, please login instead.')
+        return res.status(422).json({ msg: 'User already exists, please login instead.' })
     }
 
     let hashedPassword;
@@ -31,7 +31,7 @@ const registerUser = async ( req, res ) => {
         hashedPassword = await bcrypt.hash(password, 12);
     }catch(err){
         console.errors(err.message);
-        res.status(500).send('Server Error');
+        res.status(500).send({ msg: 'Server Error' });
     }
 
     user = new User({
@@ -46,7 +46,7 @@ const registerUser = async ( req, res ) => {
         await user.save();
     }catch{
         console.errors(err.message);
-        res.status(500).send('Server Error');
+        res.status(500).send({ msg: 'Server Error' });
     }
     
     let token;
@@ -57,7 +57,7 @@ const registerUser = async ( req, res ) => {
             {expiresIn: '1h'});
     }catch(err){
         console.errors(err.message);
-        res.status(500).send('Server Error');
+        res.status(500).send({ msg: 'Server Error' });
     };
 
     res.status(201).json({userId: user.id, name: user.username, token: token});
@@ -67,7 +67,7 @@ const registerUser = async ( req, res ) => {
 const loginUser = async ( req, res ) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-        return res.status(422).json('Invalid input, please check your data');
+        return res.status(422).json({ msg: 'Invalid input, please check your data' });
     }
 
     const { email, password } = req.body;
@@ -77,11 +77,11 @@ const loginUser = async ( req, res ) => {
         user = await User.findOne({ email });
     }catch(err){
         console.errors(err.message);
-        res.status(500).send('Server Error');
+        res.status(500).send({ msg: 'Server Error' });
     }
 
     if(!user){
-        return res.status(403).json({msg: 'Invalid credentials, could not log you in.'});
+        return res.status(403).json({ msg: 'Invalid credentials, could not log you in.'});
     }
 
     let isPasswordMatch = false;
@@ -89,10 +89,10 @@ const loginUser = async ( req, res ) => {
         isPasswordMatch = await bcrypt.compare(password, user.password);
     }catch(err){
         console.errors(err.message);
-        res.status(500).send('Server Error');
+        res.status(500).send({ msg: 'Server Error' });
     }
     if(!isPasswordMatch){
-        return res.status(403).json({msg: 'Invalid credentials, could not log you in.'});
+        return res.status(403).json({ msg: 'Invalid credentials, could not log you in.'});
     }
 
     let token;
@@ -103,7 +103,7 @@ const loginUser = async ( req, res ) => {
             {expiresIn: '1h'});
     }catch(err){
         console.errors(err.message);
-        res.status(500).send('Server Error');
+        res.status(500).send({ msg: 'Server Error' });
     };
 
     res.json({userId: user.id, name: user.username, token: token});
@@ -114,7 +114,7 @@ const loginUser = async ( req, res ) => {
 const checkEmail = async ( req, res ) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-        return res.status(422).json('Invalid input, please check your data');
+        return res.status(422).json({ msg: 'Invalid input, please check your data' });
     }
 
     const { email } = req.body;
@@ -124,7 +124,7 @@ const checkEmail = async ( req, res ) => {
         isItExist = await User.findOne({ email });
     }catch(err){
         console.errors(err.message);
-        res.status(500).send('Server Error');
+        res.status(500).send({ msg: 'Server Error' });
     }
 
     if(isItExist){
@@ -144,11 +144,11 @@ const updateUserPassword = async ( req, res ) => {
         user = await User.findOne({resetToken: token, expToken: {$gt: Date.now()}})
     }catch(err){
         console.errors(err.message);
-        res.status(500).send('Server Error, could not find the user');
+        res.status(500).send({ msg: 'Server Error, could not find the user' });
     }
 
     if(!user){
-        return res.status(403).json('Could not find user, or the time is expired');
+        return res.status(403).json({ msg: 'Could not find user, or the time is expired'});
     }
 
     let hashedPassword;
@@ -156,7 +156,7 @@ const updateUserPassword = async ( req, res ) => {
         hashedPassword = await bcrypt.hash(password, 12);
     }catch(err){
         console.errors(err.message);
-        res.status(500).send('Server Error');
+        res.status(500).send({ msg: 'Server Error' });
     }
 
     try{
@@ -166,7 +166,7 @@ const updateUserPassword = async ( req, res ) => {
         await user.save();
     }catch(err){
         console.errors(err.message);
-        res.status(500).send('Server Error, could not save new passowrd');
+        res.status(500).send({ msg: 'Server Error, could not save new passowrd' });
     }
 };
 
