@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import axios from '../../axios';
@@ -13,7 +13,7 @@ const ResetPassPage = () => {
     const history = useHistory();
     const [ errors, setErrors ] = useState({});
     const [ errorMsg, setErorrMsg ] = useState('');
-    const [ emailToReset, setEmail ] = useState({ email: ''});
+    const [ emailToReset, setEmail ] = useState({ email: '' });
 
     const { email } = emailToReset;
 
@@ -24,17 +24,18 @@ const ResetPassPage = () => {
     };
 
     //Submit email to reset, and send a recet link
-    const onSubmitHandler = async (e) => {
+    const onSubmitHandler = useCallback((e) => {
         e.preventDefault();
-        await axios.post('/emails/reset', emailToReset, 
+        axios.post('/emails/reset', emailToReset, 
         {'Content-Type': 'application/json'})
             .then(res => {     
-                history.push('/');         
+                console.log('done')    
             }).catch(err => {
-                setErorrMsg(err.response.data);
+                console.log(err.response.data);
         });
+        history.push('/'); 
         setEmail({email: ''});
-    };
+    }, [emailToReset, history]);
 
     //Back to Email Check Page
     const backToCheckPage = () => {
@@ -48,13 +49,15 @@ const ResetPassPage = () => {
 
     return(
         <Fragment>
-            {
-                errorMsg &&   
-                <Modal removeModal={hideDeleteWarning}>
-                    <InfoMessage msg={errorMsg.msg}
-                    cancel={hideDeleteWarning}/>
-                </Modal>
-            }
+            <div>
+                {
+                    errorMsg &&   
+                    <Modal removeModal={hideDeleteWarning}>
+                        <InfoMessage msg={errorMsg.msg}
+                        cancel={hideDeleteWarning}/>
+                    </Modal>
+                }
+            </div>
             <div className='auth-container'>
                 <h3>Reset password</h3>
                 <p>We will send you reset password link per E-mail</p>

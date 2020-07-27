@@ -6,7 +6,7 @@ const ConfirmPassword = (props) => {
 
     const [ unVisible, setUnVisible ] = useState(true);
 
-    //Toggle between visible and unvisible mode for password
+    //Toggle between visible and unvisible mode for a password
     //input type=text and type=password
     const toggleVisibal = () => {
         setUnVisible(prevState => !prevState);
