@@ -22,7 +22,7 @@ const addToArchive = async ( req, res ) => {
     };
 
     if(!storageToCheck){
-        return res.status(404).json({msg: 'Could not find storage with this name.'});
+        return res.status(404).json({msg: 'Could not find storage with that name.'});
     };
 
     const taxes = 20;
@@ -52,12 +52,6 @@ const addToArchive = async ( req, res ) => {
     const totalListPrice = productList.reduce((prev, cur) =>  {
         return prev + (cur.price * cur.qty)
     }, 0);
-
-    //   const archive = new Archive({
-    //         storage: storageToCheck._id,
-    //         addDate,
-    //         products: productList
-    //   });
 
     try{
         //Need to be not a local server 
@@ -145,7 +139,7 @@ const getByArchiveId = async ( req, res ) => {
     }
 
     if(!archiveById){
-        return res.status(404).json({msg: 'Could not find archive with this id.'});
+        return res.status(404).json({msg: 'Could not find archive with that id.'});
     };
 
     res.status(201).json({archive: archiveById.toObject({ getters: true}) });

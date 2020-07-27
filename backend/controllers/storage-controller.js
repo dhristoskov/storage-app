@@ -34,7 +34,7 @@ const createStorage = async ( req, res ) => {
         res.status(201).json({ storage: storage });
     }catch(err){
         console.error(err.message);
-        res.status(500).send({msg: 'Creating a new Storage failed, try again'});
+        res.status(500).send({msg: 'Creating a new Storage failed,please try again'});
     }
 
 };
@@ -83,7 +83,7 @@ const deleteStorage = async ( req, res ) => {
     }
 
     if(!storageToDelete){
-        return res.status(404).json({ msg: 'Could not find storage for this id' });
+        return res.status(404).json({ msg: 'Could not find storage with that id' });
     }
 
     try {

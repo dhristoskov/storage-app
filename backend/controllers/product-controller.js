@@ -6,7 +6,7 @@ const Product = require('../models/product');
 const postSingleProduct = async ( req, res ) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-        return res.status(422).json({msg: 'Invalid inputs, please check your data.'});
+        return res.status(422).json({msg: 'Invalid inputs, please check your input data.'});
     }
 
     const { name, price, qty, type, storage } = req.body;

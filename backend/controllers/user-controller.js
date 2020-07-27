@@ -92,7 +92,7 @@ const loginUser = async ( req, res ) => {
         res.status(500).send({ msg: 'Server Error' });
     }
     if(!isPasswordMatch){
-        return res.status(403).json({ msg: 'Invalid credentials, could not log you in.'});
+        return res.status(403).json({ msg: 'Invalid credentials, incorrect password.'});
     }
 
     let token;
@@ -166,7 +166,7 @@ const updateUserPassword = async ( req, res ) => {
         await user.save();
     }catch(err){
         console.errors(err.message);
-        res.status(500).send({ msg: 'Server Error, could not save new passowrd' });
+        res.status(500).send({ msg: 'Server Error, could not save the new passowrd' });
     }
 };
 
