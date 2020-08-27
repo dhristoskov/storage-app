@@ -2,7 +2,7 @@ import React from 'react';
 
 const TotalCalculation = (props) => {
 
-    //VAT %
+    //VAT % - still default value
     const taxes = 20;
 
     //Calculating Total Price for all products
