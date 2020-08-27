@@ -1,11 +1,11 @@
 import React from 'react';
 
-const LandingPage = () => {
+const LandingPageLayout = () => {
 
     return (
         //Coming soon
-        <p>Landing Page</p>
+        <p className='landing-layout'>Landing Page Layout</p>
     )
 }
 
-export default LandingPage;
+export default LandingPageLayout;

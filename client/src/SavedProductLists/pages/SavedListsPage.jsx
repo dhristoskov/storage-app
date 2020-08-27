@@ -43,11 +43,11 @@ const StorageListsPage = () => {
              })
     }, [id]);
 
+    //Delete a list in the storage
     const deleteStorageList = async () => {
         await axios.delete(`/archive/${itemToDelete}`)
                    .then(res => {
                        setShowWarning(false);
-                       //To be removed later
                        const newList = savedLists.filter(list => list.id !== itemToDelete);
                        setSavedLists(newList);
                    }).catch(err => {
