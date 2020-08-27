@@ -11,6 +11,8 @@ const SingleListItem = () => {
     const { id } = useParams();
     const [ singleItem, setSingleItem ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(false);
+    
+    //Change Date to local date format
     let expDate = new Date(singleItem.expDate).toLocaleDateString('en-GB');
 
     //Get single list item by ID

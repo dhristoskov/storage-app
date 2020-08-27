@@ -7,6 +7,7 @@ import StorageTableHeader from './StorageTableHeader';
 const SavedListItem = (props) => {
 
     const [ showDetails, setShowDetails ] = useState(false);  
+    //Change Date to local date format
     let expDate = new Date(props.expDate).toLocaleDateString('en-GB');
 
     //Show/Hide full product list info

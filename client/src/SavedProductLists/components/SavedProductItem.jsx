@@ -6,6 +6,7 @@ const SavedProductItem = (props) => {
     const [ toggledPrice, setToggledPrice ] = useState(false);
     const [ toggledTotalPrice, setToggledTotalPrice ] = useState(false);
 
+    //Fix the prices to .00 after decimal point
     const price = parseFloat(props.price).toFixed(2);
     const priceVat = parseFloat(props.priceVat).toFixed(2);
     const totalPrice = parseFloat(props.totalPrice).toFixed(2);
