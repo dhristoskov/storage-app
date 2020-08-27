@@ -18,6 +18,7 @@ const Registration = (props) => {
     const { username, email, password, password2 } = register;
 
     const onChangeHandler = (e) => {
+        //Validate entry data for username, email and password
         let error = productValidation(e.target.name, e.target.value);
         setErrors(error);
         setRegister({...register, [ e.target.name ]: e.target.value})

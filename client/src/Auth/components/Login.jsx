@@ -16,6 +16,7 @@ const Login = (props) => {
     const { email, password } = login;
 
     const onChangeHandler = (e) => {
+        //Validate entry data for email and password
         let error = productValidation(e.target.name, e.target.value);
         setErrors(error)
         setLogin({...login, [ e.target.name]: e.target.value})
