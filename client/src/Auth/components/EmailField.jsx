@@ -3,6 +3,7 @@ import { AiOutlineMail } from 'react-icons/ai';
 
 const EmailField = (props) => {
 
+    //Email reuseble field
     return (
         <div className='input-fied'>
             <p className='form-icon'><AiOutlineMail /></p>
