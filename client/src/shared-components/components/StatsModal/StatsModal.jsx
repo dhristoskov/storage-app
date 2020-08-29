@@ -4,7 +4,7 @@ import Overlay from '../Overlay/Overlay';
 
 const StatsModal = (props) => {
 
-    //Stats modal for product information pop-up
+    //Stats modal for product statistic pop-up
     return(
         <Fragment>
             <Overlay/>

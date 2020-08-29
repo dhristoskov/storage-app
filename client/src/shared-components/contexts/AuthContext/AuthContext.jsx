@@ -1,7 +1,7 @@
 import React, { createContext, useState, useCallback, useEffect } from 'react';
 
 export const AuthContext = createContext({
-    isLoggedIn: false,
+    isLoggedIn: false, 
     userId: null,
     token: null,
     name: null,
@@ -16,6 +16,7 @@ const AuthContextProvider = (props) => {
     const [name, setName] = useState(false)
     const [expirTime, setExpTimer] = useState();
 
+    // login method
     const login = useCallback((uid, token, name, expirInTime ) => {
         setToken(token);
         setUserId(uid);
@@ -24,6 +25,7 @@ const AuthContextProvider = (props) => {
         expirInTime || new Date(new Date().getTime() + 1000 * 60 * 60);
           setExpTimer(tokenExpirationTime);
     
+        //Add to localestorage
         localStorage.setItem
         ('userData', 
         JSON.stringify(
@@ -33,6 +35,7 @@ const AuthContextProvider = (props) => {
            expiration: tokenExpirationTime.toISOString() }));
       }, []);
 
+      //logout method
       const logout = useCallback(() => {
         setToken(null);
         setUserId(null);
