@@ -1,4 +1,4 @@
-//DUMMY DATA for products statistic
+//Dummy daat for products statistics
 export const STAT = [
     {
         id: '001',
