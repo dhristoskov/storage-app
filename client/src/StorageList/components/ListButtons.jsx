@@ -3,7 +3,7 @@ import { BsListUl, BsGrid3X2 } from 'react-icons/bs'
 
 const ListButtons = (props) => {
 
-    //Switch between list and grid view
+    //Switch between list and grid view for avalieble storages
     return (
         <div className='view'>
             <p onClick={props.showSimpleList}><BsListUl /></p>

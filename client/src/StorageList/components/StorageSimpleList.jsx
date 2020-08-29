@@ -4,8 +4,7 @@ import { AiOutlineDelete,
     AiOutlineOrderedList } from 'react-icons/ai'
 
 const StorageSimpleList = (props) => {
-
-    
+ 
     //Check if storages list is empty array, and show message
     if(!props.storages.length) {
         return(
