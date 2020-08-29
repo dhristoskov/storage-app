@@ -1,3 +1,4 @@
+// email regex
 const ValidateEmail = RegExp(/^\S+@\S+\.\S+$/);
 
 export const  productValidation = (name, value) => {
