@@ -1,6 +1,6 @@
 import React from 'react'
 
-//Info Warning
+//Info Warning message
 const InfoMessage = (props) => {
     return(
         <div className='delete-container'>
