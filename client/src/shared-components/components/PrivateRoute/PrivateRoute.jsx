@@ -3,6 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthContext/AuthContext';
 
+//Private route check if the user is authorizated
 const PrivateRoute = ({ component: Component, ...rest }) => {
 
   const { token } = useContext(AuthContext);
