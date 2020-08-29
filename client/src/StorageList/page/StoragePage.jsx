@@ -21,6 +21,7 @@ const StoragePage = () => {
     const [ isLoading, setIsLoading ] = useState(false);
     const history = useHistory();
 
+    //load a storages
     useEffect(() => {
         setIsLoading(true);
         axios.get('/storages')
@@ -33,6 +34,7 @@ const StoragePage = () => {
              })
     }, [dispatch]);
 
+    //Add new storaga
     const addStorage = async ( newStorage ) => {
         setIsLoading(true);
         await axios.post('/storages', newStorage,
@@ -47,6 +49,7 @@ const StoragePage = () => {
                    });
     }
 
+    //delete storage
     const deleteStorage = async () => {
         setIsLoading(true);
         await axios.delete(`/storages/${itemToDelete}`)
