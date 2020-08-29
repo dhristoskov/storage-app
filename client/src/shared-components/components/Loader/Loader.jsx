@@ -1,5 +1,6 @@
 import React from 'react';
 
+//loading animation
 const Loader = () => {
     return (
         <div className='loader'>
